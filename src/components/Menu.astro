@@ -4,8 +4,8 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import Logo from "@/components/icons/Logo.astro";
 import MenuButton from "@/components/icons/Menu.astro";
 
-const isSpa = Astro.url.pathname.startsWith("/es");
-const relativeLocale = isSpa ? "es" : "en";
+const relativeLocale = Astro.currentLocale || "en";
+const isSpa = relativeLocale == "es";
 
 const menuItems = [
   //{ text: "home", id: `/` },

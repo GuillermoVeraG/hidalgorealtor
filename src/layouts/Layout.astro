@@ -8,6 +8,7 @@ interface Props {
   image?: string;
 }
 
+const lang = Astro.currentLocale || "en";
 const { title, description, image } = Astro.props;
 
 Astro.response.headers.set(
@@ -17,7 +18,7 @@ Astro.response.headers.set(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />

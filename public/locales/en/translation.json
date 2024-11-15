@@ -1,0 +1,15 @@
+{
+  "menu": {
+    "home": "home",
+    "seller": "seller",
+    "buyer": "buyer",
+    "about": "about us",
+    "team": "out team",
+    "services": "services",
+    "contact": "contact"
+  },
+  "welcome": "Welcome to <0>Hidalgo</0>",
+  "home": {
+    "title": "welcome to hidalgo realtors page"
+  }
+}

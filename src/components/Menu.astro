@@ -1,20 +1,30 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import i18next, { t } from "i18next";
 
 import Logo from "@/components/icons/Logo.astro";
 import MenuButton from "@/components/icons/Menu.astro";
 
-const isSpa = Astro.url.pathname.startsWith("/es");
-const relativeLocale = isSpa ? "es" : "en";
+const isSpa = i18next.language == "es";
+const relativeLocale = i18next.language;
 
 const menuItems = [
   //{ text: "home", id: `/` },
-  { menu: "seller", id: getRelativeLocaleUrl(relativeLocale, "seller") },
-  { menu: "buyer", id: getRelativeLocaleUrl(relativeLocale, "buyer") },
-  { menu: "about me", id: getRelativeLocaleUrl(relativeLocale, "about") },
-  { menu: "our team", id: getRelativeLocaleUrl(relativeLocale, "team") },
-  { menu: "services", id: getRelativeLocaleUrl(relativeLocale, "services") },
-  { menu: "contact", id: getRelativeLocaleUrl(relativeLocale, "contact") },
+  {
+    menu: t("menu.seller"),
+    id: getRelativeLocaleUrl(relativeLocale, "seller"),
+  },
+  { menu: t("menu.buyer"), id: getRelativeLocaleUrl(relativeLocale, "buyer") },
+  { menu: t("menu.about"), id: getRelativeLocaleUrl(relativeLocale, "about") },
+  { menu: t("menu.team"), id: getRelativeLocaleUrl(relativeLocale, "team") },
+  {
+    menu: t("menu.services"),
+    id: getRelativeLocaleUrl(relativeLocale, "services"),
+  },
+  {
+    menu: t("menu.contact"),
+    id: getRelativeLocaleUrl(relativeLocale, "contact"),
+  },
 ];
 
 const menuLang = [
@@ -117,7 +127,7 @@ const { isWhite, isFloating } = Astro.props;
         href={getRelativeLocaleUrl(relativeLocale)}
         class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
       >
-        Home
+        {t("menu.home")}
       </a>
       {
         menuItems.map(({ menu, id }) => (

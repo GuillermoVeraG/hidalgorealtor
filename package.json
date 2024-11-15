@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "i18n:generate": "astro-i18next generate"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -15,6 +16,7 @@
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource/instrument-serif": "^5.1.0",
     "astro": "^4.16.10",
+    "astro-i18next": "^1.0.0-beta.21",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3"
   }

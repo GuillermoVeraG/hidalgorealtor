@@ -1,13 +1,19 @@
 ---
+import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
+
+changeLanguage("es");
 ---
 
-<Layout title="Bienvenidos a Hidalgo">
+<Layout title={t("home.title")}>
   <Menu />
   <main>
     <h1 class="text-primary font-sans">
-      Bienvenidos a <span class="text-gradient font-serif italic">Hidalgo</span>
+      <Trans i18nKey="welcome">
+        Welcome to <span class="text-gradient font-serif italic">Hidalgo</span>
+      </Trans>
     </h1>
   </main>
 </Layout>

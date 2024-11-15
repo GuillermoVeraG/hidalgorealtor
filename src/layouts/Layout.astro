@@ -1,4 +1,6 @@
 ---
+import i18next from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 import "@fontsource/instrument-serif";
 import "@fontsource-variable/inter";
 
@@ -17,7 +19,7 @@ Astro.response.headers.set(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -27,6 +29,7 @@ Astro.response.headers.set(
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {image && <meta property="og:image" content={image} />}
+    <HeadHrefLangs />
   </head>
   <body>
     <slot />

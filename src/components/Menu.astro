@@ -1,0 +1,154 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import Logo from "@/components/icons/Logo.astro";
+import MenuButton from "@/components/icons/Menu.astro";
+
+const isSpa = Astro.url.pathname.startsWith("/es");
+const relativeLocale = isSpa ? "es" : "en";
+
+const menuItems = [
+  //{ text: "home", id: `/` },
+  { menu: "seller", id: getRelativeLocaleUrl(relativeLocale, "seller") },
+  { menu: "buyer", id: getRelativeLocaleUrl(relativeLocale, "buyer") },
+  { menu: "about me", id: getRelativeLocaleUrl(relativeLocale, "about") },
+  { menu: "our team", id: getRelativeLocaleUrl(relativeLocale, "team") },
+  { menu: "services", id: getRelativeLocaleUrl(relativeLocale, "services") },
+  { menu: "contact", id: getRelativeLocaleUrl(relativeLocale, "contact") },
+];
+
+const menuLang = [
+  { text: "english", id: `/` },
+  { text: "español", id: `/es` },
+];
+
+interface Props {
+  isWhite?: boolean;
+  isFloating?: boolean;
+}
+
+const { isWhite, isFloating } = Astro.props;
+---
+
+<section class={`${isFloating ? "fixed top-0 left-0" : ""} w-screen py-5 z-50`}>
+  <div
+    class="flex justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10 z-20"
+  >
+    <a
+      href={getRelativeLocaleUrl(relativeLocale)}
+      aria-label="go to hidalgo realtor home page"
+    >
+      <Logo
+        className={`h-auto w-16 ${isWhite ? "fill-white" : "fill-black"} hover:fill-primary`}
+      />
+    </a>
+
+    <div class="flex justify-center items-center">
+      <nav class="hidden lg:flex lg:gap-8 xl:gap-14">
+        {
+          menuItems.map(({ menu, id }) => {
+            var isActive = "";
+
+            if (Astro.url.pathname != "/") {
+              isActive =
+                id != "/" && Astro.url.pathname.includes(id)
+                  ? "active-menu"
+                  : "";
+            } else {
+              isActive = Astro.url.pathname == id ? "active-menu" : "";
+            }
+
+            return (
+              <div
+                class={`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive}`}
+              >
+                <a
+                  href={id}
+                  class={`font-sans capitalize ${isWhite ? "text-white" : "text-black"} group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm`}
+                >
+                  {menu}
+                </a>
+              </div>
+            );
+          })
+        }
+      </nav>
+
+      <div
+        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-50 rounded-[18px] border-2 border-primary-300"
+      >
+        {
+          menuLang.map(({ text, id }) => {
+            return (
+              <a href={id}>
+                <div
+                  class={`font-sans capitalize px-3 py-1 ${(id == "/es" && isSpa) || (id == "/" && !isSpa) ? "text-white bg-primary rounded-xl" : "text-primary"}`}
+                >
+                  {text}
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
+
+      <div class="ml-10 mt-1">
+        <button
+          id="menuNavMobileBut"
+          aria-label="Mobile Menu"
+          class="lg:hidden group/mobile"
+        >
+          <MenuButton
+            className={`group-hover/mobile:fill-primary ${isWhite ? "fill-white" : "fill-black"} w-8 h-auto`}
+          />
+        </button>
+      </div>
+    </div>
+
+    <nav
+      id="menuNavMobile"
+      class="lg:hidden flex flex-col justify-start items-center
+    h-screen w-screen z-10 pt-24
+    absolute top-0 left-0
+    bg-white
+    -translate-y-[120vh] duration-700"
+    >
+      <a
+        href={getRelativeLocaleUrl(relativeLocale)}
+        class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
+      >
+        Home
+      </a>
+      {
+        menuItems.map(({ menu, id }) => (
+          <a
+            href={id}
+            class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
+          >
+            {menu}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</section>
+
+<script>
+  var isNavOpen = false;
+  const but = document.querySelector("#menuNavMobileBut");
+  const menu = document.querySelector("#menuNavMobile");
+
+  const menuHideClasses = "-translate-y-[120vh]";
+
+  const handleNav = () => {
+    if (isNavOpen) {
+      menu?.classList.toggle(menuHideClasses);
+      isNavOpen = false;
+    } else {
+      menu?.classList.toggle(menuHideClasses);
+      isNavOpen = true;
+    }
+  };
+
+  but?.addEventListener("click", handleNav);
+</script>

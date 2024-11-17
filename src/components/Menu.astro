@@ -1,27 +1,30 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
 import Logo from "@/components/icons/Logo.astro";
 import MenuButton from "@/components/icons/Menu.astro";
 
 const relativeLocale = Astro.currentLocale || "en";
 const isSpa = relativeLocale == "es";
 
+const t = useTranslations(relativeLocale as keyof typeof languages);
+
 const menuItems = [
   //{ text: "home", id: `/` },
   {
-    menu: "seller",
+    menu: t("nav.seller"),
     id: getRelativeLocaleUrl(relativeLocale, "seller"),
   },
-  { menu: "buyer", id: getRelativeLocaleUrl(relativeLocale, "buyer") },
-  { menu: "about", id: getRelativeLocaleUrl(relativeLocale, "about") },
-  { menu: "team", id: getRelativeLocaleUrl(relativeLocale, "team") },
+  { menu: t("nav.buyer"), id: getRelativeLocaleUrl(relativeLocale, "buyer") },
+  { menu: t("nav.about"), id: getRelativeLocaleUrl(relativeLocale, "about") },
+  { menu: t("nav.team"), id: getRelativeLocaleUrl(relativeLocale, "team") },
   {
-    menu: "services",
+    menu: t("nav.services"),
     id: getRelativeLocaleUrl(relativeLocale, "services"),
   },
   {
-    menu: "contact",
+    menu: t("nav.contact"),
     id: getRelativeLocaleUrl(relativeLocale, "contact"),
   },
 ];

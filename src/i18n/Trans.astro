@@ -1,0 +1,15 @@
+---
+import { interpolate } from "@/i18n/utils";
+import { ui, defaultLang } from "@/i18n/ui";
+
+export interface Props {
+  i18nKey: keyof (typeof ui)[typeof defaultLang];
+}
+
+const lang = Astro.currentLocale || "en";
+const { i18nKey } = Astro.props;
+
+const referenceString = await Astro.slots.render("default");
+---
+
+<Fragment set:html={interpolate(i18nKey, referenceString, lang)} />

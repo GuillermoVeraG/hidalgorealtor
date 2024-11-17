@@ -1,13 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
+import Trans from "@/i18n/Trans.astro";
 ---
 
-<Layout title="bienvenido a Hidalgo">
+<Layout title="Welcome a hidalgo">
   <Menu />
   <main>
     <h1 class="text-primary font-sans">
-      Bienvenido a <span class="text-gradient font-serif italic">Hidalgo</span>
+      <Trans i18nKey="home.welcome">
+        Welcome to <span class="text-gradient font-serif italic">Hidalgo</span>
+      </Trans>
     </h1>
   </main>
 </Layout>

@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter Variable', "sans-serif", 'ui-sans-serif'],
-        serif: ['Instrument Serif', 'ui-serif'],
+        sans: ["Inter Variable", "sans-serif", "ui-sans-serif"],
+        serif: ["Instrument Serif", "ui-serif"],
       },
       colors: {
         primary: {
@@ -50,6 +50,9 @@ export default {
           900: "#395E56",
           950: "#263E39",
         },
+      },
+      backgroundImage: {
+        "seller-banner": "url('/images/bg-seller.webp')",
       },
     },
   },

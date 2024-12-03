@@ -4,6 +4,8 @@ import Menu from "@/components/Menu.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
+import FullSearch from "@/components/FullSearch.astro";
+
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
 ---
@@ -25,9 +27,6 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       </p>
     </section>
 
-    <section
-      class="max-w-7xl m-auto flex flex-col justify-center items-center gap-8 my-20"
-    >
-    </section>
+    <FullSearch />
   </main>
 </Layout>

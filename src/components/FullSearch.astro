@@ -1,0 +1,66 @@
+---
+import SaleSearch from "@/components/SaleSearch.astro";
+---
+
+<section
+  class="max-w-7xl m-auto flex flex-col justify-center items-center my-20 w-[58rem]"
+>
+  <div class="flex justify-around items-center w-full">
+    <button
+      id="but-buy"
+      class="bg-[#CDE3E3] font-serif text-black text-2xl w-1/2 rounded-t-lg py-4"
+    >
+      I'm Looking to Buy
+    </button>
+    <button
+      id="but-rent"
+      class="font-serif text-black text-2xl w-1/2 rounded-t-lg py-4"
+      >I'm Looking to Rent
+    </button>
+  </div>
+  <div
+    id="form-buy"
+    class="w-full px-16 pt-10 pb-14 bg-[#E7F2F2] rounded-b-2xl rounded-e-2xl"
+  >
+    <div class="font-serif text-2xl font-medium mb-10">For Sale</div>
+    <SaleSearch />
+  </div>
+  <div
+    id="form-rent"
+    class="hidden w-full px-16 pt-10 pb-14 bg-[#E7F2F2] rounded-b-2xl rounded-s-2xl"
+  >
+    <div class="font-serif text-2xl font-medium mb-10">For Rent</div>
+    <SaleSearch />
+  </div>
+</section>
+
+<script>
+  var isBuyActive = true;
+  const butBuy = document.querySelector("#but-buy");
+  const butRent = document.querySelector("#but-rent");
+  const formBuy = document.querySelector("#form-buy");
+  const formRent = document.querySelector("#form-rent");
+
+  const switchFormBuy = () => {
+    if (!isBuyActive) {
+      formBuy?.classList.toggle("hidden");
+      formRent?.classList.toggle("hidden");
+      butBuy?.classList.toggle("bg-[#CDE3E3]");
+      butRent?.classList.toggle("bg-[#CDE3E3]");
+      isBuyActive = true;
+    }
+  };
+
+  const switchFormRent = () => {
+    if (isBuyActive) {
+      formBuy?.classList.toggle("hidden");
+      formRent?.classList.toggle("hidden");
+      butBuy?.classList.toggle("bg-[#CDE3E3]");
+      butRent?.classList.toggle("bg-[#CDE3E3]");
+      isBuyActive = false;
+    }
+  };
+
+  butBuy?.addEventListener("click", switchFormBuy);
+  butRent?.addEventListener("click", switchFormRent);
+</script>

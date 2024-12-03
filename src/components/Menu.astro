@@ -89,7 +89,9 @@ interface Props {
 const { isWhite, isFloating } = Astro.props;
 ---
 
-<section class={`${isFloating ? "fixed top-0 left-0" : ""} w-screen py-5 z-50`}>
+<section
+  class={`${isFloating ? "absolute top-0 left-0" : ""} w-screen py-5 z-50`}
+>
   <div
     class="flex justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10 z-20"
   >
@@ -103,7 +105,7 @@ const { isWhite, isFloating } = Astro.props;
     </a>
 
     <div class="flex justify-center items-center">
-      <nav class="hidden lg:flex lg:gap-8 xl:gap-10">
+      <nav class="hidden lg:flex lg:gap-3 xl:gap-4">
         {
           menuItems.map(({ menu, url, isActive, show }) => {
             return (
@@ -112,7 +114,7 @@ const { isWhite, isFloating } = Astro.props;
               >
                 <a
                   href={url}
-                  class={`font-sans capitalize ${isWhite ? "text-white" : "text-black"} group-hover/menu:text-primary group-hover/menu:font-bold group-hover/menu:[text-shadow:_1px_1px_2px_white,_0_0_1em_rgb(14_122_134),_0_0_0.2em_rgb(14_122_134)] group-[.active-menu]/menu:text-primary group-[.active-menu]/menu:font-bold group-[.active-menu]/menu:[text-shadow:_1px_1px_2px_white,_0_0_1em_rgb(14_122_134),_0_0_0.2em_rgb(14_122_134)] pt-4 pb-2 text-sm`}
+                  class={`font-sans capitalize ${isWhite ? "text-white" : "text-black"} group-hover/menu:text-white group-hover/menu:bg-primary group-hover/menu:rounded-xl group-[.active-menu]/menu:text-white group-[.active-menu]/menu:bg-primary group-[.active-menu]/menu:rounded-xl px-3 py-1 text-sm`}
                 >
                   {menu}
                 </a>
@@ -123,14 +125,14 @@ const { isWhite, isFloating } = Astro.props;
       </nav>
 
       <div
-        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-50 rounded-[18px] border-2 border-primary-300"
+        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-50/10 rounded-[18px] border-2 border-primary-300"
       >
         {
           menuLang.map(({ menu, id, url }) => {
             return (
               <a href={url}>
                 <div
-                  class={`font-sans capitalize px-3 py-1 ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "text-white bg-primary rounded-xl" : "text-primary"}`}
+                  class={`font-sans capitalize px-3 py-1 text-white ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl" : ""}`}
                 >
                   {menu}
                 </div>

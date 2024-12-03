@@ -16,7 +16,7 @@ export const ui = {
     "nav.services": "Services",
     "home.welcome": "Welcome to <0>Hidalgo</0>",
     "buyer.site.title": "Buyer Hidalgo",
-    "buyer.title": "Let's Find your Dream Home Today",
+    "buyer.title": "Let's find your dream home today",
     "buyer.desc":
       "Whether you’re dreaming of renting or ready to buy, I’m here to help you find a place that feels like home. Let’s work together to discover the perfect property that suits your lifestyle, budget, and needs. Your next home is waiting — let’s go find it",
   },

@@ -1,0 +1,29 @@
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: #0e7a86;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #0e7a86;
+  cursor: pointer;
+  height: 21px;
+  width: 21px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+  appearance: none;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: #0e7a86;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #0e7a86;
+  cursor: pointer;
+  height: 21px;
+  width: 21px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+  appearance: none;
+}

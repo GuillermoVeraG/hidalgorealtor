@@ -132,7 +132,7 @@ const { isWhite, isFloating } = Astro.props;
             return (
               <a href={url}>
                 <div
-                  class={`font-sans capitalize px-3 py-1 text-white ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl" : ""}`}
+                  class={`font-sans capitalize px-3 py-1  ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl text-white" : isWhite ? "text-white" : "text-black"}`}
                 >
                   {menu}
                 </div>

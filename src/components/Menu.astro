@@ -1,34 +1,84 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
 import Logo from "@/components/icons/Logo.astro";
 import MenuButton from "@/components/icons/Menu.astro";
+import { isMenuActive } from "@/utils/menu";
 
 const relativeLocale = Astro.currentLocale || "en";
 const isSpa = relativeLocale == "es";
 
+const t = useTranslations(relativeLocale as keyof typeof languages);
+const pathname = Astro.url.pathname;
+
 const menuItems = [
-  //{ text: "home", id: `/` },
   {
-    menu: "seller",
-    id: getRelativeLocaleUrl(relativeLocale, "seller"),
-  },
-  { menu: "buyer", id: getRelativeLocaleUrl(relativeLocale, "buyer") },
-  { menu: "about", id: getRelativeLocaleUrl(relativeLocale, "about") },
-  { menu: "team", id: getRelativeLocaleUrl(relativeLocale, "team") },
-  {
-    menu: "services",
-    id: getRelativeLocaleUrl(relativeLocale, "services"),
+    id: "",
+    menu: t("nav.home"),
+    url: getRelativeLocaleUrl(relativeLocale, ""),
+    isActive: isMenuActive(pathname, "/"),
+    show: false,
   },
   {
-    menu: "contact",
-    id: getRelativeLocaleUrl(relativeLocale, "contact"),
+    id: "seller",
+    menu: t("nav.seller"),
+    url: getRelativeLocaleUrl(relativeLocale, "seller"),
+    isActive: isMenuActive(pathname, "seller"),
+    show: true,
+  },
+  {
+    id: "buyer",
+    menu: t("nav.buyer"),
+    url: getRelativeLocaleUrl(relativeLocale, "buyer"),
+    isActive: isMenuActive(pathname, "buyer"),
+    show: true,
+  },
+  {
+    id: "about",
+    menu: t("nav.about"),
+    url: getRelativeLocaleUrl(relativeLocale, "about"),
+    isActive: isMenuActive(pathname, "about"),
+    show: true,
+  },
+  {
+    id: "team",
+    menu: t("nav.team"),
+    url: getRelativeLocaleUrl(relativeLocale, "team"),
+    isActive: isMenuActive(pathname, "team"),
+    show: true,
+  },
+  {
+    id: "services",
+    menu: t("nav.services"),
+    url: getRelativeLocaleUrl(relativeLocale, "services"),
+    isActive: isMenuActive(pathname, "services"),
+    show: true,
+  },
+  {
+    id: "contact",
+    menu: t("nav.contact"),
+    url: getRelativeLocaleUrl(relativeLocale, "contact"),
+    isActive: isMenuActive(pathname, "contact"),
+    show: true,
   },
 ];
 
+const actualMenu = menuItems.filter((val) => {
+  return val.isActive;
+})[0];
+
 const menuLang = [
-  { text: "english", id: `/` },
-  { text: "español", id: `/es` },
+  {
+    id: `en`,
+    menu: "english",
+    url: getRelativeLocaleUrl("en", actualMenu.id),
+  },
+  {
+    id: `es`,
+    menu: "español",
+    url: getRelativeLocaleUrl("es", actualMenu.id),
+  },
 ];
 
 interface Props {
@@ -39,7 +89,9 @@ interface Props {
 const { isWhite, isFloating } = Astro.props;
 ---
 
-<section class={`${isFloating ? "fixed top-0 left-0" : ""} w-screen py-5 z-50`}>
+<section
+  class={`${isFloating ? "absolute top-0 left-0" : ""} w-screen py-5 z-50`}
+>
   <div
     class="flex justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10 z-20"
   >
@@ -48,32 +100,21 @@ const { isWhite, isFloating } = Astro.props;
       aria-label="go to hidalgo realtor home page"
     >
       <Logo
-        className={`h-auto w-16 ${isWhite ? "fill-white" : "fill-black"} hover:fill-primary`}
+        className={`h-auto w-16 ${isWhite ? "fill-white" : "fill-black"} hover:fill-primary hover:drop-shadow-lg`}
       />
     </a>
 
     <div class="flex justify-center items-center">
-      <nav class="hidden lg:flex lg:gap-8 xl:gap-14">
+      <nav class="hidden lg:flex lg:gap-3 xl:gap-4">
         {
-          menuItems.map(({ menu, id }) => {
-            var isActive = "";
-
-            if (Astro.url.pathname != "/") {
-              isActive =
-                id != "/" && Astro.url.pathname.includes(id)
-                  ? "active-menu"
-                  : "";
-            } else {
-              isActive = Astro.url.pathname == id ? "active-menu" : "";
-            }
-
+          menuItems.map(({ menu, url, isActive, show }) => {
             return (
               <div
-                class={`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive}`}
+                class={`${show ? "flex" : "hidden"} flex-col justify-center items-center overflow-hidden group/menu ${isActive ? "active-menu" : ""}`}
               >
                 <a
-                  href={id}
-                  class={`font-sans capitalize ${isWhite ? "text-white" : "text-black"} group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm`}
+                  href={url}
+                  class={`font-sans capitalize ${isWhite ? "text-white" : "text-black"} group-hover/menu:text-white group-hover/menu:bg-primary group-hover/menu:rounded-xl group-[.active-menu]/menu:text-white group-[.active-menu]/menu:bg-primary group-[.active-menu]/menu:rounded-xl px-3 py-1 text-sm`}
                 >
                   {menu}
                 </a>
@@ -84,16 +125,16 @@ const { isWhite, isFloating } = Astro.props;
       </nav>
 
       <div
-        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-50 rounded-[18px] border-2 border-primary-300"
+        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-50/10 rounded-[18px] border-2 border-primary-300"
       >
         {
-          menuLang.map(({ text, id }) => {
+          menuLang.map(({ menu, id, url }) => {
             return (
-              <a href={id}>
+              <a href={url}>
                 <div
-                  class={`font-sans capitalize px-3 py-1 ${(id == "/es" && isSpa) || (id == "/" && !isSpa) ? "text-white bg-primary rounded-xl" : "text-primary"}`}
+                  class={`font-sans capitalize px-3 py-1 text-white ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl" : ""}`}
                 >
-                  {text}
+                  {menu}
                 </div>
               </a>
             );
@@ -122,20 +163,18 @@ const { isWhite, isFloating } = Astro.props;
     bg-white
     -translate-y-[120vh] duration-700"
     >
-      <a
-        href={getRelativeLocaleUrl(relativeLocale)}
-        class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
-      >
-        home
-      </a>
       {
-        menuItems.map(({ menu, id }) => (
-          <a
-            href={id}
-            class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
+        menuItems.map(({ menu, url, isActive }) => (
+          <div
+            class={`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive ? "active-menu" : ""}`}
           >
-            {menu}
-          </a>
+            <a
+              href={url}
+              class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
+            >
+              {menu}
+            </a>
+          </div>
         ))
       }
     </nav>

@@ -1,5 +1,10 @@
 ---
 import SaleSearch from "@/components/SaleSearch.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 ---
 
 <section
@@ -10,26 +15,30 @@ import SaleSearch from "@/components/SaleSearch.astro";
       id="but-buy"
       class="bg-[#CDE3E3] font-serif text-black text-2xl w-1/2 rounded-t-lg py-4"
     >
-      I'm Looking to Buy
+      {t("buyer.tab.sale.title")}
     </button>
     <button
       id="but-rent"
       class="font-serif text-black text-2xl w-1/2 rounded-t-lg py-4"
-      >I'm Looking to Rent
+      >{t("buyer.tab.rent.title")}
     </button>
   </div>
   <div
     id="form-buy"
     class="w-full px-16 pt-10 pb-14 bg-[#E7F2F2] rounded-b-2xl rounded-e-2xl"
   >
-    <div class="font-serif text-2xl font-medium mb-10">For Sale</div>
+    <div class="font-serif text-2xl font-medium mb-10">
+      {t("buyer.search.sale.title")}
+    </div>
     <SaleSearch />
   </div>
   <div
     id="form-rent"
     class="hidden w-full px-16 pt-10 pb-14 bg-[#E7F2F2] rounded-b-2xl rounded-s-2xl"
   >
-    <div class="font-serif text-2xl font-medium mb-10">For Rent</div>
+    <div class="font-serif text-2xl font-medium mb-10">
+      {t("buyer.search.rent.title")}
+    </div>
     <SaleSearch />
   </div>
 </section>

@@ -3,6 +3,12 @@
 
 import NumberInput from "@/components/NumberInput.tsx";
 import MultiRangeInput from "@/components/MultiRangeInput";
+
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 ---
 
 <form class="flex justify-between items-center gap-14" method="POST">
@@ -10,7 +16,7 @@ import MultiRangeInput from "@/components/MultiRangeInput";
     <div
       class="w-11/12 flex flex-col justify-start items-start gap-2 font-sans text-sm"
     >
-      <label for="property-address">City, Zip Code or MLS number</label>
+      <label for="property-address">{t("buyer.search.sale.address")}</label>
       <input
         class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
         type="text"
@@ -23,7 +29,7 @@ import MultiRangeInput from "@/components/MultiRangeInput";
     <div
       class="w-11/12 flex flex-col justify-start items-start gap-2 font-sans text-sm"
     >
-      <label for="property-type">Property type</label>
+      <label for="property-type">{t("buyer.search.sale.type")}</label>
       <select
         class="w-full bg-primary-100 accent-primary-700 border border-black rounded py-1 px-2 font-sans"
         id="property-type"
@@ -37,20 +43,26 @@ import MultiRangeInput from "@/components/MultiRangeInput";
     </div>
 
     <div class="font-sans text-black text-sm font-medium mt-4">
-      Bedrooms and bathrooms
+      {t("buyer.search.sale.bedsbaths")}
     </div>
 
     <div class="flex justify-center items-center gap-2">
-      <label class="w-20" for="property-beds">Bedroom</label>
+      <label class="w-20" for="property-beds"
+        >{t("buyer.search.sale.beds")}</label
+      >
       <NumberInput name="beds" client:load />
     </div>
 
     <div class="flex justify-center items-center gap-2">
-      <label class="w-20" for="property-baths">Bathroom</label>
+      <label class="w-20" for="property-baths"
+        >{t("buyer.search.sale.baths")}</label
+      >
       <NumberInput name="baths" client:load />
     </div>
 
-    <div class="font-sans text-black font-medium mt-4">Amenities</div>
+    <div class="font-sans text-black font-medium mt-4">
+      {t("buyer.search.sale.amenities")}
+    </div>
     <div class="flex justify-center items-center gap-4">
       <div class="flex justify-center items-center gap-2">
         <div class="grid justify-center items-center gap-2">
@@ -72,7 +84,9 @@ import MultiRangeInput from "@/components/MultiRangeInput";
               stroke-linejoin="round"></path>
           </svg>
         </div>
-        <label class="text-sm font-sans" for="property-view">View</label>
+        <label class="text-sm font-sans" for="property-view"
+          >{t("buyer.search.sale.view")}</label
+        >
       </div>
       <div class="flex justify-center items-center gap-2">
         <div class="grid justify-center items-center gap-2">
@@ -95,7 +109,7 @@ import MultiRangeInput from "@/components/MultiRangeInput";
           </svg>
         </div>
 
-        <label for="property-parking">Parking</label>
+        <label for="property-parking">{t("buyer.search.sale.parking")}</label>
       </div>
       <div class="flex justify-center items-center gap-2">
         <div class="grid justify-center items-center gap-2">
@@ -117,15 +131,17 @@ import MultiRangeInput from "@/components/MultiRangeInput";
               stroke-linejoin="round"></path>
           </svg>
         </div>
-        <label for="property-pool">Pool</label>
+        <label for="property-pool">{t("buyer.search.sale.pool")}</label>
       </div>
     </div>
   </div>
   <div class="w-1/2 flex flex-col justify-start items-start gap-24">
     <div class="w-full flex flex-col justify-start items-start gap-2">
-      <div class="font-sans text-black text-sm font-medium">Price Range</div>
+      <div class="font-sans text-black text-sm font-medium">
+        {t("buyer.search.sale.price.title")}
+      </div>
       <p class="font-sans text-black text-xs mb-4">
-        Enter the minimun and maximum amount you want to spend
+        {t("buyer.search.sale.price.desc")}
       </p>
 
       <MultiRangeInput
@@ -140,10 +156,10 @@ import MultiRangeInput from "@/components/MultiRangeInput";
 
     <div class="w-full flex flex-col justify-start items-start gap-4">
       <div class="font-sans text-black text-sm font-medium">
-        Square meters range
+        {t("buyer.search.sale.sqft.title")}
       </div>
       <p class="font-sans text-black text-xs">
-        Enter the minimun and maximum amount you want
+        {t("buyer.search.sale.sqft.desc")}
       </p>
 
       <MultiRangeInput
@@ -157,7 +173,7 @@ import MultiRangeInput from "@/components/MultiRangeInput";
     </div>
 
     <button class="px-16 py-2 bg-primary-700 rounded-full text-white"
-      >Search</button
+      >{t("buyer.search.sale.but")}</button
     >
   </div>
 </form>

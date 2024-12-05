@@ -1,0 +1,50 @@
+---
+import { actions } from "astro:actions";
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import type { PropertySearchParams } from "@/utils/property";
+
+const url = new URL(Astro.request.url);
+const searchParams = Object.fromEntries(url.searchParams);
+
+let input = {} as PropertySearchParams;
+if (searchParams.address) {
+  input.address = searchParams.address;
+  input.beds = searchParams.beds ? parseInt(searchParams.beds) : 0;
+  input.baths = searchParams.baths ? parseInt(searchParams.baths) : 0;
+  input["min-price"] = parseInt(searchParams["min-price"]);
+  input["max-price"] = parseInt(searchParams["max-price"]);
+  input["min-sqft"] = parseInt(searchParams["min-sqft"]);
+  input["max-sqft"] = parseInt(searchParams["max-sqft"]);
+  input.type = searchParams.type;
+  input.subtype = searchParams.subtype;
+  if (searchParams.pool) input.pool = true;
+  if (searchParams.view) input.view = true;
+  if (searchParams.parking) input.parking = true;
+}
+const API_TOKEN = import.meta.env.PUBLIC_API_TOKEN;
+const API_URL = import.meta.env.PUBLIC_API_URL;
+
+const search = {
+  data: input,
+  key: API_TOKEN ?? "bad_token",
+  urlBase: API_URL ?? "bad_url",
+};
+const { data } = await Astro.callAction(actions.property.getProperties, search);
+---
+
+<Layout title="result test">
+  <Menu isFloating isWhite />
+  <div class="h-64 w-full bg-seller-banner bg-cover bg-no-repeat"></div>
+  <main>
+    {JSON.stringify(import.meta.env)}
+    <br />
+    {search.key}
+    <br />
+    {search.urlBase}
+    <br />
+    {data?.total}
+    <br />
+    {JSON.stringify(data?.dataProperty)}
+  </main>
+</Layout>

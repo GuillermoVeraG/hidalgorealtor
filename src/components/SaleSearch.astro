@@ -1,9 +1,6 @@
 ---
-//import { actions } from "astro:actions";
-
 import NumberInput from "@/components/NumberInput.tsx";
 import MultiRangeInput from "@/components/MultiRangeInput";
-
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -26,6 +23,8 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       />
     </div>
 
+    <input type="hidden" name="type" value="sale" />
+
     <div
       class="w-11/12 flex flex-col justify-start items-start gap-2 font-sans text-sm"
     >
@@ -33,12 +32,12 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       <select
         class="w-full bg-primary-100 accent-primary-700 border border-black rounded py-1 px-2 font-sans"
         id="property-type"
-        name="type"
+        name="subtype"
       >
         <option value="Single Family Residence">Single Family</option>
         <option value="Condominium">Condo</option>
         <option value="Multy Family">Multy-Family</option>
-        <option value="Comercial">Comercial / Industrial / Agricultura</option>
+        <option value="Comercial">Comercial / Industrial / Agriculture</option>
       </select>
     </div>
 
@@ -172,8 +171,23 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       />
     </div>
 
-    <button class="px-16 py-2 bg-primary-700 rounded-full text-white"
+    <button
+      type="submit"
+      class="px-16 py-2 bg-primary-700 rounded-full text-white"
       >{t("buyer.search.sale.but")}</button
     >
   </div>
 </form>
+
+<script>
+  import { actions } from "astro:actions";
+  import { navigate } from "astro:transitions/client";
+
+  const form = document.querySelector("form") as HTMLFormElement;
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const { data, error } = await actions.property.getUrlParams(formData);
+    if (!error) navigate(`/buyer/result/?${data}`);
+  });
+</script>

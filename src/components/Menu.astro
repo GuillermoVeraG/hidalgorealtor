@@ -100,7 +100,7 @@ const { isWhite, isFloating } = Astro.props;
       aria-label="go to hidalgo realtor home page"
     >
       <Logo
-        className={`h-auto w-16 ${isWhite ? "fill-white" : "fill-black"} hover:fill-primary hover:drop-shadow-lg`}
+        className={`h-auto w-20 ${isWhite ? "fill-white" : "fill-black"} hover:fill-primary hover:drop-shadow-lg`}
       />
     </a>
 
@@ -125,14 +125,14 @@ const { isWhite, isFloating } = Astro.props;
       </nav>
 
       <div
-        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-50/10 rounded-[18px] border-2 border-primary-300"
+        class="hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] bg-primary-100/60 rounded-[18px] border-2 border-primary-300"
       >
         {
           menuLang.map(({ menu, id, url }) => {
             return (
               <a href={url}>
                 <div
-                  class={`font-sans capitalize px-3 py-1  ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl text-white" : isWhite ? "text-white" : "text-black"}`}
+                  class={`font-sans capitalize px-3 py-1  ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl text-white" : isWhite ? "text-white" : "text-primary"}`}
                 >
                   {menu}
                 </div>

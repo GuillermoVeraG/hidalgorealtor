@@ -15,7 +15,11 @@ export default defineConfig({
     locales: ["es", "en"],
   },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
   output: "server",
 
   vite: {

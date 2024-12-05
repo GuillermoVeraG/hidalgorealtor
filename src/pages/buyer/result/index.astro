@@ -37,12 +37,6 @@ const { data } = await Astro.callAction(actions.property.getProperties, search);
   <Menu isFloating isWhite />
   <div class="h-64 w-full bg-seller-banner bg-cover bg-no-repeat"></div>
   <main>
-    {JSON.stringify(import.meta.env)}
-    <br />
-    {search.key}
-    <br />
-    {search.urlBase}
-    <br />
     {data?.total}
     <br />
     {JSON.stringify(data?.dataProperty)}

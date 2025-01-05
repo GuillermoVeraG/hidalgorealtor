@@ -84,13 +84,14 @@ const menuLang = [
 interface Props {
   isWhite?: boolean;
   isFloating?: boolean;
+  isBorder?: boolean;
 }
 
-const { isWhite, isFloating } = Astro.props;
+const { isWhite, isFloating, isBorder } = Astro.props;
 ---
 
 <section
-  class={`${isFloating ? "absolute top-0 left-0" : ""} w-screen py-5 z-50`}
+  class={`${isFloating ? "absolute top-0 left-0" : ""} ${isBorder ? "border-b-[0.5px] " : ""} ${isWhite ? "border-white" : "border-black"} w-full py-5 z-50`}
 >
   <div
     class="flex justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10 z-20"

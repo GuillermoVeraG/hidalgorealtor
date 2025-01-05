@@ -2,7 +2,17 @@
 import { actions } from "astro:actions";
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
-import type { PropertySearchParams } from "@/utils/property";
+import type {
+  PropertySearchParams,
+  PropertySearchParamsItems,
+  PropertyResultItems,
+} from "@/utils/property";
+import Arrow from "@/components/icons/Arrow.astro";
+import Arrows from "@/components/icons/Arrows.astro";
+import Bed from "@/components/icons/Bed.astro";
+import Sqft from "@/components/icons/Sqft.astro";
+import Bath from "@/components/icons/Bath.astro";
+import Parking from "@/components/icons/Parking.astro";
 
 const url = new URL(Astro.request.url);
 const searchParams = Object.fromEntries(url.searchParams);
@@ -22,23 +32,159 @@ if (searchParams.address) {
   if (searchParams.view) input.view = true;
   if (searchParams.parking) input.parking = true;
 }
-const API_TOKEN = import.meta.env.PUBLIC_API_TOKEN;
-const API_URL = import.meta.env.PUBLIC_API_URL;
+const API_TOKEN = import.meta.env.PUBLIC_API_TOKEN ?? "bad_token";
+const API_URL = import.meta.env.PUBLIC_API_URL ?? "bad_url";
+
+const currentPage = parseInt(searchParams.page ?? "0");
+const ITEMS_PER_PAGE = 9;
+
+url.searchParams.delete("page");
 
 const search = {
   data: input,
-  key: API_TOKEN ?? "bad_token",
-  urlBase: API_URL ?? "bad_url",
-};
+  key: API_TOKEN,
+  urlBase: API_URL,
+  pagination: { page: currentPage, total: ITEMS_PER_PAGE },
+} as PropertySearchParamsItems;
+
 const { data } = await Astro.callAction(actions.property.getProperties, search);
+const { total, dataProperty } = data ?? { total: 0, dataProperty: [] };
+
+const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
+
+const USDollar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+});
+const DecimalNumber = new Intl.NumberFormat("en-US", {
+  style: "decimal",
+  minimumFractionDigits: 0,
+});
 ---
 
 <Layout title="result test">
-  <Menu isFloating isWhite />
-  <div class="h-64 w-full bg-seller-banner bg-cover bg-no-repeat"></div>
-  <main>
-    {data?.total}
-    <br />
-    {JSON.stringify(data?.dataProperty)}
+  <Menu isBorder />
+  <main
+    class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
+  >
+    <div class="flex justify-between items-center w-full py-8 font-sans">
+      <div>
+        <a href="/buyer/" class="flex items-center justify-start gap-2">
+          <Arrow className="size-5 stroke-black -ml-2" />Back to Search</a
+        >
+      </div>
+      <div>Filters</div>
+    </div>
+
+    <div class="flex justify-start items-center w-full pb-4 font-sans">
+      {total} Listings
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      {
+        dataProperty.map((property: PropertyResultItems) => (
+          <article class="flex flex-col font-sans relative h-[35rem] group/property">
+            <div class="relative rounded-2xl overflow-hidden">
+              <div class="absolute top-6 left-0 h-11 text-base bg-primary-800 text-white pl-6 pr-10 rounded-e-2xl flex items-center z-20">
+                {property.proptype == "Residential" ? "For Sale" : "For Rent"}
+              </div>
+              <img
+                class="w-full h-72 object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
+                src={property.photos[0]}
+                alt="property img"
+              />
+            </div>
+
+            <div class="flex flex-col px-4 py-2 gap-2">
+              <p class="text-2xl font-medium">
+                {USDollar.format(property.price)}
+              </p>
+              <h2 class="text-lg">{property.address}</h2>
+
+              <p class="pt-2 text-sm">{property.propsubtype}</p>
+
+              <div class="flex gap-2 pt-2">
+                <p class="flex gap-1 items-center">
+                  <Bed className="size-5 stroke-black" /> {property.beds}
+                </p>
+                <p class="flex gap-1 items-center">
+                  <Bath className="size-5 stroke-black" />
+                  {property.baths}
+                </p>
+                <p class="flex gap-1 items-center">
+                  <Parking className="size-5 stroke-black" />
+                  {property.garage}
+                </p>
+                <p class="flex gap-1 items-center">
+                  <Sqft className="size-5 stroke-black" />
+                  {DecimalNumber.format(property.sqft)} sqft
+                </p>
+              </div>
+            </div>
+
+            <div class="absolute bottom-4 left-0">
+              <a
+                href={`/buyer/overview/${property.mlsnumber}/`}
+                class="rounded-2xl flex justify-center items-center group-hover/property:bg-primary-800 group-hover/property:text-white py-2 border border-black group-hover/property:border-primary-800 w-40"
+              >
+                View Property
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+
+    <div class="flex justify-center items-center w-full py-6 font-sans">
+      {
+        lastPage > 1 && (
+          <nav class="flex items-center justify-center gap-2 w-80">
+            {currentPage > 0 && (
+              <div class="flex gap-2">
+                <a
+                  class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/leftarrows"
+                  href={`?${url.searchParams}&page=0`}
+                >
+                  <Arrows className="size-5 stroke-black group-hover/leftarrows:stroke-white" />
+                </a>
+                <a
+                  class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/leftarrow"
+                  href={`?${url.searchParams}&page=${currentPage - 1}`}
+                >
+                  <Arrow className="size-5 stroke-black group-hover/leftarrow:stroke-white" />
+                </a>
+              </div>
+            )}
+
+            <p class="text-slate-600 dark:text-slate-400 px-4">
+              Page
+              <strong class="text-slate-800 dark:text-white">
+                {currentPage + 1}
+              </strong>
+              of
+              <strong class="text-slate-800 dark:text-white">{lastPage}</strong>
+            </p>
+
+            {currentPage < lastPage - 1 && (
+              <div class="flex gap-2">
+                <a
+                  class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/rightarrow"
+                  href={`?${url.searchParams}&page=${currentPage + 1}`}
+                >
+                  <Arrow className="size-5 stroke-black rotate-180 group-hover/rightarrow:stroke-white" />
+                </a>
+                <a
+                  class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/rightarrows"
+                  href={`?${url.searchParams}&page=${lastPage - 1}`}
+                >
+                  <Arrows className="size-5 stroke-black rotate-180 group-hover/rightarrows:stroke-white" />
+                </a>
+              </div>
+            )}
+          </nav>
+        )
+      }
+    </div>
   </main>
 </Layout>

@@ -1,0 +1,185 @@
+---
+import { actions } from "astro:actions";
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import type {
+  PropertyParamsItems,
+  PropertyResultItems,
+} from "@/utils/property";
+import Arrow from "@/components/icons/Arrow.astro";
+import Share from "@/components/icons/Share.astro";
+import Bed from "@/components/icons/Bed.astro";
+import Sqft from "@/components/icons/Sqft.astro";
+import Bath from "@/components/icons/Bath.astro";
+import Parking from "@/components/icons/Parking.astro";
+import Photos from "@/components/icons/Photos.astro";
+
+const { mlsnumber } = Astro.params;
+
+const API_TOKEN = import.meta.env.PUBLIC_API_TOKEN ?? "bad_token";
+const API_URL = import.meta.env.PUBLIC_API_URL ?? "bad_url";
+
+const search = {
+  data: { mlsnumber },
+  key: API_TOKEN,
+  urlBase: API_URL,
+  pagination: { page: 0, total: 1 },
+} as PropertyParamsItems;
+
+const { data } = await Astro.callAction(actions.property.getProperty, search);
+const { dataProperty } = data ?? { dataProperty: [] };
+
+const error = dataProperty.length === 0;
+const property = (dataProperty[0] as PropertyResultItems) ?? {};
+
+const USDollar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+});
+const DecimalNumber = new Intl.NumberFormat("en-US", {
+  style: "decimal",
+  minimumFractionDigits: 0,
+});
+---
+
+<Layout title="overview test">
+  <Menu isBorder />
+  <main
+    class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
+  >
+    <div class="flex justify-between items-center w-full py-8 font-sans">
+      <div>
+        <button
+          id="backButtonOverview"
+          class="flex items-center justify-start gap-2"
+          ><Arrow className="size-5 stroke-black -ml-2" />Back to Result
+        </button>
+      </div>
+      <div>
+        <button
+          id="shareButtonOverview"
+          class="flex items-center justify-start gap-1"
+          ><Share className="size-5 stroke-black" />Share
+        </button>
+      </div>
+    </div>
+
+    {error && <p>Property not found</p>}
+    {
+      property && (
+        <section class="flex flex-col items-center justify-center gap-8 w-full">
+          <h1 class="hidden">{property.address}</h1>
+          <header class="relative grid grid-cols-4 h-96 w-full gap-2">
+            <button
+              id="photosButton"
+              class="absolute flex justify-center items-center gap-2 bottom-4 right-4 rounded-xl shadow-md bg-white px-4 py-2 cursor-pointer"
+            >
+              <Photos className="size-4 stroke-black" />
+              <span class="text-xs">Show all photos</span>
+            </button>
+            <div class="rounded-l-2xl overflow-hidden col-span-2 row-span-2">
+              <img
+                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
+                src={property.photos[0]}
+                alt="property img"
+              />
+            </div>
+            <div class="rounded-none overflow-hidden">
+              <img
+                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
+                src={property.photos[1]}
+                alt="property img"
+              />
+            </div>
+            <div class="rounded-se-2xl overflow-hidden">
+              <img
+                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
+                src={property.photos[2]}
+                alt="property img"
+              />
+            </div>
+            <div class="rounded-none overflow-hidden">
+              <img
+                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
+                src={property.photos[3]}
+                alt="property img"
+              />
+            </div>
+            <div class="rounded-ee-2xl overflow-hidden">
+              <img
+                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
+                src={property.photos[4]}
+                alt="property img"
+              />
+            </div>
+          </header>
+          <div class="flex justify-between items-start gap-10 w-full">
+            <div class="flex flex-col px-4 py-2 gap-2 w-full">
+              <div class="flex justify-between items-center">
+                <h2 class="text-3xl font-medium">
+                  {property.proptype == "Residential" ? "For Sale" : "For Rent"}
+                  {USDollar.format(property.price)}
+                </h2>
+                <div class="flex items-center gap-2 pt-2">
+                  <p class="flex gap-1 items-center">
+                    <Bed className="size-5 stroke-black" /> {property.beds}
+                  </p>
+                  <p class="flex gap-1 items-center">
+                    <Bath className="size-5 stroke-black" />
+                    {property.baths}
+                  </p>
+                  <p class="flex gap-1 items-center">
+                    <Parking className="size-5 stroke-black" />
+                    {property.garage}
+                  </p>
+                  <p class="flex gap-1 items-center">
+                    <Sqft className="size-5 stroke-black" />
+                    {DecimalNumber.format(property.sqft)} sqft
+                  </p>
+                </div>
+              </div>
+
+              <h2 class="text-base">{property.address}</h2>
+
+              <p class="pt-2 text-sm text-secondary-800">
+                {property.mlsnumber}, {property.subdivision},{" "}
+                {property.propsubtype}
+              </p>
+
+              <h3 class="font-semibold text-lg capitalize mt-6 my-4">
+                property description
+              </h3>
+              <p class="text-sm text-pretty">{property.description}</p>
+
+              <h3 class="font-semibold text-lg capitalize mt-8 my-4">
+                property details
+              </h3>
+              <div class="grid grid-cols-3 gap-2 w-4/6">
+                <p>{property.yearbuilt} Year Built</p>
+                <p>{property.baths} Bathrooms</p>
+                <p>{property.beds} Bedrooms</p>
+                <p>{DecimalNumber.format(property.sqft)} Sqft</p>
+                <p>{property.garage} Parking</p>
+              </div>
+
+              <h3 class="font-semibold text-lg capitalize mt-8 my-4">
+                property location
+              </h3>
+              <div>mapa</div>
+            </div>
+            <div class="w-[30rem] h-60">property agent</div>
+          </div>
+        </section>
+      )
+    }
+  </main>
+</Layout>
+<script>
+  const backBt = document.getElementById("backButtonOverview");
+
+  backBt?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    window.history.back();
+  });
+</script>

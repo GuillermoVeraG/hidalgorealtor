@@ -1,3 +1,7 @@
+export interface PropertyParams {
+  mlsnumber: string;
+}
+
 export interface PropertySearchParams {
   address: string;
   type: string;
@@ -11,6 +15,26 @@ export interface PropertySearchParams {
   "max-price": number;
   "min-sqft": number;
   "max-sqft": number;
+}
+
+export interface PropertyParamsItems {
+  data: PropertyParams;
+  key: string;
+  urlBase: string;
+  pagination: {
+    total: number;
+    page: number;
+  };
+}
+
+export interface PropertySearchParamsItems {
+  data: PropertySearchParams;
+  key: string;
+  urlBase: string;
+  pagination: {
+    total: number;
+    page: number;
+  };
 }
 
 export interface PropertyResult {
@@ -33,13 +57,33 @@ export interface PropertyResult {
   Longitude: number;
 }
 
+export interface PropertyResultItems {
+  mlsnumber: number;
+  address: string;
+  sqft: number;
+  beds: number;
+  baths: number;
+  garage: number;
+  proptype: string;
+  propsubtype: string;
+  price: number;
+  photos: Array<string>;
+  subdivision: string;
+  description: string;
+  yearbuilt: number;
+  latitude: number;
+  longitude: number;
+}
+
 export function getUrlSearchParams(params: PropertySearchParams) {
   let searchParams = "address=" + params.address;
-  searchParams += "&type=" + params.type;
-  searchParams += "&subtype=" + params.subtype;
 
-  if (params.beds > 0) searchParams += "&beds=" + params.beds;
-  if (params.baths > 0) searchParams += "&baths=" + params.baths;
+  if (params.type) searchParams += "&type=" + params.type;
+  if (params.subtype) searchParams += "&subtype=" + params.subtype;
+
+  if (params.beds && params.beds > 0) searchParams += "&beds=" + params.beds;
+  if (params.baths && params.baths > 0)
+    searchParams += "&baths=" + params.baths;
 
   if (params.view) searchParams += "&view=true";
   if (params.parking) searchParams += "&parking=true";
@@ -57,12 +101,14 @@ export function getApiSearchParams(params: PropertySearchParams) {
   let searchParams = "&and[0][MlsStatus][in]=Active,Pending",
     index = 1;
 
-  if (params.type == "sale") {
-    searchParams += "&and[" + index + "][PropertyType][eq]=Residential";
-    index += 1;
-  } else {
-    searchParams += "&and[" + index + "][PropertyType][eq]=Residential Lease";
-    index += 1;
+  if (params.type) {
+    if (params.type == "sale") {
+      searchParams += "&and[" + index + "][PropertyType][eq]=Residential";
+      index += 1;
+    } else {
+      searchParams += "&and[" + index + "][PropertyType][eq]=Residential Lease";
+      index += 1;
+    }
   }
 
   if (params.address) {
@@ -155,6 +201,16 @@ export function getApiSearchParams(params: PropertySearchParams) {
       "&and[" + index + "][LivingArea][lte]=" + params["max-sqft"];
     index += 1;
   }
+
+  return searchParams;
+}
+
+export function getPropertyParams(params: PropertyParams) {
+  let searchParams = "&and[0][MlsStatus][in]=Active,Pending";
+
+  if (params.mlsnumber) {
+    searchParams += "&and[1][ListingId][eq]=" + params.mlsnumber;
+  } else return false;
 
   return searchParams;
 }

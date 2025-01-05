@@ -4,8 +4,9 @@ import {
   getApiSearchParams,
   getFullUrl,
   getUrlSearchParams,
+  getPropertyParams,
 } from "@/utils/property";
-import type { PropertyResult } from "@/utils/property";
+import type { PropertyResult, PropertyResultItems } from "@/utils/property";
 
 export const property = {
   getUrlParams: defineAction({
@@ -47,34 +48,92 @@ export const property = {
       }),
       key: z.string(),
       urlBase: z.string(),
+      pagination: z.object({
+        total: z.number().gt(0),
+        page: z.number().gte(0),
+      }),
     }),
     handler: async (input) => {
       const searchParams = getApiSearchParams(input.data);
-      const fullUrl = getFullUrl(10, 0, searchParams, input.key, input.urlBase);
+      const fullUrl = getFullUrl(
+        input.pagination.total,
+        input.pagination.page,
+        searchParams,
+        input.key,
+        input.urlBase
+      );
 
       const response = await fetch(encodeURI(fullUrl));
       const data = await response.json();
       const { total, bundle } = data;
       const dataProperty = bundle.map((item: PropertyResult) => {
         return {
-          ListingId: item.ListingId,
-          BathroomsTotalDecimal: item.BathroomsTotalDecimal,
-          BedroomsTotal: item.BedroomsTotal,
-          GarageSpaces: item.GarageSpaces,
-          Latitude: item.Latitude,
-          ListPrice: item.ListPrice,
-          LivingArea: item.LivingArea,
-          Longitude: item.Longitude,
-          Media: item.Media.map((media: { MediaURL: string }) => {
+          mlsnumber: item.ListingId,
+          address: item.UnparsedAddress,
+          sqft: item.LivingArea,
+          beds: item.BedroomsTotal,
+          baths: item.BathroomsTotalDecimal,
+          proptype: item.PropertyType,
+          propsubtype: item.PropertySubType,
+          price: item.ListPrice,
+          photos: item.Media.map((media: { MediaURL: string }) => {
             return media.MediaURL;
           }),
-          PropertySubType: item.PropertySubType,
-          PropertyType: item.PropertyType,
-          PublicRemarks: item.PublicRemarks,
-          SubdivisionName: item.SubdivisionName,
-          UnparsedAddress: item.UnparsedAddress,
-          YearBuilt: item.YearBuilt,
-        };
+          subdivision: item.SubdivisionName,
+          description: item.PublicRemarks,
+          yearbuilt: item.YearBuilt,
+          latitude: item.Latitude,
+          longitude: item.Longitude,
+
+          garage: item.GarageSpaces,
+        } as PropertyResultItems;
+      });
+
+      return {
+        total,
+        dataProperty,
+      };
+    },
+  }),
+  getProperty: defineAction({
+    input: z.object({
+      data: z.object({
+        mlsnumber: z.string(),
+      }),
+      key: z.string(),
+      urlBase: z.string(),
+    }),
+    handler: async (input) => {
+      const searchParams = getPropertyParams(input.data);
+
+      if (searchParams === false) return undefined;
+
+      const fullUrl = getFullUrl(1, 0, searchParams, input.key, input.urlBase);
+
+      const response = await fetch(encodeURI(fullUrl));
+      const data = await response.json();
+      const { total, bundle } = data;
+      const dataProperty = bundle.map((item: PropertyResult) => {
+        return {
+          mlsnumber: item.ListingId,
+          address: item.UnparsedAddress,
+          sqft: item.LivingArea,
+          beds: item.BedroomsTotal,
+          baths: item.BathroomsTotalDecimal,
+          proptype: item.PropertyType,
+          propsubtype: item.PropertySubType,
+          price: item.ListPrice,
+          photos: item.Media.map((media: { MediaURL: string }) => {
+            return media.MediaURL;
+          }),
+          subdivision: item.SubdivisionName,
+          description: item.PublicRemarks,
+          yearbuilt: item.YearBuilt,
+          latitude: item.Latitude,
+          longitude: item.Longitude,
+
+          garage: item.GarageSpaces,
+        } as PropertyResultItems;
       });
 
       return {

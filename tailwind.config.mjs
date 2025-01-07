@@ -53,6 +53,7 @@ export default {
       },
       backgroundImage: {
         "seller-banner": "url('/images/bg-seller.webp')",
+        "home-banner": "url('/images/bg-home.webp')",
       },
     },
   },

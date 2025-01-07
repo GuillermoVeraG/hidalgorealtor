@@ -1,0 +1,39 @@
+---
+import ArrowLarge from "@/components/icons/ArrowLarge.astro";
+
+const { title, subtitle, desc, img1, img2, href, isRight } = Astro.props;
+
+const bg = isRight ? "bg-primary-100" : "bg-white";
+---
+
+<article
+  class={`flex ${isRight ? "flex-row-reverse pb-32" : "flex-row pb-56"} items-start justify-around gap-2 ${bg} px-28 py-14`}
+>
+  <div class="w-1/2">
+    <h2 class={`capitalize font-serif text-2xl ${isRight ? "mt-20" : ""}`}>
+      {title}<div class="italic">{subtitle}</div>
+    </h2>
+
+    <p class="font-sans text-base mt-5 w-80">
+      {desc}
+    </p>
+
+    <a
+      class="border border-black flex items-center justify-center gap-4 w-48 py-2 px-4 rounded-2xl text-sm mt-4"
+      href={href}
+      >View Property <ArrowLarge className="mt-1 h-4 stroke-black" />
+    </a>
+  </div>
+  <div class="w-1/2 relative">
+    <img
+      class={`absolute top-0 ${isRight ? "left-0" : "-left-20"} rounded-lg`}
+      src={img1}
+      alt="city photo 1"
+    />
+    <img
+      class={`absolute top-20 ${isRight ? "left-48" : "left-32"} rounded-lg`}
+      src={img2}
+      alt="city photo 2"
+    />
+  </div>
+</article>

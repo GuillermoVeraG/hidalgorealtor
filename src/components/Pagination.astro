@@ -1,0 +1,55 @@
+---
+import Arrow from "@/components/icons/Arrow.astro";
+import Arrows from "@/components/icons/Arrows.astro";
+
+const { currentPage, lastPage, url } = Astro.props;
+---
+
+<div class="flex justify-center items-center w-full py-6 font-sans">
+  {
+    lastPage > 1 && (
+      <nav class="flex items-center justify-center gap-2 w-80">
+        {currentPage > 1 && (
+          <div class="flex gap-2">
+            <a
+              class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/leftarrows"
+              href={`${url}1/`}
+            >
+              <Arrows className="size-5 stroke-black group-hover/leftarrows:stroke-white" />
+            </a>
+            <a
+              class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/leftarrow"
+              href={`${url}${currentPage - 1}/`}
+            >
+              <Arrow className="size-5 stroke-black group-hover/leftarrow:stroke-white" />
+            </a>
+          </div>
+        )}
+
+        <p class="text-slate-600 dark:text-slate-400 px-4">
+          Page
+          <strong class="text-slate-800 dark:text-white">{currentPage}</strong>
+          of
+          <strong class="text-slate-800 dark:text-white">{lastPage}</strong>
+        </p>
+
+        {currentPage < lastPage && (
+          <div class="flex gap-2">
+            <a
+              class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/rightarrow"
+              href={`${url}${currentPage + 1}/`}
+            >
+              <Arrow className="size-5 stroke-black rotate-180 group-hover/rightarrow:stroke-white" />
+            </a>
+            <a
+              class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-10 group/rightarrows"
+              href={`${url}${lastPage - 1}/`}
+            >
+              <Arrows className="size-5 stroke-black rotate-180 group-hover/rightarrows:stroke-white" />
+            </a>
+          </div>
+        )}
+      </nav>
+    )
+  }
+</div>

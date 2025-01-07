@@ -1,0 +1,102 @@
+---
+import { actions } from "astro:actions";
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import type {
+  PropertySearchParams,
+  PropertySearchParamsItems,
+  PropertyResultItems,
+} from "@/utils/property";
+
+import Pagination from "@/components/Pagination.astro";
+import PropertiesItem from "@/components/PropertiesItem.astro";
+
+import Arrow from "@/components/icons/Arrow.astro";
+import Filter from "@/components/icons/Filter.astro";
+
+const url = new URL(Astro.url);
+const { type, subtype, address, beds, baths, price, sqft, amenities, page } =
+  Astro.params;
+
+const paths = url.pathname.split("/");
+const baseUrl = paths.slice(0, -2).join("/") + "/";
+
+const priceRange = price?.split("-") ?? ["0", "5000000"];
+const sqftRange = sqft?.split("-") ?? ["0", "5000"];
+const amenitiesList = amenities?.split(" ") ?? [];
+
+let input = {} as PropertySearchParams;
+
+input.address = address ?? "";
+input.beds = parseInt(beds ?? "0");
+input.baths = parseInt(baths ?? "0");
+
+input["min-price"] = parseInt(priceRange[0]);
+input["max-price"] = parseInt(priceRange[1]);
+input["min-sqft"] = parseInt(sqftRange[0]);
+input["max-sqft"] = parseInt(sqftRange[1]);
+
+input.type = type ?? "sale";
+input.subtype = subtype ?? "residential";
+
+amenitiesList.forEach((amenity) => {
+  if (amenity === "pool") input.pool = true;
+  if (amenity === "view") input.view = true;
+  if (amenity === "parking") input.parking = true;
+});
+
+const API_TOKEN = import.meta.env.PUBLIC_API_TOKEN ?? "bad_token";
+const API_URL = import.meta.env.PUBLIC_API_URL ?? "bad_url";
+
+const currentPage = parseInt(page ?? "1");
+const ITEMS_PER_PAGE = 9;
+
+const search = {
+  data: input,
+  key: API_TOKEN,
+  urlBase: API_URL,
+  pagination: { page: currentPage - 1, total: ITEMS_PER_PAGE },
+} as PropertySearchParamsItems;
+
+const { data } = await Astro.callAction(actions.property.getProperties, search);
+const { total, dataProperty } = data ?? { total: 0, dataProperty: [] };
+
+const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
+---
+
+<Layout title="result test">
+  <Menu isBorder />
+  <main
+    class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
+  >
+    <div class="flex justify-between items-center w-full py-8 font-sans">
+      <div>
+        <a href="/buyer/" class="flex items-center justify-start gap-2">
+          <Arrow className="size-5 stroke-black -ml-2" />Back to Search</a
+        >
+      </div>
+      <div>
+        <button
+          class="rounded-2xl flex justify-center items-center gap-2 hover:bg-primary-800 hover:text-white px-4 py-2 border border-black hover:border-primary-800 group/button"
+          >Filters <Filter
+            className="size-5 stroke-black group-hover/button:stroke-white"
+          /></button
+        >
+      </div>
+    </div>
+
+    <div class="flex justify-start items-center w-full pb-4 font-sans">
+      {total} Listings
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      {
+        dataProperty.map((property: PropertyResultItems) => (
+          <PropertiesItem property={property} />
+        ))
+      }
+    </section>
+
+    <Pagination currentPage={currentPage} lastPage={lastPage} url={baseUrl} />
+  </main>
+</Layout>

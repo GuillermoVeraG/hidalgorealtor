@@ -1,0 +1,69 @@
+---
+import type { PropertyResultItems } from "@/utils/property";
+import { USDollar, USNumber } from "@/utils/property";
+
+import PropertiesItemPhotos from "./PropertiesItemPhotos.astro";
+
+import Bed from "@/components/icons/Bed.astro";
+import Sqft from "@/components/icons/Sqft.astro";
+import Bath from "@/components/icons/Bath.astro";
+import Parking from "@/components/icons/Parking.astro";
+import Arrow from "./icons/Arrow.astro";
+
+type Props = { property: PropertyResultItems };
+
+const { property } = Astro.props;
+const {
+  proptype,
+  photos,
+  price,
+  address,
+  propsubtype,
+  beds,
+  baths,
+  garage,
+  sqft,
+  mlsnumber,
+} = property;
+---
+
+<article class="flex flex-col font-sans relative h-[35rem] group/property">
+  <PropertiesItemPhotos proptype={proptype} photos={photos} />
+
+  <div class="flex flex-col px-4 py-2 gap-2">
+    <p class="text-2xl font-medium">
+      {USDollar.format(price)}
+    </p>
+    <h2 class="text-lg">{address}</h2>
+
+    <p class="pt-2 text-sm">{propsubtype}</p>
+
+    <div class="flex gap-2 pt-2">
+      <p class="flex gap-1 items-center">
+        <Bed className="size-5 stroke-black" />
+        {beds}
+      </p>
+      <p class="flex gap-1 items-center">
+        <Bath className="size-5 stroke-black" />
+        {baths}
+      </p>
+      <p class="flex gap-1 items-center">
+        <Parking className="size-5 stroke-black" />
+        {garage}
+      </p>
+      <p class="flex gap-1 items-center">
+        <Sqft className="size-5 stroke-black" />
+        {USNumber.format(sqft)} sqft
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-4 left-0">
+    <a
+      href={`/buyer/overview/${mlsnumber}/`}
+      class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-40"
+    >
+      View Property
+    </a>
+  </div>
+</article>

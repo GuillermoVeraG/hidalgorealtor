@@ -27,6 +27,18 @@ export interface PropertyParamsItems {
   };
 }
 
+export interface PropertySearchUrlParams {
+  type: string;
+  address: string;
+  subtype: string;
+  price: string;
+  sqft: string;
+  beds: string;
+  baths: string;
+  amenities: string;
+  page: string;
+}
+
 export interface PropertySearchParamsItems {
   data: PropertySearchParams;
   key: string;
@@ -76,23 +88,23 @@ export interface PropertyResultItems {
 }
 
 export function getUrlSearchParams(params: PropertySearchParams) {
-  let searchParams = "address=" + params.address;
+  let searchParams =
+    params.type + "/" + params.address + "/" + params.subtype + "/";
 
-  if (params.type) searchParams += "&type=" + params.type;
-  if (params.subtype) searchParams += "&subtype=" + params.subtype;
+  searchParams += params["min-price"] + "-" + params["max-price"] + "/";
+  searchParams += params["min-sqft"] + "-" + params["max-sqft"] + "/";
+  searchParams += (params.beds && params.beds > 0 ? params.beds : "0") + "/";
+  searchParams += (params.baths && params.baths > 0 ? params.baths : "0") + "/";
 
-  if (params.beds && params.beds > 0) searchParams += "&beds=" + params.beds;
-  if (params.baths && params.baths > 0)
-    searchParams += "&baths=" + params.baths;
+  let amenities = "";
+  if (params.view) amenities += "view+";
+  if (params.parking) amenities += "parking+";
+  if (params.pool) amenities += "pool+";
 
-  if (params.view) searchParams += "&view=true";
-  if (params.parking) searchParams += "&parking=true";
-  if (params.pool) searchParams += "&pool=true";
+  if (amenities.length > 0) searchParams += amenities + "/";
+  else searchParams += "none/";
 
-  searchParams +=
-    "&min-price=" + params["min-price"] + "&max-price=" + params["max-price"];
-  searchParams +=
-    "&min-sqft=" + params["min-sqft"] + "&max-sqft=" + params["max-sqft"];
+  searchParams += "1/";
 
   return encodeURI(searchParams);
 }
@@ -236,3 +248,14 @@ export function getFullUrl(
 
   return fullUrl;
 }
+
+export const USDollar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+});
+
+export const USNumber = new Intl.NumberFormat("en-US", {
+  style: "decimal",
+  minimumFractionDigits: 0,
+});

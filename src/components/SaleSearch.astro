@@ -188,6 +188,6 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     event.preventDefault();
     const formData = new FormData(form);
     const { data, error } = await actions.property.getUrlParams(formData);
-    if (!error) navigate(`/buyer/result/?${data}`);
+    if (!error) navigate(`/buyer/result/${data}`);
   });
 </script>

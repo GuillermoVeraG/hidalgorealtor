@@ -6,13 +6,16 @@ import type {
   PropertyParamsItems,
   PropertyResultItems,
 } from "@/utils/property";
+
+import PropertyGalery from "@/components/PropertyGalery.astro";
+
+import Phone from "@/components/icons/Phone.astro";
 import Arrow from "@/components/icons/Arrow.astro";
 import Share from "@/components/icons/Share.astro";
 import Bed from "@/components/icons/Bed.astro";
 import Sqft from "@/components/icons/Sqft.astro";
 import Bath from "@/components/icons/Bath.astro";
 import Parking from "@/components/icons/Parking.astro";
-import Photos from "@/components/icons/Photos.astro";
 
 const { mlsnumber } = Astro.params;
 
@@ -68,55 +71,12 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
     {error && <p>Property not found</p>}
     {
       property && (
-        <section class="flex flex-col items-center justify-center gap-8 w-full">
-          <h1 class="hidden">{property.address}</h1>
-          <header class="relative grid grid-cols-4 h-96 w-full gap-2">
-            <button
-              id="photosButton"
-              class="absolute flex justify-center items-center gap-2 bottom-4 right-4 rounded-xl shadow-md bg-white px-4 py-2 cursor-pointer"
-            >
-              <Photos className="size-4 stroke-black" />
-              <span class="text-xs">Show all photos</span>
-            </button>
-            <div class="rounded-l-2xl overflow-hidden col-span-2 row-span-2">
-              <img
-                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
-                src={property.photos[0]}
-                alt="property img"
-              />
-            </div>
-            <div class="rounded-none overflow-hidden">
-              <img
-                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
-                src={property.photos[1]}
-                alt="property img"
-              />
-            </div>
-            <div class="rounded-se-2xl overflow-hidden">
-              <img
-                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
-                src={property.photos[2]}
-                alt="property img"
-              />
-            </div>
-            <div class="rounded-none overflow-hidden">
-              <img
-                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
-                src={property.photos[3]}
-                alt="property img"
-              />
-            </div>
-            <div class="rounded-ee-2xl overflow-hidden">
-              <img
-                class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
-                src={property.photos[4]}
-                alt="property img"
-              />
-            </div>
-          </header>
+        <section class="flex flex-col items-center justify-center gap-4 w-full">
+          <PropertyGalery address={property.address} photos={property.photos} />
+
           <div class="flex justify-between items-start gap-10 w-full">
-            <div class="flex flex-col px-4 py-2 gap-2 w-full">
-              <div class="flex justify-between items-center">
+            <main class="flex flex-col px-4 py-2 gap-2 w-full">
+              <div class="flex flex-col lg:flex-row justify-start lg:justify-between  items-start lg:items-center">
                 <h2 class="text-3xl font-medium">
                   {property.proptype == "Residential" ? "For Sale" : "For Rent"}
                   {USDollar.format(property.price)}
@@ -155,7 +115,7 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
               <h3 class="font-semibold text-lg capitalize mt-8 my-4">
                 property details
               </h3>
-              <div class="grid grid-cols-3 gap-2 w-4/6">
+              <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 w-full lg:w-4/6">
                 <p>{property.yearbuilt} Year Built</p>
                 <p>{property.baths} Bathrooms</p>
                 <p>{property.beds} Bedrooms</p>
@@ -167,8 +127,34 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
                 property location
               </h3>
               <div>mapa</div>
-            </div>
-            <div class="w-[30rem] h-60">property agent</div>
+            </main>
+            <aside class="hidden w-[30rem] h-60 md:flex flex-col justify-center items-center gap-4 shadow-[0px_0px_6px_2px_rgba(0,_0,_0,_0.1)] rounded-2xl">
+              <h3 class="font-serif text-2xl capitalize mb-4">
+                property agent
+              </h3>
+              <div class="flex justify-start items-center gap-4 w-52 lg:w-64">
+                <img
+                  class="size-14 rounded-full"
+                  src="/images/alexhidalgo.webp"
+                  alt="agent photo"
+                />
+                <div class="flex flex-col justify-start items-start gap-1">
+                  <p class="text-base">Alex Hidalgo</p>
+                  <p class="flex justify-start items-center gap-1">
+                    <Phone className="size-4 stroke-black" />
+                    <a href="tel:+17222404094" class="text-sm underline">
+                      +1 772 240 4094
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <a
+                href="/contact/"
+                class="bg-primary text-white py-2 px-4 rounded-2xl text-sm flex justify-center items-center w-52 lg:w-64"
+              >
+                Get in touch
+              </a>
+            </aside>
           </div>
         </section>
       )

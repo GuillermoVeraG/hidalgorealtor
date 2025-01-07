@@ -3,6 +3,33 @@ import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import CityItem from "@/components/CityItem.astro";
 import Trans from "@/i18n/Trans.astro";
+
+const CITIES = [
+  {
+    title: "Miramar",
+    subtitle: "The World Traveler",
+    desc: "Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures.",
+    img1: "/images/miramar-1.webp",
+    img2: "/images/miramar-2.webp",
+    href: "/",
+  },
+  {
+    title: "Miramar",
+    subtitle: "The World Traveler",
+    desc: "Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures.",
+    img1: "/images/miramar-1.webp",
+    img2: "/images/miramar-2.webp",
+    href: "/",
+  },
+  {
+    title: "Miramar",
+    subtitle: "The World Traveler",
+    desc: "Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures.",
+    img1: "/images/miramar-1.webp",
+    img2: "/images/miramar-2.webp",
+    href: "/",
+  },
+];
 ---
 
 <Layout title="Welcome a hidalgo">
@@ -19,31 +46,19 @@ import Trans from "@/i18n/Trans.astro";
     </section>
 
     <section class="hidden sm:block">
-      <CityItem
-        title="Miramar"
-        subtitle="The World Traveler"
-        desc="Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures."
-        img1="/images/miramar-1.webp"
-        img2="/images/miramar-2.webp"
-        href="/"
-      />
-      <CityItem
-        title="Miramar"
-        subtitle="The World Traveler"
-        desc="Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures."
-        img1="/images/miramar-1.webp"
-        img2="/images/miramar-2.webp"
-        isRight
-        href="/"
-      />
-      <CityItem
-        title="Miramar"
-        subtitle="The World Traveler"
-        desc="Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures."
-        img1="/images/miramar-1.webp"
-        img2="/images/miramar-2.webp"
-        href="/"
-      />
+      {
+        CITIES.map((data, index) => (
+          <CityItem
+            title={data.title}
+            subtitle={data.subtitle}
+            desc={data.desc}
+            img1={data.img1}
+            img2={data.img2}
+            href={data.href}
+            isRight={index % 2 != 0 ? true : false}
+          />
+        ))
+      }
     </section>
     <section class="block sm:hidden">city mobile</section>
   </main>

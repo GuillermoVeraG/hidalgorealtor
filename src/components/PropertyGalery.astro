@@ -29,7 +29,9 @@ const { address, photos } = Astro.props;
       alt="property img"
     />
   </div>
-  <div class="rounded-none md:rounded-bl-2xl lg:rounded-se-2xl overflow-hidden">
+  <div
+    class="rounded-none md:rounded-bl-2xl lg:rounded-none lg:rounded-se-2xl overflow-hidden"
+  >
     <img
       class="h-full w-full object-cover group-hover/property:scale-105 transition-transform duration-100 ease-linear"
       src={photos[2]}

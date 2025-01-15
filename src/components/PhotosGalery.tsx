@@ -9,7 +9,6 @@ const PhotosGalery = ({ photos }: PhotosGaleryProps) => {
   var [photo, setPhoto] = useState(photos[current]);
 
   useEffect(() => {
-    console.log("useEffect", current);
     setPhoto(photos[current]);
   }, [current]);
 

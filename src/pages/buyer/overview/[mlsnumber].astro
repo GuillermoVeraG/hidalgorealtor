@@ -1,6 +1,6 @@
 ---
 import { actions } from "astro:actions";
-import Layout from "@/layouts/Layout.astro";
+import MapLayout from "@/layouts/MapLayout.astro";
 import Menu from "@/components/Menu.astro";
 import type {
   PropertyParamsItems,
@@ -8,6 +8,7 @@ import type {
 } from "@/utils/property";
 
 import PropertyGalery from "@/components/PropertyGalery.astro";
+import MapStatic from "@/components/MapStatic.tsx";
 
 import Phone from "@/components/icons/Phone.astro";
 import Arrow from "@/components/icons/Arrow.astro";
@@ -46,7 +47,7 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
 });
 ---
 
-<Layout title="overview test">
+<MapLayout title="overview test">
   <Menu isBorder />
   <main
     class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
@@ -75,7 +76,7 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
           <PropertyGalery address={property.address} photos={property.photos} />
 
           <div class="flex justify-between items-start gap-10 w-full">
-            <main class="flex flex-col px-4 py-2 gap-2 w-full">
+            <main class="flex flex-col px-4 py-2 gap-2 w-full mb-20">
               <div class="flex flex-col lg:flex-row justify-start lg:justify-between  items-start lg:items-center">
                 <h2 class="text-3xl font-medium">
                   {property.proptype == "Residential" ? "For Sale" : "For Rent"}
@@ -126,7 +127,13 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
               <h3 class="font-semibold text-lg capitalize mt-8 my-4">
                 property location
               </h3>
-              <div>mapa</div>
+              <div class="h-64 w-full rounded-lg overflow-hidden shadow-lg">
+                <MapStatic
+                  position={[property.latitude, property.longitude]}
+                  height={256}
+                  client:only
+                />
+              </div>
             </main>
             <aside class="hidden w-[30rem] h-60 md:flex flex-col justify-center items-center gap-4 shadow-[0px_0px_6px_2px_rgba(0,_0,_0,_0.1)] rounded-2xl">
               <h3 class="font-serif text-2xl capitalize mb-4">
@@ -160,7 +167,7 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
       )
     }
   </main>
-</Layout>
+</MapLayout>
 <script>
   const backBt = document.getElementById("backButtonOverview");
 

@@ -1,0 +1,49 @@
+---
+import Link from "@/components/icons/Link.astro";
+import Facebook from "@/components/icons/Facebook.astro";
+import X from "@/components/icons/X.astro";
+import Email from "@/components/icons/Email.astro";
+
+const { open } = Astro.props;
+---
+
+<dialog
+  class="bg-white rounded-2xl p-4 w-60 backdrop:bg-gray-300/50 backdrop:blur-2xl"
+  open={open}
+>
+  <h3 class="font-medium text-xl">Share this property</h3>
+  <ul>
+    <li>
+      <a href="" class="flex justify-start items-center gap-2">
+        <div class="bg-primary-100 rounded-full">
+          <Facebook className="size-6 fill-black" />
+        </div>
+        <span class="capitalize text-lg text-primary">Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a href="" class="flex justify-start items-center gap-2"
+        ><div class="bg-primary-100 rounded-full">
+          <X className="size-6 fill-black" />
+        </div>
+        <span class="capitalize text-lg text-primary">X</span></a
+      >
+    </li>
+    <li>
+      <a href="" class="flex justify-start items-center gap-2"
+        ><div class="bg-primary-100 rounded-full">
+          <Email className="size-6 fill-black" />
+        </div>
+        <span class="capitalize text-lg text-primary">Email</span></a
+      >
+    </li>
+    <li>
+      <a href="" class="flex justify-start items-center gap-2"
+        ><div class="bg-primary-100 rounded-full">
+          <Link className="size-6 fill-black" />
+        </div>
+        <span class="capitalize text-lg text-primary">Copy link</span></a
+      >
+    </li>
+  </ul>
+</dialog>

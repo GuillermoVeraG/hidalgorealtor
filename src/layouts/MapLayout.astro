@@ -1,0 +1,46 @@
+---
+import "@fontsource/instrument-serif";
+import "@fontsource-variable/inter";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const lang = Astro.currentLocale || "en";
+const { title, description, image } = Astro.props;
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=300, s-maxage=3600"
+);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href=`/favicon.svg` />
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -7,11 +7,11 @@ const bg = isRight ? "bg-primary-100" : "bg-white";
 ---
 
 <article
-  class={`flex ${isRight ? "flex-row-reverse pb-32" : "flex-row pb-56"} items-start justify-around gap-2 ${bg} px-20 lg:px-28 py-14`}
+  class={`flex ${isRight ? "flex-row-reverse pb-32" : "flex-row pb-44"} items-start justify-around gap-2 ${bg} px-20 lg:px-28 py-14`}
 >
-  <div class={`w-1/2 ${isRight ? "pl-20 lg:pl-0" : ""}`}>
+  <div class={`w-1/2 ${isRight ? "pl-20 lg:pl-28 xl:pl-0" : ""}`}>
     <h2 class={`capitalize font-serif text-2xl ${isRight ? "mt-20" : ""}`}>
-      {title}<div class="italic">{subtitle}</div>
+      {title}<div class="italic mt-3">{subtitle}</div>
     </h2>
 
     <p class="font-sans text-base mt-5 w-60 md:w-72 lg:w-80">
@@ -26,12 +26,12 @@ const bg = isRight ? "bg-primary-100" : "bg-white";
   </div>
   <div class="w-1/2 relative">
     <img
-      class={`absolute top-0 ${isRight ? "-left-6 lg:left-0" : "-left-2 lg:-left-20"} w-64 lg:w-auto h-auto rounded-lg`}
+      class={`absolute top-0 ${isRight ? "-left-6 lg:left-0" : "-left-2 lg:-left-20"} w-64 lg:w-[300px] h-56 lg:h-64 rounded-lg`}
       src={img1}
       alt="city photo 1"
     />
     <img
-      class={`absolute top-20 ${isRight ? "left-20 lg:left-48" : "left-20 lg:left-32"} w-64 lg:w-auto h-auto rounded-lg`}
+      class={`absolute top-20 ${isRight ? "left-20 lg:left-48" : "left-20 lg:left-32"} w-64 lg:w-[300px] h-56 lg:h-64 rounded-lg`}
       src={img2}
       alt="city photo 2"
     />

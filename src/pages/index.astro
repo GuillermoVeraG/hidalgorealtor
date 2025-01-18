@@ -1,16 +1,144 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
+import CityItem from "@/components/CityItem.astro";
 import Trans from "@/i18n/Trans.astro";
+
+const CITIES = [
+  {
+    title: "Miramar",
+    subtitle: "The World Traveler",
+    desc: "Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures.",
+    img1: "/images/cities/miramar-1.webp",
+    img2: "/images/cities/miramar-2.webp",
+    href: "/buyer/result/sale/miramar/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
+  },
+  {
+    title: "Pembroke Pines",
+    subtitle: "The Family Guardian",
+    desc: "Pembroke Pines resembles a friend who's the ultimate family person. They're reliable, warm, and always looking out for their loved ones.",
+    img1: "/images/cities/pembrohke-1.webp",
+    img2: "/images/cities/pembrohke-2.webp",
+    href: "/buyer/result/sale/pembroke%20pines/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
+  },
+  {
+    title: "Southwest Ranches",
+    subtitle: "The Country Soul",
+    desc: "Southwest Ranches is like a friend with a rustic heart. They're laid-back, enjoy wide-open spaces, and have a love for the great outdoors.",
+    img1: "/images/cities/southwest-1.webp",
+    img2: "/images/cities/southwest-2.webp",
+    href: "/buyer/result/sale/Southwest%20Ranches/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
+  },
+];
+const CITIES2 = [
+  {
+    title: "Weston",
+    subtitle: "The elegant aristocrat",
+    desc: "Weston is like a friend who embodies elegance and luxury. They appreciate the finer things in life and enjoy upscale experiences.",
+    img1: "/images/cities/weston-1.webp",
+    img2: "/images/cities/weston-2.webp",
+    href: "/buyer/result/sale/Weston/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
+  },
+  {
+    title: "Cooper City",
+    subtitle: "The Unconditional",
+    desc: "Cooper City is like that friend who's unconditional. They're known for their unwavering loyalty and dependable presence who value their community's warmth, sense of belonging, and comfort.",
+    img1: "/images/cities/cooper-1.webp",
+    img2: "/images/cities/cooper-2.webp",
+    href: "/buyer/result/sale/Cooper%20City/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
+  },
+  {
+    title: "Davie",
+    subtitle: "The Cowboy Adventurer",
+    desc: "Davie resembles a friend with a cowboy spirit. They're easygoing, love the outdoors, and are always up for a relaxed adventure.",
+    img1: "/images/cities/davie-1.webp",
+    img2: "/images/cities/davie-2.webp",
+    href: "/buyer/result/sale/Davie/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
+  },
+];
 ---
 
 <Layout title="Welcome a hidalgo">
-  <Menu />
-  <main>
-    <h1 class="text-primary font-sans">
-      <Trans i18nKey="home.welcome">
-        Welcome to <span class="text-gradient font-serif italic">Hidalgo</span>
-      </Trans>
-    </h1>
+  <Menu isFloating isWhite />
+  <div class="h-[500px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat">
+  </div>
+  <main class="">
+    <section class="bg-white pt-16 lg:pt-40 md:pt-24 px-20 max-w-7xl mx-auto">
+      <h1 class="uppercase font-serif text-3xl md:text-4xl mb-20">
+        Let's explore <div class="italic normal-case mt-2">
+          Broward's real estate together!
+        </div>
+      </h1>
+    </section>
+
+    <section class="hidden sm:block">
+      {
+        CITIES.map((data, index) => (
+          <CityItem
+            title={data.title}
+            subtitle={data.subtitle}
+            desc={data.desc}
+            img1={data.img1}
+            img2={data.img2}
+            href={data.href}
+            isRight={index % 2 != 0 ? true : false}
+          />
+        ))
+      }
+      <div class="flex justify-center items-center my-24">
+        <button
+          id="showMoreBut"
+          class="border border-black w-52
+      py-2 px-4 rounded-2xl text-sm"
+          aria-label="Show More Cities"
+          >Show More
+        </button>
+      </div>
+      <div id="moreCities" class="hidden">
+        {
+          CITIES2.map((data, index) => (
+            <CityItem
+              title={data.title}
+              subtitle={data.subtitle}
+              desc={data.desc}
+              img1={data.img1}
+              img2={data.img2}
+              href={data.href}
+              isRight={index % 2 == 0 ? true : false}
+            />
+          ))
+        }
+        <div class="flex justify-center items-center my-24">
+          <button
+            id="showLessBut"
+            class="border border-black w-52
+        py-2 px-4 rounded-2xl text-sm"
+            aria-label="Show Less Cities"
+            >Show less
+          </button>
+        </div>
+      </div>
+      <section class="block sm:hidden">city mobile</section>
+    </section>
   </main>
 </Layout>
+
+<script>
+  const showMoreBut = document.getElementById("showMoreBut"),
+    showLessBut = document.getElementById("showLessBut"),
+    moreCities = document.getElementById("moreCities");
+
+  showMoreBut?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    moreCities?.classList.toggle("hidden");
+    showMoreBut?.parentElement?.classList.toggle("hidden");
+  });
+
+  showLessBut?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    moreCities?.classList.toggle("hidden");
+    showMoreBut?.parentElement?.classList.toggle("hidden");
+  });
+</script>

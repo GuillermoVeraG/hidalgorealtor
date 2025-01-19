@@ -8,6 +8,7 @@ import type {
 } from "@/utils/property";
 
 import PropertyGalery from "@/components/PropertyGalery.astro";
+import ShareWindow from "@/components/ShareWindow.astro";
 import MapStatic from "@/components/MapStatic.tsx";
 
 import Phone from "@/components/icons/Phone.astro";
@@ -45,9 +46,13 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
   style: "decimal",
   minimumFractionDigits: 0,
 });
+
+const title = property ? property.address : "property not found";
+const desc = property ? property.description : "property not found";
+const image = property && property.photos ? property.photos[0] : "";
 ---
 
-<MapLayout title="overview test">
+<MapLayout title={title} description={desc} image={image}>
   <Menu isBorder />
   <main
     class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
@@ -68,6 +73,7 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
         </button>
       </div>
     </div>
+    <ShareWindow address={property.address} />
 
     {error && <p>Property not found</p>}
     {
@@ -169,10 +175,18 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
   </main>
 </MapLayout>
 <script>
-  const backBt = document.getElementById("backButtonOverview");
+  const backBt = document.getElementById("backButtonOverview"),
+    shareBt = document.getElementById("shareButtonOverview"),
+    shareWin = document.getElementById("shareWin") as HTMLDialogElement;
 
   backBt?.addEventListener("click", async (e) => {
     e.preventDefault();
     window.history.back();
+  });
+
+  shareBt?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    shareWin?.showModal();
   });
 </script>

@@ -1,6 +1,7 @@
 ---
 import "@fontsource/instrument-serif";
 import "@fontsource-variable/inter";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   title: string;
@@ -31,5 +32,6 @@ Astro.response.headers.set(
   </head>
   <body>
     <slot />
+    <Footer />
   </body>
 </html>

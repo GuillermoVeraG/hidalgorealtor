@@ -50,6 +50,8 @@ export default {
           900: "#395E56",
           950: "#263E39",
         },
+        crema: "#F9F7F1",
+        verde: "#063E44",
       },
       backgroundImage: {
         "seller-banner": "url('/images/bg-seller.webp')",

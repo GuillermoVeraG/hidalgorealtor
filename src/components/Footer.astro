@@ -1,0 +1,67 @@
+---
+import Href from "./icons/Href.astro";
+import Logo from "./icons/Logo.astro";
+---
+
+<footer class="bg-verde pt-16 pb-4 px-20">
+  <div class="max-w-7xl mx-auto flex justify-between items-start gap-4 w-full">
+    <div class="w-20">
+      <h2 class="font-semibold mb-10 text-white">Follow us</h2>
+
+      <a
+        href="https://www.instagram.com/hidalgo.realtor/"
+        target="_blank"
+        class="font-sans text-sm text-white flex mb-3"
+        >Instagram <Href className="size-5 stroke-white" />
+      </a>
+      <a
+        href="https://www.facebook.com/profile.php?id=100090874022390"
+        target="_blank"
+        class="font-sans text-sm text-white flex"
+        >Facebook <Href className="size-5 stroke-white" />
+      </a>
+    </div>
+
+    <div class="w-80">
+      <h2 class="font-semibold mb-10 text-white">Contact</h2>
+
+      <a
+        href="https://wa.me/17722404094"
+        target="_blank"
+        class="font-sans text-sm mb-5 text-white flex underline"
+        >+1 772 240 4094
+      </a>
+      <a
+        href="mailto:alexandra@hidalgorealtor.com"
+        target="_blank"
+        class="font-sans text-sm mb-5 text-white flex underline"
+        >alexandra@hidalgorealtor.com
+      </a>
+      <h3 class="font-sans text-sm mb-5 w-56 text-white flex">
+        15000 Pines Blvd, Suite 315 Pembroke Pines, FL 33027
+      </h3>
+    </div>
+
+    <div class="w-1/3">
+      <a
+        target="_blank"
+        href="https://www.google.com/maps/place/15000+Pines+Blvd+%23315,+Pembroke+Pines,+FL+33027,+EE.+UU./@26.0067239,-80.3457248,17z/data=!3m1!4b1!4m5!3m4!1s0x88d9a6a226ed4a63:0x41323ceedd56c563!8m2!3d26.0067239!4d-80.3457248?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
+      >
+        <img
+          class="rounded-2xl border-4 border-primary shadow-2xl h-60 w-80 object-cover object-bottom"
+          src="/images/mapa.webp"
+          alt="Location imagen"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto">
+    <div class="flex gap-4 justify-start items-center mb-4">
+      <Logo className="h-10 fill-white" />
+      <img src="/images/logo-florida.webp" alt="Logo Florida" />
+    </div>
+    <p class="font-sans text-[10px] text-white">
+      © 2023 ALL RIGHTS RESERVED by hidalgorealtor.com
+    </p>
+  </div>
+</footer>

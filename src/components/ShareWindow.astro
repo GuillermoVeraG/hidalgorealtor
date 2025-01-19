@@ -2,48 +2,90 @@
 import Link from "@/components/icons/Link.astro";
 import Facebook from "@/components/icons/Facebook.astro";
 import X from "@/components/icons/X.astro";
-import Email from "@/components/icons/Email.astro";
+/*import Email from "@/components/icons/Email.astro";*/
+import Close from "@/components/icons/Close.astro";
+import Clipboard from "@/components/icons/Clipboard.astro";
 
-const { open } = Astro.props;
+const { href } = new URL(Astro.url);
+const { address } = Astro.props;
+
+const text = encodeURIComponent(
+  `Alex Hidalgo Realtor property address ${address} share`
+);
+const hashtags = "realtor,houses,hidalgorealtor";
 ---
 
 <dialog
-  class="bg-white rounded-2xl p-4 w-60 backdrop:bg-gray-300/50 backdrop:blur-2xl"
-  open={open}
+  class="relative bg-white rounded-2xl p-10 backdrop:bg-gray-300/50 backdrop:blur-2xl z-40 drop-shadow-lg top-[20%]"
+  id="shareWin"
 >
-  <h3 class="font-medium text-xl">Share this property</h3>
-  <ul>
+  <button id="closeShareWin" class="absolute top-2 right-2 p-2"
+    ><Close className="stroke-black size-4" /></button
+  >
+  <h3 class="font-medium text-xl mb-4">Share this property</h3>
+  <ul class="flex flex-col justify-center items-start gap-2">
     <li>
-      <a href="" class="flex justify-start items-center gap-2">
-        <div class="bg-primary-100 rounded-full">
-          <Facebook className="size-6 fill-black" />
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${href}`}
+        target="_blank"
+        class="flex justify-start items-center gap-2"
+      >
+        <div class="bg-primary-100 rounded-full p-2">
+          <Facebook className="h-5 fill-black" />
         </div>
-        <span class="capitalize text-lg text-primary">Facebook</span>
+        <span class="capitalize text-lg text-primary">Share Facebook</span>
       </a>
     </li>
     <li>
-      <a href="" class="flex justify-start items-center gap-2"
-        ><div class="bg-primary-100 rounded-full">
-          <X className="size-6 fill-black" />
+      <a
+        href={`https://twitter.com/share?text=${text}&url=${href}&hashtags=${hashtags}`}
+        target="_blank"
+        class="flex justify-start items-center gap-2"
+        ><div class="bg-primary-100 rounded-full p-2">
+          <X className="h-5 fill-black" />
         </div>
-        <span class="capitalize text-lg text-primary">X</span></a
+        <span class="capitalize text-lg text-primary">Share X</span></a
       >
     </li>
+    {
+      /* <li>
+      <a href="" class="flex justify-start items-center gap-2"
+        ><div class="bg-primary-100 rounded-full p-2">
+          <Email className="h-5 fill-black" />
+        </div>
+        <span class="capitalize text-lg text-primary">Share Email</span></a
+      >
+    </li>*/
+    }
     <li>
-      <a href="" class="flex justify-start items-center gap-2"
-        ><div class="bg-primary-100 rounded-full">
-          <Email className="size-6 fill-black" />
+      <button
+        id="copyBut"
+        class="flex justify-start items-center gap-2 capitalize text-lg text-primary"
+        ><div class="bg-primary-100 rounded-full p-2">
+          <Link className="h-5 fill-black" />
         </div>
-        <span class="capitalize text-lg text-primary">Email</span></a
-      >
+        Copy link <Clipboard className="hidden h-4 fill-primary" < button />
+      </button>
     </li>
-    <li>
-      <a href="" class="flex justify-start items-center gap-2"
-        ><div class="bg-primary-100 rounded-full">
-          <Link className="size-6 fill-black" />
-        </div>
-        <span class="capitalize text-lg text-primary">Copy link</span></a
-      >
-    </li>
+
+    <script>
+      const closeShareWin = document.getElementById("closeShareWin"),
+        copyBut = document.getElementById("copyBut"),
+        shareWin = document.getElementById("shareWin") as HTMLDialogElement,
+        clipboard = document.getElementById("clipboardCopy");
+
+      closeShareWin?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        shareWin?.close();
+      });
+
+      copyBut?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        navigator.clipboard.writeText(window.location.href);
+        clipboard?.classList.toggle("hidden");
+      });
+    </script>
   </ul>
 </dialog>

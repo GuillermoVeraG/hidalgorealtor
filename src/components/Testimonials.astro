@@ -1,0 +1,44 @@
+---
+import Arrow from "./icons/Arrow.astro";
+---
+
+<section class="bg-crema py-16 px-20">
+  <div class="max-w-7xl mx-auto flex justify-between items-start gap-4 w-full">
+    <div class="w-1/2">
+      <h2 class="font-serif text-5xl mb-10 ml-12">What customer say</h2>
+
+      <p class="font-sans text-base ml-12 w-80">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+
+    <div class="w-1/2 mt-20">
+      <h2 class="uppercase font-serif text-sm mb-5">Carlos Silva</h2>
+
+      <p class="font-serif text-2xl w-96">
+        I highly recommend it. I will continue to use your services for any real
+        estate agent needs in the future. Very nice to work with Alex!
+      </p>
+      <div class="flex justify-start items-center my-10 gap-5">
+        <button
+          id="testimonialLeft"
+          class="border border-black
+    py-1 px-1 rounded-full"
+          aria-label="Slide testimonial left"
+        >
+          <Arrow className="size-4 stroke-black" />
+        </button>
+        <div class="h-px w-32 bg-black"></div>
+        <button
+          id="testimonialright"
+          class="border border-black
+    py-1 px-1 rounded-full"
+          aria-label="Slide testimonial right"
+        >
+          <Arrow className="size-4 stroke-black rotate-180" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

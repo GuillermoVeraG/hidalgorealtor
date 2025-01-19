@@ -1,16 +1,32 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
+import CityContainer from "@/components/CityContainer.astro";
+import Testimonials from "@/components/Testimonials.astro";
 import Trans from "@/i18n/Trans.astro";
 ---
 
 <Layout title="Welcome a hidalgo">
-  <Menu />
-  <main>
-    <h1 class="text-primary font-sans">
-      <Trans i18nKey="home.welcome">
-        Welcome to <span class="text-gradient font-serif italic">Hidalgo</span>
-      </Trans>
-    </h1>
-  </main>
-</Layout>
+  <Menu isFloating isWhite />
+  <div
+    class="h-[500px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+    <div
+      class="uppercase font-serif text-6xl text-white w-[440px] text-center leading-[4.5rem]"
+    >
+      Home is Where your story begins
+    </div>
+  </div>
+  <main class="">
+    <section class="bg-white pt-16 lg:pt-40 md:pt-24 px-20 max-w-7xl mx-auto">
+      <h1 class="uppercase font-serif text-3xl md:text-4xl mb-20">
+        Let's explore <div class="italic normal-case mt-2">
+          Broward's real estate together!
+        </div>
+      </h1>
+    </section>
+
+    <CityContainer />
+    <Testimonials />
+  </main></Layout
+>

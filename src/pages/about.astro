@@ -1,0 +1,113 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import Testimonials from "@/components/Testimonials.astro";
+import Book from "@/components/icons/Book.astro";
+---
+
+<Layout title="Welcome a hidalgo">
+  <Menu isFloating isWhite />
+  <div
+    class="h-[473px] w-full bg-about-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+    <div class="font-serif italic text-7xl text-white">About me</div>
+  </div>
+
+  <main class="relative">
+    <section class="flex flex-col items-center py-20">
+      <img
+        class="rounded-full h-64 absolute -top-24"
+        src="/images/alexhidalgo.webp"
+        alt="Photo Alex"
+      />
+      <h2
+        class="font-serif italic text-3xl mt-28 w-[480px] text-center leading-[3rem] mb-10"
+      >
+        Hi, I'm Alex, your go-to partner for Broward, Florida's real estate
+        scene.
+      </h2>
+      <div
+        class="text-base font-sans w-[580px] text-center flex flex-col gap-6"
+      >
+        <p>
+          I'm all about making transactions smooth and connecting eager buyers
+          with motivated sellers. Based in Broward, I'm ready to help you with
+          selling and finding your perfect home
+        </p>
+
+        <p>
+          As part of the Florida New Dream family, I embrace values like
+          integrity, hard work, and top-notch client service in every deal.
+        </p>
+
+        <p>
+          And guess what? I speak both English and Spanish fluently, making
+          communication a breeze.
+        </p>
+
+        <p>
+          I bring my marketing and consumer behavior professional knowledge,
+          fresh market insights, and a touch of seasoned expertise to the table.
+          Ensuring your property journey is well-guided. First-time buyer,
+          seasoned investor, or looking to sell or rent? I'm here to tailor my
+          services to your unique needs.
+        </p>
+
+        <p>Let's dive into Broward's real estate together.</p>
+
+        <p>
+          Drop me a line at Drop me a line at alexandra@hidalgorealtor.com and
+          let's chat about turning properties into lasting
+          investments.alexandra@hidalgorealtor.com and let's chat about turning
+          properties into lasting investments.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-primary-100 py-16 px-20 text-center">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-serif uppercase italic text-4xl mb-10">
+          Why choose me?
+        </h2>
+
+        <div class="flex justify-between items-center gap-8">
+          <div class="flex flex-col justify-center items-center w-72">
+            <h2 class="font-sans font-semibold text-lg pb-5">Integrity</h2>
+
+            <p class="font-sans text-base text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+          <div class="flex flex-col justify-center items-center w-72">
+            <div class="bg-black rounded-full p-6">
+              <Book />
+            </div>
+            <h2 class="font-sans font-semibold text-lg pb-5">
+              Professional knowledge
+            </h2>
+
+            <p class="font-sans text-base text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+          </div>
+
+          <div class="flex flex-col justify-center items-center w-72">
+            <h2 class="font-sans font-semibold text-lg pb-5">
+              Fluent English and Spanish
+            </h2>
+
+            <p class="font-sans text-base text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Testimonials />
+  </main>
+</Layout>

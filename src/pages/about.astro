@@ -2,7 +2,25 @@
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import Testimonials from "@/components/Testimonials.astro";
-import Book from "@/components/icons/Book.astro";
+import AboutItem from "@/components/AboutItem.astro";
+
+const items = [
+  {
+    title: "Integrity",
+    icon: "Handshake",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Professional knowledge",
+    icon: "Book",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Fluent English and Spanish",
+    icon: "World",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];
 ---
 
 <Layout title="Welcome a hidalgo">
@@ -71,39 +89,11 @@ import Book from "@/components/icons/Book.astro";
         </h2>
 
         <div class="flex justify-between items-center gap-8">
-          <div class="flex flex-col justify-center items-center w-72">
-            <h2 class="font-sans font-semibold text-lg pb-5">Integrity</h2>
-
-            <p class="font-sans text-base text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-
-          <div class="flex flex-col justify-center items-center w-72">
-            <div class="bg-black rounded-full p-6">
-              <Book />
-            </div>
-            <h2 class="font-sans font-semibold text-lg pb-5">
-              Professional knowledge
-            </h2>
-
-            <p class="font-sans text-base text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
-          </div>
-
-          <div class="flex flex-col justify-center items-center w-72">
-            <h2 class="font-sans font-semibold text-lg pb-5">
-              Fluent English and Spanish
-            </h2>
-
-            <p class="font-sans text-base text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
-          </div>
+          {
+            items.map(({ title, icon, desc }) => (
+              <AboutItem title={title} icon={icon} desc={desc} />
+            ))
+          }
         </div>
       </div>
     </section>

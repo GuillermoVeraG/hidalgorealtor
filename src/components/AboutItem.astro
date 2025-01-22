@@ -1,0 +1,20 @@
+---
+import Book from "@/components/icons/Book.astro";
+import Handshake from "@/components/icons/Handshake.astro";
+import World from "@/components/icons/World.astro";
+
+const { title, desc, icon } = Astro.props;
+---
+
+<div class="flex flex-col justify-center items-center w-72 pt-16">
+  <div class="bg-primary-700 rounded-full p-6">
+    {icon == "Handshake" && <Handshake />}
+    {icon == "Book" && <Book />}
+    {icon == "World" && <World />}
+  </div>
+  <h2 class="font-sans font-semibold text-lg py-10">{title}</h2>
+
+  <p class="font-sans text-base text-center">
+    {desc}
+  </p>
+</div>

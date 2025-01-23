@@ -1,0 +1,48 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+---
+
+<Layout title="Welcome a hidalgo">
+  <Menu isFloating isWhite />
+  <div
+    class="h-[473px] w-full bg-about-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+    <div class="font-serif italic text-7xl text-white">Our team</div>
+  </div>
+
+  <section class="flex justify-evenly items-center max-w-7xl mx-auto">
+    <div class="flex-col justify-around items-center gap-6 w-[485px] my-20">
+      <h2 class="font-serif italic text-5xl text-left my-20">Who we are</h2>
+      <p class="mb-6">
+        Florida New Dream, is an established real estate company in South
+        Florida, providing our clients exceptional service in residential,
+        commercial, industrial, agricultural, and business transactions.
+      </p>
+
+      <p class="mb-6">
+        We all know that finding a real estate agent you can trust and feel
+        comfortable with is hard. Even more, deciding to sell and move away is a
+        huge life decision. We understand that you want to ensure that your real
+        estate agent is as invested in this sale as you are, and that is what we
+        are committed to providing you.
+      </p>
+
+      <p>Regards,</p>
+      <p>Florida New Dream</p>
+      <a target="_blank" href="https://www.floridanewdream.com"
+        >www.floridanewdream.com</a
+      >
+    </div>
+
+    <img
+      class="h-52 w-auto items-center"
+      src="/images/logo-florida-color.webp"
+      alt="Logo a color de Florida"
+    />
+  </section>
+
+  <section class="bg-primary-100 pt-16 lg:pt-40 md:pt-24 px-20">
+    <div class="max-w-7xl mx-auto"></div>
+  </section>
+</Layout>

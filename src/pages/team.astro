@@ -1,0 +1,95 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import Teamitem from "@/components/Teamitem.astro";
+import { undefined } from "astro:schema";
+
+const teamItems = [
+  {
+    img: "/images/rociotorres.webp",
+    title: "ROCIO TORRES",
+    subtitle: "MORTGAGE ADVISOR  |  HOME OFFICER AGENT",
+    desc1:
+      "With over 9 years of industry experience, I am dedicated to providing superior service and personal expert guidance throughout the financing process.",
+    desc2: undefined,
+    web: "www.innovativemlo.com",
+  },
+  {
+    img: "/images/alexhidalgo.webp",
+    title: "ALEX HIDALGO",
+    subtitle: "REALTOR",
+    desc1:
+      "Committed to finding you the right house and price, I will have the persistence, dedication, and integrity you deserve.",
+    desc2:
+      "I will use all my background knowledge in marketing and consumer behavior fields to help you succeed with your selling property transactions.",
+    web: "www.hidalgorealtor.com",
+  },
+];
+---
+
+<Layout title="Welcome a hidalgo">
+  <Menu isFloating isWhite />
+  <div
+    class="h-[473px] w-full bg-about-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+    <div class="font-serif italic text-7xl text-white">Our team</div>
+  </div>
+
+  <section class="flex justify-evenly items-center max-w-7xl mx-auto">
+    <div class="flex-col justify-around items-center gap-6 w-[485px] my-20">
+      <h2 class="font-serif italic text-5xl text-left my-20">Who we are</h2>
+      <p class="mb-6">
+        Florida New Dream, is an established real estate company in South
+        Florida, providing our clients exceptional service in residential,
+        commercial, industrial, agricultural, and business transactions.
+      </p>
+
+      <p class="mb-6">
+        We all know that finding a real estate agent you can trust and feel
+        comfortable with is hard. Even more, deciding to sell and move away is a
+        huge life decision. We understand that you want to ensure that your real
+        estate agent is as invested in this sale as you are, and that is what we
+        are committed to providing you.
+      </p>
+
+      <p>Regards,</p>
+      <p>Florida New Dream</p>
+      <a target="_blank" href="https://www.floridanewdream.com"
+        >www.floridanewdream.com</a
+      >
+    </div>
+
+    <img
+      class="h-52 w-auto items-center"
+      src="/images/logo-florida-color.webp"
+      alt="Logo a color de Florida"
+    />
+  </section>
+
+  <section
+    class="bg-primary-100 flex justify-center items-center py-16 lg:py-40 md:py-24 px-20"
+  >
+    <div class="w-full max-w-7xl mx-auto text-center">
+      <h2 class="capitalize italic font-serif text-5xl">Our Dedicated Team</h2>
+      <p class="font-sans w-[548px] mx-auto my-10">
+        Our team is committed to providing expert guidance and personalised
+        support for all your property needs.
+      </p>
+
+      <div class="flex justify-evenly items-start gap-4 mt-28">
+        {
+          teamItems.map(({ img, title, subtitle, desc1, desc2, web }) => (
+            <Teamitem
+              img={img}
+              title={title}
+              subtitle={subtitle}
+              desc1={desc1}
+              desc2={desc2}
+              web={web}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

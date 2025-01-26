@@ -54,9 +54,10 @@ export default {
         verde: "#063E44",
       },
       backgroundImage: {
-        "seller-banner": "url('/images/bg-seller.webp')",
-        "home-banner": "url('/images/bg-home.webp')",
-        "about-banner": "url('/images/bg-about.webp')",
+        "seller-banner": "url('/images/bg/bg-seller.webp')",
+        "home-banner": "url('/images/bg/bg-home.webp')",
+        "about-banner": "url('/images/bg/bg-about.webp')",
+        "about-banner": "url('/images/bg/bg-team.webp')",
       },
     },
   },

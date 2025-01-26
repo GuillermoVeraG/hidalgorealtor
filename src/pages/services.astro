@@ -1,0 +1,71 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import ServicesItems from "@/components/ServicesItems.astro";
+import Testimonials from "@/components/Testimonials.astro";
+
+const serviceItems = [
+  {
+    icon: "RealEstate",
+    title: "Selling",
+    desc1:
+      "Property Valuations Accurate market assessments to determine the bestprice for your home.",
+    desc2:
+      "Professional Marketing Highlight your property with compelling listings and extensive exposure.",
+    desc3:
+      "Smooth Transactions From negotiations to legalities, we ensure a seamless selling process.",
+  },
+  {
+    icon: "HouseMoney",
+    title: "Buying",
+    desc1:
+      "Tailored Property Search Find your ideal home with our personalised guidance.",
+    desc2:
+      "Market Insights Stay informed with expert advice and the latest market trends.",
+    desc3:
+      "Support Every Step From viewings to finalising the deal, we´ll be with you all the way.",
+  },
+  {
+    icon: "Keys",
+    title: "Renting",
+    desc1:
+      "For Tenants A wide selection of houses to suit all preferences and budgets, with transparent terms and personalised assistance.",
+    desc2:
+      "For Landlords Expert marketing, tenant management, and property care to maximise your rental income.",
+  },
+];
+---
+
+<Layout title="Welcome a hidalgo">
+  <Menu isFloating isWhite />
+  <div
+    class="h-[276px] w-full bg-about-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+  </div>
+
+  <section class="max-w-7xl mx-auto mb-10 mt-20">
+    <h2 class="capitalize font-serif italic text-5xl text-center mx-auto">
+      Our Services
+    </h2>
+    <p class="mx-auto text-center w-[420px] my-10">
+      We offer comprehensive services to meet all your property needs, whether
+      you're renting, buying, or selling a house. Our goal is to provide expert
+      guidance and make the process smooth and hassle-free
+    </p>
+    <div class="flex justify-evenly items-start">
+      {
+        serviceItems.map(({ icon, title, desc1, desc2, desc3 }) => (
+          <ServicesItems
+            icon={icon}
+            title={title}
+            desc1={desc1}
+            desc2={desc2}
+            desc3={desc3}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <Testimonials />
+</Layout>

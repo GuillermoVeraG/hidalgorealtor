@@ -58,6 +58,7 @@ export default {
         "home-banner": "url('/images/bg/bg-home.webp')",
         "about-banner": "url('/images/bg/bg-about.webp')",
         "about-banner": "url('/images/bg/bg-team.webp')",
+        "about-banner": "url('/images/bg/bg-services.webp')",
       },
     },
   },

@@ -1,0 +1,27 @@
+---
+import RealEstate from "@/components/icons/RealEstate.astro";
+import HouseMoney from "@/components/icons/HouseMoney.astro";
+import Keys from "@/components/icons/Keys.astro";
+
+const { icon, title, desc1, desc2, desc3 } = Astro.props;
+---
+
+<article
+  class="w-80 h-[620px] bg-white hover:bg-primary-100 p-10 rounded-xl shadow-md"
+>
+  <div class="bg-primary rounded-full bg-center p-6 size-24 mx-auto mb-8">
+    {icon == "RealEstate" && <RealEstate {icon} />}
+    {icon == "HouseMoney" && <HouseMoney {icon} />}
+    {icon == "Keys" && <Keys {icon} />}
+  </div>
+  <h2 class="text-lg text-center font-semibold mx-auto">{title}</h2>
+  <p class="text-center my-6">
+    {desc1}
+  </p>
+  <p class="text-center my-6">
+    {desc2}
+  </p>
+  <p class="text-center my-6">
+    {desc3}
+  </p>
+</article>

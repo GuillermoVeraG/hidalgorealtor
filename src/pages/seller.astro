@@ -1,0 +1,233 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import NumberInput from "@/components/NumberInput.tsx";
+import MultiRangeInput from "@/components/MultiRangeInput";
+---
+
+<Layout title="Welcome a hidalgo">
+  <Menu isFloating isWhite />
+  <div
+    class="h-[276px] w-full bg-seller-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+  </div>
+
+  <section class="max-w-7xl mx-auto mb-10 mt-20">
+    <div
+      class="flex flex-col md:flex-row justify-start items-center gap-60 mb-20 mx-auto"
+    >
+      <h2
+        class="w-[340px] italic font-serif text-4xl md:text-5xl text-center leading-10"
+      >
+        Let's help you sell your home today
+      </h2>
+      <p class="w-[485px] my-10">
+        Finding the right realtor is crucial when navigating the complex world
+        of real estate. A skilled realtor not only understands the local market
+        but also possesses the expertise to guide you through the buying or
+        selling process.
+      </p>
+    </div>
+
+    <div class="flex justify-center items-start gap-20">
+      <img src="/images/seller.webp" alt="seller" class="rounded-xl" />
+
+      <form action="" class="px-8 pt-4 pb-16 bg-primary-100 rounded-xl w-full">
+        <h3 class="font-serif text-4xl">Get a Value</h3>
+        <p class="w-3/5 mt-2 mb-8">
+          Please complete this form to receive an accurate valuation of your
+          property.
+        </p>
+
+        <div class="flex justify-around items-center gap-6 w-full">
+          <div class="w-full my-6">
+            <label for="seller-FirstName"
+              >First name <span class="text-red-500">*</span>
+            </label>
+            <input
+              class="w-full bg-primary-100 shadow-md border border-black rounded py-1 px-2 font-sans"
+              id="seller-FirstName"
+              required
+              name="FirstName"
+            />
+          </div>
+
+          <div class="w-full my-6">
+            <label for="seller-LastName"
+              >Last name <span class="text-red-500">*</span>
+            </label>
+            <input
+              class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
+              type="email"
+              id="seller-LastNam"
+              required
+              name="LastNam"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="seller-email"
+            >Email <span class="text-red-700">*</span>
+          </label>
+          <input
+            class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
+            type="email"
+            id="seller-email"
+            required
+            name="email"
+          />
+        </div>
+
+        <div class="flex justify-around items-start gap-4 w-full my-6">
+          <div class="w-1/3">
+            <label for="seller-Prefix"
+              >Prefix <span class="text-red-500">*</span>
+            </label>
+            <input
+              class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
+              type="text"
+              id="seller-Prefix"
+              name="Prefix"
+            />
+          </div>
+
+          <div class="w-full">
+            <label for="seller-Phone"
+              >Phone (optional) <span class="text-red-500">*</span>
+            </label>
+            <input
+              class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
+              type="number"
+              id="seller-Phone"
+              name="Phone"
+            />
+          </div>
+        </div>
+
+        <div class="my-6">
+          <label for="seller-Location"
+            >Location <span class="text-red-500">*</span>
+          </label>
+          <input
+            class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
+            type="text"
+            id="seller-Location"
+            required
+            name="Location"
+          />
+        </div>
+
+        <div class="w-full flex flex-col justify-start items-start gap-4 my-6">
+          <div class="font-sans text-black text-sm font-medium">
+            Square meters
+          </div>
+
+          <MultiRangeInput
+            name="sqft"
+            min={0}
+            max={5000}
+            step={250}
+            suffix="sqft"
+            client:load
+          />
+        </div>
+
+        <h3 class="font-sans text-lg mt-24">Bedrooms and bathrooms</h3>
+
+        <div class="flex justify-around items-center gap-4 w-full my-10">
+          <div class="flex justify-start items-center gap-4 w-full">
+            <label for="seller-beds">Bedroom</label>
+            <NumberInput name="beds" client:load />
+          </div>
+
+          <div class="flex justify-start items-center gap-4 w-full">
+            <label for="seller-baths">Bathroom</label>
+            <NumberInput name="baths" client:load />
+          </div>
+        </div>
+
+        <h3 class="font-sans text-lg">Select items</h3>
+
+        <div class="flex justify-start items-center gap-4 my-8">
+          <div class="flex justify-center items-center gap-2">
+            <div class="grid justify-center items-center gap-2">
+              <input
+                class="peer row-start-1 col-start-1 appearance-none size-6 bg-primary-100 border-2 border-gray-600 rounded checked:bg-primary checked:border-primary checked:text-white"
+                type="checkbox"
+                id="seller-parking"
+                name="parking"
+              />
+              <svg
+                viewBox="0 0 14 14"
+                fill="none"
+                class="pointer-events-none invisible peer-checked:visible size-6 row-start-1 col-start-1 stroke-white"
+              >
+                <path
+                  d="M3 8L6 11L11 3.5"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <label class="text-sm font-sans" for="seller-parking">Parking</label
+            >
+          </div>
+
+          <div class="flex justify-center items-center gap-2">
+            <div class="grid justify-center items-center gap-2">
+              <input
+                class="peer row-start-1 col-start-1 appearance-none size-6 bg-primary-100 border-2 border-gray-600 rounded checked:bg-primary checked:border-primary checked:text-white"
+                type="checkbox"
+                id="seller-pool"
+                name="pool"
+              />
+              <svg
+                viewBox="0 0 14 14"
+                fill="none"
+                class="pointer-events-none invisible peer-checked:visible size-6 row-start-1 col-start-1 stroke-white"
+              >
+                <path
+                  d="M3 8L6 11L11 3.5"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
+
+            <label for="seller-pool">Pool</label>
+          </div>
+
+          <div class="flex justify-center items-center gap-2">
+            <div class="grid justify-center items-center gap-2">
+              <input
+                class="peer row-start-1 col-start-1 appearance-none size-6 bg-primary-100 border-2 border-gray-600 rounded checked:bg-primary checked:border-primary checked:text-white"
+                type="checkbox"
+                id="seller-view"
+                name="view"
+              />
+              <svg
+                viewBox="0 0 14 14"
+                fill="none"
+                class="pointer-events-none invisible peer-checked:visible size-6 row-start-1 col-start-1 stroke-white"
+              >
+                <path
+                  d="M3 8L6 11L11 3.5"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <label for="seller-view">View</label>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="px-16 py-2 bg-primary-700 rounded-full text-white"
+          >Submit</button
+        >
+      </form>
+    </div>
+  </section>
+</Layout>

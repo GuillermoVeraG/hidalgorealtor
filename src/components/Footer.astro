@@ -3,7 +3,7 @@ import Href from "./icons/Href.astro";
 import Logo from "./icons/Logo.astro";
 ---
 
-<footer class="bg-verde pt-16 pb-4 px-20">
+<footer class="bg-verde pt-16 pb-4 px-8 sm:px-10">
   <div class="max-w-7xl mx-auto flex justify-between items-start gap-4 w-full">
     <div class="w-20">
       <h2 class="font-semibold mb-10 text-white">Follow us</h2>
@@ -42,7 +42,7 @@ import Logo from "./icons/Logo.astro";
       </h3>
     </div>
 
-    <div class="w-1/3">
+    <div class="hidden md:block w-1/3">
       <a
         target="_blank"
         href="https://www.google.com/maps/place/15000+Pines+Blvd+%23315,+Pembroke+Pines,+FL+33027,+EE.+UU./@26.0067239,-80.3457248,17z/data=!3m1!4b1!4m5!3m4!1s0x88d9a6a226ed4a63:0x41323ceedd56c563!8m2!3d26.0067239!4d-80.3457248?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
@@ -54,6 +54,18 @@ import Logo from "./icons/Logo.astro";
         />
       </a>
     </div>
+  </div>
+  <div class="block md:hidden w-full my-8">
+    <a
+      target="_blank"
+      href="https://www.google.com/maps/place/15000+Pines+Blvd+%23315,+Pembroke+Pines,+FL+33027,+EE.+UU./@26.0067239,-80.3457248,17z/data=!3m1!4b1!4m5!3m4!1s0x88d9a6a226ed4a63:0x41323ceedd56c563!8m2!3d26.0067239!4d-80.3457248?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
+    >
+      <img
+        class="rounded-2xl border-4 border-primary shadow-2xl h-60 w-full object-cover object-bottom"
+        src="/images/mapa.webp"
+        alt="Location imagen"
+      />
+    </a>
   </div>
   <div class="max-w-7xl mx-auto">
     <div class="flex gap-4 justify-start items-center mb-4">

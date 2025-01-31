@@ -60,6 +60,7 @@ export default {
         "team-banner": "url('/images/bg/bg-team.webp')",
         "services-banner": "url('/images/bg/bg-services.webp')",
         "seller-banner": "url('/images/bg/bg-seller.webp')",
+        "contact-banner": "url('/images/bg/bg-contact.webp')",
       },
     },
   },

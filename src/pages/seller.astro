@@ -12,16 +12,16 @@ import MultiRangeInput from "@/components/MultiRangeInput";
   >
   </div>
 
-  <section class="max-w-7xl mx-auto mb-10 mt-20">
+  <section class="max-w-7xl mx-auto mb-10 mt-20 px-10">
     <div
-      class="flex flex-col md:flex-row justify-start items-center gap-60 mb-20 mx-auto"
+      class="flex flex-col lg:flex-row justify-between items-center my-10 mx-auto gap-20"
     >
       <h2
-        class="w-[340px] italic font-serif text-4xl md:text-5xl text-center leading-10"
+        class="w-full text-center lg:text-left lg:w-[500px] italic font-serif text-4xl md:text-5xl leading-10 mb-4"
       >
-        Let's help you sell your home today
+        Let's help you sell <br />your home today
       </h2>
-      <p class="w-[485px] my-10">
+      <p class="w-full lg:w-1/2">
         Finding the right realtor is crucial when navigating the complex world
         of real estate. A skilled realtor not only understands the local market
         but also possesses the expertise to guide you through the buying or
@@ -29,10 +29,17 @@ import MultiRangeInput from "@/components/MultiRangeInput";
       </p>
     </div>
 
-    <div class="flex justify-center items-start gap-20">
-      <img src="/images/seller.webp" alt="seller" class="rounded-xl" />
+    <div class="flex justify-between items-start gap-20 mt-20 mb-48">
+      <img
+        src="/images/seller.webp"
+        alt="seller"
+        class="hidden lg:block rounded-xl w-10 lg:w-[400px] xl:w-fit"
+      />
 
-      <form action="" class="px-8 pt-4 pb-16 bg-primary-100 rounded-xl w-full">
+      <form
+        action=""
+        class="px-12 pt-8 pb-16 bg-primary-100 rounded-xl w-full lg:w-1/2"
+      >
         <h3 class="font-serif text-4xl">Get a Value</h3>
         <p class="w-3/5 mt-2 mb-8">
           Please complete this form to receive an accurate valuation of your

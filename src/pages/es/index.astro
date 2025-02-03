@@ -1,16 +1,38 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
-import Trans from "@/i18n/Trans.astro";
+import CityContainer from "@/components/CityContainer.astro";
+import Testimonials from "@/components/Testimonials.astro";
+
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 ---
 
 <Layout title="Welcome a hidalgo">
-  <Menu />
-  <main>
-    <h1 class="text-primary font-sans">
-      <Trans i18nKey="home.welcome">
-        Welcome to <span class="text-gradient font-serif italic">Hidalgo</span>
-      </Trans>
-    </h1>
-  </main>
-</Layout>
+  <Menu isFloating isWhite />
+  <div
+    class="h-[500px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+    <div
+      class="uppercase font-serif text-4xl md:text-6xl text-white w-60 md:w-[440px] text-center leading-[3rem] md:leading-[4.5rem]"
+    >
+      {t("home.header.title")}
+    </div>
+  </div>
+  <main class="">
+    <section class="bg-white pt-16 lg:pt-40 md:pt-24 px-20 max-w-7xl mx-auto">
+      <h1 class="uppercase font-serif text-3xl md:text-4xl mb-20">
+        {t("home.city.title1")}
+        <div class="italic normal-case mt-2">
+          {t("home.city.title2")}
+        </div>
+      </h1>
+    </section>
+
+    <CityContainer />
+    <Testimonials />
+  </main></Layout
+>

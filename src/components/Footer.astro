@@ -1,12 +1,17 @@
 ---
 import Href from "./icons/Href.astro";
 import Logo from "./icons/Logo.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 ---
 
 <footer class="bg-verde pt-16 pb-4 px-8 sm:px-10">
   <div class="max-w-7xl mx-auto flex justify-between items-start gap-4 w-full">
     <div class="w-20">
-      <h2 class="font-semibold mb-10 text-white">Follow us</h2>
+      <h2 class="font-semibold mb-10 text-white">{t("footer.follow")}</h2>
 
       <a
         href="https://www.instagram.com/hidalgo.realtor/"
@@ -23,7 +28,7 @@ import Logo from "./icons/Logo.astro";
     </div>
 
     <div class="w-80">
-      <h2 class="font-semibold mb-10 text-white">Contact</h2>
+      <h2 class="font-semibold mb-10 text-white">{t("footer.contac")}</h2>
 
       <a
         href="https://wa.me/17722404094"

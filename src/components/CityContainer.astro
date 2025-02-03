@@ -1,27 +1,32 @@
 ---
 import CityItem from "@/components/CityItem.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const CITIES = [
   {
-    title: "Miramar",
-    subtitle: "The World Traveler",
-    desc: "Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures.",
+    title: t("home.city1.title"),
+    subtitle: t("home.city1.subtitle"),
+    desc: t("home.city1.description"),
     img1: "/images/cities/miramar-1.webp",
     img2: "/images/cities/miramar-2.webp",
     href: "/buyer/result/sale/miramar/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
   },
   {
-    title: "Pembroke Pines",
-    subtitle: "The Family Guardian",
-    desc: "Pembroke Pines resembles a friend who's the ultimate family person. They're reliable, warm, and always looking out for their loved ones.",
+    title: t("home.city2.title"),
+    subtitle: t("home.city2.subtitle"),
+    desc: t("home.city2.description"),
     img1: "/images/cities/pembrohke-1.webp",
     img2: "/images/cities/pembrohke-2.webp",
     href: "/buyer/result/sale/pembroke%20pines/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
   },
   {
-    title: "Southwest Ranches",
-    subtitle: "The Country Soul",
-    desc: "Southwest Ranches is like a friend with a rustic heart. They're laid-back, enjoy wide-open spaces, and have a love for the great outdoors.",
+    title: t("home.city3.title"),
+    subtitle: t("home.city3.subtitle"),
+    desc: t("home.city3.description"),
     img1: "/images/cities/southwest-1.webp",
     img2: "/images/cities/southwest-2.webp",
     href: "/buyer/result/sale/Southwest%20Ranches/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
@@ -29,25 +34,25 @@ const CITIES = [
 ];
 const CITIES2 = [
   {
-    title: "Weston",
-    subtitle: "The elegant aristocrat",
-    desc: "Weston is like a friend who embodies elegance and luxury. They appreciate the finer things in life and enjoy upscale experiences.",
+    title: t("home.city4.title"),
+    subtitle: t("home.city4.subtitle"),
+    desc: t("home.city4.description"),
     img1: "/images/cities/weston-1.webp",
     img2: "/images/cities/weston-2.webp",
     href: "/buyer/result/sale/Weston/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
   },
   {
-    title: "Cooper City",
-    subtitle: "The Unconditional",
-    desc: "Cooper City is like that friend who's unconditional. They're known for their unwavering loyalty and dependable presence who value their community's warmth, sense of belonging, and comfort.",
+    title: t("home.city5.title"),
+    subtitle: t("home.city5.subtitle"),
+    desc: t("home.city5.description"),
     img1: "/images/cities/cooper-1.webp",
     img2: "/images/cities/cooper-2.webp",
     href: "/buyer/result/sale/Cooper%20City/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
   },
   {
-    title: "Davie",
-    subtitle: "The Cowboy Adventurer",
-    desc: "Davie resembles a friend with a cowboy spirit. They're easygoing, love the outdoors, and are always up for a relaxed adventure.",
+    title: t("home.city6.title"),
+    subtitle: t("home.city6.subtitle"),
+    desc: t("home.city6.description"),
     img1: "/images/cities/davie-1.webp",
     img2: "/images/cities/davie-2.webp",
     href: "/buyer/result/sale/Davie/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
@@ -75,7 +80,7 @@ const CITIES2 = [
       class="border border-black w-52
     py-2 px-4 rounded-2xl text-sm"
       aria-label="Show More Cities"
-      >Show More
+      >{t("home.city.boton2")}
     </button>
   </div>
   <div id="moreCities" class="hidden">
@@ -98,7 +103,7 @@ const CITIES2 = [
         class="border border-black w-52
       py-2 px-4 rounded-2xl text-sm"
         aria-label="Show Less Cities"
-        >Show less
+        >{t("home.city.boton3")}
       </button>
     </div>
   </div>

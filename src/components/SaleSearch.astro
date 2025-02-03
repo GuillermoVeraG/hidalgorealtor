@@ -46,14 +46,14 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     </div>
 
     <div class="flex justify-center items-center gap-2">
-      <label class="w-20" for="property-beds"
+      <label class="w-28" for="property-beds"
         >{t("buyer.search.sale.beds")}</label
       >
       <NumberInput name="beds" client:load />
     </div>
 
     <div class="flex justify-center items-center gap-2">
-      <label class="w-20" for="property-baths"
+      <label class="w-28" for="property-baths"
         >{t("buyer.search.sale.baths")}</label
       >
       <NumberInput name="baths" client:load />

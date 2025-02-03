@@ -1,5 +1,10 @@
 ---
 import ArrowLarge from "@/components/icons/ArrowLarge.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const { title, subtitle, desc, img1, img2, href, isRight } = Astro.props;
 
@@ -22,7 +27,8 @@ const bg = isRight ? "bg-primary-100" : "bg-white";
       <a
         class="border border-black flex items-center justify-center gap-4 w-48 py-2 px-4 rounded-2xl text-sm mt-4"
         href={href}
-        >View Property <ArrowLarge className="mt-1 h-4 stroke-black" />
+        >{t("home.city.boton1")}
+        <ArrowLarge className="mt-1 h-4 stroke-black" />
       </a>
     </div>
     <div class="w-1/2 relative">

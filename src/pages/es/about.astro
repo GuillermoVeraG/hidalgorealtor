@@ -1,0 +1,100 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import Testimonials from "@/components/Testimonials.astro";
+import AboutItem from "@/components/AboutItem.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const items = [
+  {
+    title: t("about.choose.title1"),
+    icon: "Handshake",
+    desc: t("about.choose.description1"),
+  },
+  {
+    title: t("about.choose.title2"),
+    icon: "Book",
+    desc: t("about.choose.description2"),
+  },
+  {
+    title: t("about.choose.title3"),
+    icon: "World",
+    desc: t("about.choose.description3"),
+  },
+];
+---
+
+<Layout title="Welcome a hidalgo">
+  <Menu isFloating isWhite />
+  <div
+    class="h-[473px] w-full bg-about-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+  >
+    <div class="font-serif italic text-6xl sm:text-7xl text-white">
+      {t("about.header.title")}
+    </div>
+  </div>
+
+  <main class="relative">
+    <section class="flex flex-col items-center py-20">
+      <img
+        class="rounded-full h-56 sm:h-64 absolute -top-24"
+        src="/images/alexhidalgo.webp"
+        alt="Photo Alex"
+      />
+      <h2
+        class="font-serif italic text-3xl mt-28 w-80 sm:w-[480px] text-center leading-8 md:leading-[3rem] mb-10"
+      >
+        {t("about.title")}
+      </h2>
+      <div
+        class="text-base font-sans mx-56 md:w-[580px] text-center flex flex-col gap-6"
+      >
+        <p>
+          {t("about.description1")}
+        </p>
+
+        <p>
+          {t("about.description2")}
+        </p>
+
+        <p>
+          {t("about.description3")}
+        </p>
+
+        <p>
+          {t("about.description4")}
+        </p>
+
+        <p>{t("about.description5")}</p>
+
+        <p>
+          {t("about.description6")}
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-primary-100 py-16 px-10 md:px-20 text-center">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-serif uppercase italic text-4xl mb-10">
+          {t("about.choose.title")}
+        </h2>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          {
+            items.map(({ title, icon, desc }) => (
+              <AboutItem title={title} icon={icon} desc={desc} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <Testimonials />
+  </main>
+</Layout>

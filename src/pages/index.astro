@@ -3,7 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import CityContainer from "@/components/CityContainer.astro";
 import Testimonials from "@/components/Testimonials.astro";
-
+import HomeSearch from "@/components/HomeSearch.astro";
+import HomeWindow from "@/components/HomeWindow.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -14,15 +15,17 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 <Layout title="Welcome a hidalgo">
   <Menu isFloating isWhite />
   <div
-    class="h-[500px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+    class="relative h-[500px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
   >
+    <HomeSearch />
+
     <div
       class="uppercase font-serif text-4xl md:text-6xl text-white w-60 md:w-[440px] text-center leading-[3rem] md:leading-[4.5rem]"
     >
       {t("home.header.title")}
     </div>
   </div>
-  <main class="">
+  <main class="relative">
     <section class="bg-white pt-16 lg:pt-40 md:pt-24 px-20 max-w-7xl mx-auto">
       <h1 class="uppercase font-serif text-3xl md:text-4xl mb-20">
         {t("home.city.title1")}
@@ -32,7 +35,9 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       </h1>
     </section>
 
+    <HomeWindow />
+
     <CityContainer />
     <Testimonials />
-  </main></Layout
->
+  </main>
+</Layout>

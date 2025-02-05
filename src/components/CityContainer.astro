@@ -1,5 +1,6 @@
 ---
 import CityItem from "@/components/CityItem.astro";
+import CityItemMobile from "@/components/CityItemMobile.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -60,6 +61,26 @@ const CITIES2 = [
 ];
 ---
 
+<section class="sm:hidden">
+  <div class="flex">
+    <button> </button>
+  </div>
+
+  <div class="flex justify-start items-center gap-4">
+    {
+      CITIES.map((data) => (
+        <CityItemMobile
+          title={data.title}
+          subtitle={data.subtitle}
+          desc={data.desc}
+          img={data.img1}
+          href={data.href}
+        />
+      ))
+    }
+  </div>
+</section>
+
 <section class="hidden sm:block">
   {
     CITIES.map((data, index) => (
@@ -107,7 +128,6 @@ const CITIES2 = [
       </button>
     </div>
   </div>
-  <section class="block sm:hidden">city mobile</section>
 </section>
 
 <script>

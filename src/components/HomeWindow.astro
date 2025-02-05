@@ -1,0 +1,25 @@
+---
+import Close from "@/components/icons/Close.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+---
+
+<div
+  class="hidden lg:block absolute top-16 right-16 bg-white rounded-1xl px-6 py-10 shadow-xl rounded-3xl border-2 border-gray-200/30"
+>
+  <div class="relative flex justify-between items-center gap-6">
+    <img
+      class="w-auto h-16 rounded-full"
+      src="/images/alexhidalgo.webp"
+      alt="Photo Alex"
+    />
+    <p class="w-52 text-sm">{t("home.header.window.desc.")}</p>
+
+    <button class="absolute flex -top-2 -right-2"
+      ><Close className="size-5 stroke-black" /></button
+    >
+  </div>
+</div>

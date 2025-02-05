@@ -16,6 +16,10 @@ export const ui = {
     "nav.services": "Services",
 
     "home.header.title": "Home is Where your story begins",
+    "home.header.search": "Search city, code or MLS#",
+    "home.header.search.button": "Filters",
+    "home.header.window.desc.":
+      "If you have any questions, we're here to help.",
     "home.city.title1": "Let's explore",
     "home.city.title2": "Broward's real estate together!",
     "home.city1.title": "Miramar",
@@ -215,6 +219,10 @@ export const ui = {
     "nav.services": "Servicios",
 
     "home.header.title": "El hogar es donde comienza tu historia",
+    "home.header.search": "Buscar ciudad, código o MLS#",
+    "home.header.search.button": "Filtros",
+    "home.header.window.desc.":
+      "Si tienes alguna pregunta, estamos aquí para ayudarte.",
     "home.city.title1": "Exploremos",
     "home.city.title2": "¡Los bienes raíces de Broward juntos!",
     "home.city1.title": "Miramar",

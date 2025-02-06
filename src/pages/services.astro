@@ -3,35 +3,32 @@ import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import ServicesItems from "@/components/ServicesItems.astro";
 import Testimonials from "@/components/Testimonials.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const serviceItems = [
   {
     icon: "RealEstate",
-    title: "Selling",
-    desc1:
-      "Property Valuations Accurate market assessments to determine the bestprice for your home.",
-    desc2:
-      "Professional Marketing Highlight your property with compelling listings and extensive exposure.",
-    desc3:
-      "Smooth Transactions From negotiations to legalities, we ensure a seamless selling process.",
+    title: t("our.services.title1"),
+    desc1: t("our.services.Selling.description1"),
+    desc2: t("our.services.Selling.description2"),
+    desc3: t("our.services.Selling.description3"),
   },
   {
     icon: "HouseMoney",
-    title: "Buying",
-    desc1:
-      "Tailored Property Search Find your ideal home with our personalised guidance.",
-    desc2:
-      "Market Insights Stay informed with expert advice and the latest market trends.",
-    desc3:
-      "Support Every Step From viewings to finalising the deal, we´ll be with you all the way.",
+    title: t("our.services.title2"),
+    desc1: t("our.services.buying.description1"),
+    desc2: t("our.services.buying.description2"),
+    desc3: t("our.services.buying.description3"),
   },
   {
     icon: "Keys",
-    title: "Renting",
-    desc1:
-      "For Tenants A wide selection of houses to suit all preferences and budgets, with transparent terms and personalised assistance.",
-    desc2:
-      "For Landlords Expert marketing, tenant management, and property care to maximise your rental income.",
+    title: t("our.services.title3"),
+    desc1: t("our.services.renting.description1"),
+    desc2: t("our.services.renting.description2"),
   },
 ];
 ---
@@ -47,12 +44,10 @@ const serviceItems = [
     <h2
       class="capitalize font-serif italic text-3xl md:text-5xl text-center mx-auto"
     >
-      Our Services
+      {t("our.services.title")}
     </h2>
     <p class="mx-auto text-center w-[420px] my-10">
-      We offer comprehensive services to meet all your property needs, whether
-      you're renting, buying, or selling a house. Our goal is to provide expert
-      guidance and make the process smooth and hassle-free
+      {t("our.services.description")}
     </p>
     <div
       class="flex flex-wrap flex-col md:flex-row justify-evenly items-center md:items-start gap-14 md:gap-4"

@@ -192,5 +192,6 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     const formData = new FormData(form);
     const { data, error } = await actions.property.getUrlParams(formData);
     if (!error) navigate(`/buyer/result/${data}`);
+    else console.error(error);
   });
 </script>

@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { actions } from "astro:actions";
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
@@ -13,6 +14,8 @@ import PropertiesItem from "@/components/PropertiesItem.astro";
 
 import Arrow from "@/components/icons/Arrow.astro";
 import Filter from "@/components/icons/Filter.astro";
+
+const relativeLocale = Astro.currentLocale || "en";
 
 const url = new URL(Astro.url);
 const { type, subtype, address, beds, baths, price, sqft, amenities, page } =
@@ -71,7 +74,10 @@ const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
   >
     <div class="flex justify-between items-center w-full py-8 font-sans">
       <div>
-        <a href="/buyer/" class="flex items-center justify-start gap-2">
+        <a
+          href={getRelativeLocaleUrl(relativeLocale, "/buyer/")}
+          class="flex items-center justify-start gap-2"
+        >
           <Arrow className="size-5 stroke-black -ml-2" />Back to Search</a
         >
       </div>

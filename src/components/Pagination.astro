@@ -1,6 +1,11 @@
 ---
 import Arrow from "@/components/icons/Arrow.astro";
 import Arrows from "@/components/icons/Arrows.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const { currentPage, lastPage, url } = Astro.props;
 ---
@@ -27,9 +32,9 @@ const { currentPage, lastPage, url } = Astro.props;
         )}
 
         <p class="text-slate-600 dark:text-slate-400 px-4">
-          Page
+          {t("buyer.result.paging.page")}
           <strong class="text-slate-800 dark:text-white">{currentPage}</strong>
-          of
+          {t("buyer.result.paging.of")}
           <strong class="text-slate-800 dark:text-white">{lastPage}</strong>
         </p>
 

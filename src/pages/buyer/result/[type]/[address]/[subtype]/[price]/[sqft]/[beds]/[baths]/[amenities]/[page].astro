@@ -15,7 +15,11 @@ import PropertiesItem from "@/components/PropertiesItem.astro";
 import Arrow from "@/components/icons/Arrow.astro";
 import Filter from "@/components/icons/Filter.astro";
 
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
 const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const url = new URL(Astro.url);
 const { type, subtype, address, beds, baths, price, sqft, amenities, page } =
@@ -78,13 +82,16 @@ const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
           href={getRelativeLocaleUrl(relativeLocale, "/buyer/")}
           class="flex items-center justify-start gap-2"
         >
-          <Arrow className="size-5 stroke-black -ml-2" />Back to Search</a
+          <Arrow className="size-5 stroke-black -ml-2" />{
+            t("buyer.result.back")
+          }</a
         >
       </div>
       <div>
         <button
           class="rounded-2xl flex justify-center items-center gap-2 hover:bg-primary-800 hover:text-white px-4 py-2 border border-black hover:border-primary-800 group/button"
-          >Filters <Filter
+          >{t("buyer.result.filters")}
+          <Filter
             className="size-5 stroke-black group-hover/button:stroke-white"
           /></button
         >
@@ -92,7 +99,8 @@ const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
     </div>
 
     <div class="flex justify-start items-center w-full pb-4 font-sans">
-      {total} Listings
+      {total}
+      {t("buyer.result.listings")}
     </div>
 
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">

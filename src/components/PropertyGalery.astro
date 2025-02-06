@@ -1,5 +1,10 @@
 ---
 import Photos from "@/components/icons/Photos.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const { address, photos } = Astro.props;
 const total = photos.length;
@@ -12,7 +17,7 @@ const total = photos.length;
     class="absolute flex justify-center items-center gap-2 bottom-4 right-4 rounded-xl shadow-md bg-white px-4 py-2 cursor-pointer"
   >
     <Photos className="size-4 stroke-black" />
-    <span class="text-xs">Show all photos</span>
+    <span class="text-xs">{t("buyer.overview.photos")}</span>
   </button>
   {
     total >= 4 && (

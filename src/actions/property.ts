@@ -63,6 +63,7 @@ export const property = {
         input.urlBase
       );
 
+      //console.log(fullUrl);
       const response = await fetch(encodeURI(fullUrl));
       const data = await response.json();
       const { total, bundle } = data;

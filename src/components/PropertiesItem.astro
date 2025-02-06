@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import type { PropertyResultItems } from "@/utils/property";
 import { USDollar, USNumber } from "@/utils/property";
 
@@ -8,6 +9,11 @@ import Bed from "@/components/icons/Bed.astro";
 import Sqft from "@/components/icons/Sqft.astro";
 import Bath from "@/components/icons/Bath.astro";
 import Parking from "@/components/icons/Parking.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 type Props = { property: PropertyResultItems };
 
@@ -59,10 +65,13 @@ const {
 
   <div class="absolute bottom-4 left-0">
     <a
-      href={`/buyer/overview/${mlsnumber}/`}
+      href={getRelativeLocaleUrl(
+        relativeLocale,
+        `/buyer/overview/${mlsnumber}/`
+      )}
       class="rounded-2xl flex justify-center items-center hover:bg-primary-800 hover:text-white py-2 border border-black hover:border-primary-800 w-40"
     >
-      View Property
+      {t("buyer.result.btn")}
     </a>
   </div>
 </article>

@@ -115,6 +115,27 @@ export const ui = {
       "Enter the minimun and maximum amount you want",
     "buyer.search.rent.but": "Search",
 
+    "buyer.result.back": "Back to Search",
+    "buyer.result.filters": "Filters",
+    "buyer.result.listings": "Listings",
+    "buyer.result.btn": "View Property",
+    "buyer.result.paging.page": "Page",
+    "buyer.result.paging.of": "of",
+
+    "buyer.overview.back": "Back to Results",
+    "buyer.overview.share": "Share",
+    "buyer.overview.photos": "Show all photos",
+    "buyer.overview.description": "property description",
+    "buyer.overview.details": "property details",
+    "buyer.overview.details.year": "Year Built",
+    "buyer.overview.details.bath": "Bathrooms",
+    "buyer.overview.details.beds": "Bedrooms",
+    "buyer.overview.details.parking": "Parking",
+    "buyer.overview.location": "property location",
+
+    "buyer.overview.agent.title": "Property Agent",
+    "buyer.overview.agent.btn": "Get in touch",
+
     "about.header.title": "About me",
     "about.title":
       "Hi, I'm Alex, your go-to partner for Broward, Florida's real estate scene.",
@@ -315,6 +336,27 @@ export const ui = {
     "buyer.search.rent.sqft.title": "Rango Metros Cuadrados",
     "buyer.search.rent.sqft.desc": "Selecciona lo minimo y maximo del tamaño",
     "buyer.search.rent.but": "Buscar",
+
+    "buyer.result.back": "Volver a la Busquedad",
+    "buyer.result.filters": "Filtros",
+    "buyer.result.listings": "Propiedades",
+    "buyer.result.btn": "Ver Propiedad",
+    "buyer.result.paging.page": "Pagina",
+    "buyer.result.paging.of": "de",
+
+    "buyer.overview.back": "Volver a los Resultados",
+    "buyer.overview.share": "Compartir",
+    "buyer.overview.photos": "Mostrar todas las fotos",
+    "buyer.overview.description": "Descripción de la propiedad",
+    "buyer.overview.details": "Detalles de la propiedad",
+    "buyer.overview.details.year": "Años",
+    "buyer.overview.details.bath": "Baños",
+    "buyer.overview.details.beds": "Habitaciones",
+    "buyer.overview.details.parking": "Estacionamiento",
+    "buyer.overview.location": "Ubicación de la propiedad",
+
+    "buyer.overview.agent.title": "Agente de la propiedad",
+    "buyer.overview.agent.btn": "Ponte en contacto",
 
     "about.header.title": "Acerca de mí",
     "about.title":

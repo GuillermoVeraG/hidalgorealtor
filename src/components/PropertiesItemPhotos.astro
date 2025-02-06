@@ -1,5 +1,13 @@
 ---
 import PhotosGalery from "@/components/PhotosGalery";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+
+//buyer.search.rent.title
+//buyer.search.sale.title
 
 const { proptype, photos } = Astro.props;
 ---
@@ -8,7 +16,11 @@ const { proptype, photos } = Astro.props;
   <div
     class="absolute top-6 left-0 h-11 text-base bg-primary-800 text-white pl-6 pr-10 rounded-e-2xl flex items-center z-20"
   >
-    {proptype == "Residential" ? "For Sale" : "For Rent"}
+    {
+      proptype == "Residential"
+        ? t("buyer.search.sale.title")
+        : t("buyer.search.rent.title")
+    }
   </div>
 
   <PhotosGalery client:load photos={photos} />

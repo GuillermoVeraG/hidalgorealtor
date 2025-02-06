@@ -1,14 +1,15 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react()],
+  integrations: [react()],
 
   i18n: {
     defaultLocale: "en",
@@ -26,6 +27,7 @@ export default defineConfig({
     define: {
       "process.env": process.env,
     },
+
     resolve: {
       // Use react-dom/server.edge instead of react-dom/server.browser for React 19.
       // Without this, MessageChannel from node:worker_threads needs to be polyfilled.
@@ -35,5 +37,7 @@ export default defineConfig({
           }
         : {},
     },
+
+    plugins: [tailwindcss()],
   },
 });

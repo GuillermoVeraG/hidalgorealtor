@@ -18,6 +18,11 @@ import Bed from "@/components/icons/Bed.astro";
 import Sqft from "@/components/icons/Sqft.astro";
 import Bath from "@/components/icons/Bath.astro";
 import Parking from "@/components/icons/Parking.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const { mlsnumber } = Astro.params;
 
@@ -62,14 +67,16 @@ const image = property && property.photos ? property.photos[0] : "";
         <button
           id="backButtonOverview"
           class="flex items-center justify-start gap-2"
-          ><Arrow className="size-5 stroke-black -ml-2" />Back to Result
+          ><Arrow className="size-5 stroke-black -ml-2" />{
+            t("buyer.overview.back")
+          }
         </button>
       </div>
       <div>
         <button
           id="shareButtonOverview"
           class="flex items-center justify-start gap-1"
-          ><Share className="size-5 stroke-black" />Share
+          ><Share className="size-5 stroke-black" />{t("buyer.overview.share")}
         </button>
       </div>
     </div>
@@ -85,7 +92,9 @@ const image = property && property.photos ? property.photos[0] : "";
             <main class="flex flex-col px-4 py-2 gap-2 w-full mb-20">
               <div class="flex flex-col lg:flex-row justify-start lg:justify-between  items-start lg:items-center">
                 <h2 class="text-3xl font-medium">
-                  {property.proptype == "Residential" ? "For Sale" : "For Rent"}
+                  {property.proptype == "Residential"
+                    ? t("buyer.search.sale.title")
+                    : t("buyer.search.rent.title")}
                   {USDollar.format(property.price)}
                 </h2>
                 <div class="flex items-center gap-2 pt-2">
@@ -115,23 +124,31 @@ const image = property && property.photos ? property.photos[0] : "";
               </p>
 
               <h3 class="font-semibold text-lg capitalize mt-6 my-4">
-                property description
+                {t("buyer.overview.description")}
               </h3>
               <p class="text-sm text-pretty">{property.description}</p>
 
               <h3 class="font-semibold text-lg capitalize mt-8 my-4">
-                property details
+                {t("buyer.overview.details")}
               </h3>
               <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 w-full lg:w-4/6">
-                <p>{property.yearbuilt} Year Built</p>
-                <p>{property.baths} Bathrooms</p>
-                <p>{property.beds} Bedrooms</p>
+                <p>
+                  {property.yearbuilt} {t("buyer.overview.details.year")}
+                </p>
+                <p>
+                  {property.baths} {t("buyer.overview.details.bath")}
+                </p>
+                <p>
+                  {property.beds} {t("buyer.overview.details.beds")}
+                </p>
                 <p>{DecimalNumber.format(property.sqft)} Sqft</p>
-                <p>{property.garage} Parking</p>
+                <p>
+                  {property.garage} {t("buyer.overview.details.parking")}
+                </p>
               </div>
 
               <h3 class="font-semibold text-lg capitalize mt-8 my-4">
-                property location
+                {t("buyer.overview.location")}
               </h3>
               <div class="h-64 w-full rounded-lg overflow-hidden shadow-lg">
                 <MapStatic
@@ -143,7 +160,7 @@ const image = property && property.photos ? property.photos[0] : "";
             </main>
             <aside class="hidden w-[30rem] h-60 md:flex flex-col justify-center items-center gap-4 shadow-[0px_0px_6px_2px_rgba(0,_0,_0,_0.1)] rounded-2xl">
               <h3 class="font-serif text-2xl capitalize mb-4">
-                property agent
+                {t("buyer.overview.agent.title")}
               </h3>
               <div class="flex justify-start items-center gap-4 w-52 lg:w-64">
                 <img
@@ -165,7 +182,7 @@ const image = property && property.photos ? property.photos[0] : "";
                 href="/contact/"
                 class="bg-primary text-white py-2 px-4 rounded-2xl text-sm flex justify-center items-center w-52 lg:w-64"
               >
-                Get in touch
+                {t("buyer.overview.agent.btn")}
               </a>
             </aside>
           </div>

@@ -4,7 +4,7 @@ import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 import Logo from "@/components/icons/Logo.astro";
 import MenuButton from "@/components/icons/Menu.astro";
-import { isMenuActive } from "@/utils/menu";
+import { isMenuActive, isCompActive } from "@/utils/menu";
 
 const relativeLocale = Astro.currentLocale || "en";
 const isSpa = relativeLocale == "es";
@@ -12,12 +12,20 @@ const isSpa = relativeLocale == "es";
 const t = useTranslations(relativeLocale as keyof typeof languages);
 const pathname = Astro.url.pathname;
 
+let pathnameUrl = pathname;
+if (pathname.substring(0, 3) == "es/") {
+  pathnameUrl = pathname.substring(3);
+} else if (pathname.substring(0, 4) == "/es/") {
+  pathnameUrl = pathname.substring(4);
+}
+
 const menuItems = [
   {
     id: "",
     menu: t("nav.home"),
     url: getRelativeLocaleUrl(relativeLocale, ""),
     isActive: isMenuActive(pathname, "/"),
+    isCompActive: isCompActive(pathname, "/"),
     show: false,
   },
   {
@@ -25,6 +33,7 @@ const menuItems = [
     menu: t("nav.seller"),
     url: getRelativeLocaleUrl(relativeLocale, "seller"),
     isActive: isMenuActive(pathname, "seller"),
+    isCompActive: isCompActive(pathname, "seller"),
     show: true,
   },
   {
@@ -32,13 +41,37 @@ const menuItems = [
     menu: t("nav.buyer"),
     url: getRelativeLocaleUrl(relativeLocale, "buyer"),
     isActive: isMenuActive(pathname, "buyer"),
+    isCompActive: isCompActive(pathname, "buyer"),
     show: true,
+  },
+  {
+    id: "buyer/result",
+    menu: t("nav.buyer"),
+    url: getRelativeLocaleUrl(
+      relativeLocale,
+      pathnameUrl.includes("buyer/result/") ? pathnameUrl : "buyer/result"
+    ),
+    isActive: isMenuActive(pathname, "buyer/result"),
+    isCompActive: isCompActive(pathname, "buyer/result"),
+    show: false,
+  },
+  {
+    id: "buyer/overview",
+    menu: t("nav.buyer"),
+    url: getRelativeLocaleUrl(
+      relativeLocale,
+      pathnameUrl.includes("buyer/overview/") ? pathnameUrl : "buyer/overview"
+    ),
+    isActive: isMenuActive(pathname, "buyer/overview"),
+    isCompActive: isCompActive(pathname, "buyer/overview"),
+    show: false,
   },
   {
     id: "about",
     menu: t("nav.about"),
     url: getRelativeLocaleUrl(relativeLocale, "about"),
     isActive: isMenuActive(pathname, "about"),
+    isCompActive: isCompActive(pathname, "about"),
     show: true,
   },
   {
@@ -46,6 +79,7 @@ const menuItems = [
     menu: t("nav.team"),
     url: getRelativeLocaleUrl(relativeLocale, "team"),
     isActive: isMenuActive(pathname, "team"),
+    isCompActive: isCompActive(pathname, "team"),
     show: true,
   },
   {
@@ -53,6 +87,7 @@ const menuItems = [
     menu: t("nav.services"),
     url: getRelativeLocaleUrl(relativeLocale, "services"),
     isActive: isMenuActive(pathname, "services"),
+    isCompActive: isCompActive(pathname, "services"),
     show: true,
   },
   {
@@ -60,24 +95,32 @@ const menuItems = [
     menu: t("nav.contact"),
     url: getRelativeLocaleUrl(relativeLocale, "contact"),
     isActive: isMenuActive(pathname, "contact"),
+    isCompActive: isCompActive(pathname, "contact"),
     show: true,
   },
 ];
 
 const actualMenu = menuItems.filter((val) => {
-  return val.isActive;
+  return val.isCompActive;
 })[0];
+
+let langUrl = actualMenu.url;
+if (actualMenu.url.substring(0, 3) == "es/") {
+  langUrl = actualMenu.url.substring(3);
+} else if (actualMenu.url.substring(0, 4) == "/es/") {
+  langUrl = actualMenu.url.substring(4);
+}
 
 const menuLang = [
   {
     id: `en`,
     menu: "english",
-    url: getRelativeLocaleUrl("en", actualMenu.id),
+    url: getRelativeLocaleUrl("en", langUrl),
   },
   {
     id: `es`,
     menu: "español",
-    url: getRelativeLocaleUrl("es", actualMenu.id),
+    url: getRelativeLocaleUrl("es", langUrl),
   },
 ];
 

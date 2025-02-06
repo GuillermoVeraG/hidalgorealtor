@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+
+  --color-primary: #0e7a86;
+  --color-primary-50: #edf5f6;
+  --color-primary-100: #dceced;
+  --color-primary-200: #bad9dc;
+  --color-primary-300: #97c6cb;
+  --color-primary-400: #75b3b9;
+  --color-primary-500: #52a0a8;
+  --color-primary-600: #308d97;
+  --color-primary-700: #0e7a86;
+  --color-primary-800: #095159;
+  --color-primary-900: #04282c;
+  --color-primary-950: #021416;
+
+  --color-secondary: #faf0e6;
+  --color-secondary-50: #fefdfc;
+  --color-secondary-100: #fefcfa;
+  --color-secondary-200: #fdf9f5;
+  --color-secondary-300: #fcf6f0;
+  --color-secondary-400: #fbf3eb;
+  --color-secondary-500: #faf0e6;
+  --color-secondary-600: #d2cac1;
+  --color-secondary-700: #9d9791;
+  --color-secondary-800: #696560;
+  --color-secondary-900: #343230;
+  --color-secondary-950: #1a1918;
+
+  --color-accent: #73bcac;
+  --color-accent-50: #ebf9f6;
+  --color-accent-100: #e9fffa;
+  --color-accent-200: #d7f3ed;
+  --color-accent-300: #afe7db;
+  --color-accent-400: #9ae9d7;
+  --color-accent-500: #87dcc9;
+  --color-accent-600: #73bcac;
+  --color-accent-700: #609d8f;
+  --color-accent-800: #4d7d72;
+  --color-accent-900: #395e56;
+  --color-accent-950: #263e39;
+
+  --color-crema: #f9f7f1;
+  --color-verde: #063e44;
+
+  --background-image-buyer-banner: url("/images/bg/bg-buyer.webp");
+  --background-image-home-banner: url("/images/bg/bg-home.webp");
+  --background-image-about-banner: url("/images/bg/bg-about.webp");
+  --background-image-team-banner: url("/images/bg/bg-team.webp");
+  --background-image-services-banner: url("/images/bg/bg-services.webp");
+  --background-image-seller-banner: url("/images/bg/bg-seller.webp");
+  --background-image-contact-banner: url("/images/bg/bg-contact.webp");
+}
+
+button {
+  @apply cursor-pointer;
+}

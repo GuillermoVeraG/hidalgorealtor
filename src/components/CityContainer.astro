@@ -1,6 +1,6 @@
 ---
 import CityItem from "@/components/CityItem.astro";
-import CityItemMobile from "@/components/CityItemMobile.astro";
+import CitiesSlider from "@/components/CitiesSlider.tsx";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -59,26 +59,16 @@ const CITIES2 = [
     href: "/buyer/result/sale/Davie/Single%20Family%20Residence/0-5000000/0-5000/0/0/none/1/",
   },
 ];
+
+const CITIESMOBILE = [...new Set([...CITIES, ...CITIES2])];
 ---
 
-<section class="sm:hidden">
-  <div class="flex">
-    <button> </button>
-  </div>
-
-  <div class="flex justify-start items-center gap-4">
-    {
-      CITIES.map((data) => (
-        <CityItemMobile
-          title={data.title}
-          subtitle={data.subtitle}
-          desc={data.desc}
-          img={data.img1}
-          href={data.href}
-        />
-      ))
-    }
-  </div>
+<section class="sm:hidden w-full mx-auto">
+  <CitiesSlider
+    button={t("home.city.boton1")}
+    cities={CITIESMOBILE}
+    client:load
+  />
 </section>
 
 <section class="hidden sm:block">

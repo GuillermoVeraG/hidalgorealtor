@@ -32,7 +32,7 @@ Astro.response.headers.set(
     <meta property="og:description" content={description} />
     {image && <meta property="og:image" content={image} />}
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <slot />
     <Footer />
   </body>

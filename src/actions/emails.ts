@@ -8,29 +8,45 @@ export const emails = {
   sendEmailSeller: defineAction({
     accept: "form",
     input: z.object({
-      "Customer-Name": z.string(),
-      "Customer-Email": z.string(),
-      "Customer-Service": z.string(),
-      "Customer-Message": z.string(),
+      FirstName: z.string(),
+      LastName: z.string(),
+      Email: z.string().email(),
+      Prefix: z.string(),
+      Phone: z.string(),
+      Location: z.string(),
+      "min-sqft": z.number(),
+      "max-sqft": z.number(),
+      parking: z.optional(z.boolean()),
+      pool: z.optional(z.boolean()),
+      view: z.optional(z.boolean()),
     }),
     handler: async (input) => {
       const {
-        "Customer-Name": name,
-        "Customer-Email": email,
-        "Customer-Service": service,
-        "Customer-Message": message,
+        FirstName,
+        LastName,
+        Email,
+        Prefix,
+        Phone,
+        Location,
+        "min-sqft": minsqft,
+        "max-sqft": maxsqft,
+        parking,
+        pool,
+        view,
       } = input;
 
-      const emailFrom = "Contact Audienzelabs <hello@audienzelabs.com>";
+      const emailFrom = "Seller Audienzelabs <hello@audienzelabs.com>";
 
       const { data, error } = await resend.emails.send({
         from: emailFrom,
         to: ["hello@audienzelabs.com"],
-        subject: "Audienzelabs Contact Form " + name,
+        subject: `Audienzelabs Seller Form ${FirstName} ${LastName}`,
         html:
-          `<p><strong>From:</strong> ${name} (<strong>${email}</strong>) </p>` +
-          `<p><strong>Service ${service}</strong></p>` +
-          `<p>${message}</p>`,
+          `<p><strong>From:</strong> ${FirstName} ${LastName} (<strong>${Email}</strong>) </p>` +
+          `<p><strong>Phone:</strong> ${Prefix} ${Phone}</p>` +
+          `<p><strong>Location:</strong> ${Location}</p>` +
+          `<p><strong>Sqft:</strong> ${minsqft} to ${maxsqft}</p>` +
+          `<p><strong>Ameniaties:</strong> ${parking ? "Parking" : ""} ${pool ? "Pool" : ""} ${view ? "View" : ""}</p>`,
       });
 
       if (error) {

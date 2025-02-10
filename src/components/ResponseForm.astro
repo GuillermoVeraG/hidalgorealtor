@@ -6,7 +6,7 @@ const { msgError, msgSuccess } = Astro.props;
 
 <dialog
   id="dialogForm"
-  class="max-w-sm w-full bg-primary-50 text-black text-xs font-light rounded-xl relative backdrop:bg-primary-300/80"
+  class="max-w-sm w-full bg-primary-50 text-black text-xs font-light rounded-xl backdrop:bg-primary-300/80 relative"
 >
   <h5 class="p-10 text-xl font-bold tracking-tight text-black">
     {msgSuccess}
@@ -18,7 +18,7 @@ const { msgError, msgSuccess } = Astro.props;
 
 <dialog
   id="dialogFormError"
-  class="max-w-sm w-full bg-red-600 text-white text-xs font-light rounded-xl relative backdrop:bg-white/80"
+  class="max-w-sm w-full bg-red-600 text-white text-xs font-light rounded-xl backdrop:bg-white/80 relative"
 >
   <h5 class="p-10 text-xl font-bold tracking-tight text-white">
     {msgError}

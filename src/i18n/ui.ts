@@ -224,8 +224,12 @@ export const ui = {
     "testimonials.title": "What customer say",
     "testimonials.description":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "testimonials.name.description":
+    "testimonials.description1":
       "I highly recommend it. I will continue to use your services for any real estate agent needs in the future. Very nice to work with Alex!",
+    "testimonials.description2":
+      "Everything went in a timely manner, he did an excellent job and I am very grateful for the outcome of the transaction. Very professional!",
+    "testimonials.description3":
+      "An excellent attention!!! He was attentive to every detail and his help was invaluable. I was completely satisfied.",
 
     "footer.follow": "Follow us",
     "footer.contac": "Contact",
@@ -447,8 +451,12 @@ export const ui = {
     "testimonials.title": "Lo que dice el cliente",
     "testimonials.description":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "testimonials.name.description":
-      "Lo recomiendo mucho. Continuaré utilizando sus servicios para cualquier necesidad de agente inmobiliario en el futuro. ¡Qué bueno trabajar con Alex!",
+    "testimonials.description1":
+      "La recomiendo altamente. Continuaré utilizando sus servicios para cualquier necesidad de agente inmobiliario en el futuro.  Muy agradable trabajar con Alex!",
+    "testimonials.description2":
+      "Todo salió de manera oportuna, hizo un excelente trabajo y estoy muy agradecida por el resultado de la transacción. Muy profesional!",
+    "testimonials.description3":
+      "Una atención excelente!!! Estuvo pendientes de cada detalle y su ayuda fue invaluable. Quedé completamente satisfecha.",
 
     "footer.follow": "Síganos",
     "footer.contac": "Contacto",

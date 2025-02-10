@@ -17,6 +17,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
   >
     <input
       type="text"
+      name="address"
       class="w-full h-14 group-hover/search:bg-primary-100 focus-visible:border-none focus-visible:outline-none"
       placeholder={t("home.header.search")}
     />
@@ -35,3 +36,20 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     </button>
   </form>
 </div>
+
+<script>
+  import { actions } from "astro:actions";
+  import { navigate } from "astro:transitions/client";
+
+  const form = document.querySelector("form") as HTMLFormElement;
+  const isSpa = window.location.pathname.includes("/es/");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const { data, error } =
+      await actions.property.getUrlLocationParams(formData);
+    if (!error) navigate(`${isSpa ? "/es" : ""}/buyer/result/${data}`);
+    else console.error(error);
+  });
+</script>

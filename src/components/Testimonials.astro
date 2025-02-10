@@ -1,53 +1,43 @@
 ---
-import Arrow from "./icons/Arrow.astro";
+import TestimonialsSlider from "@/components/TestimonialsSlider.tsx";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const testimonials = [
+  {
+    name: "CARLOS SILVA",
+    desc: t("testimonials.description1"),
+  },
+  {
+    name: "ANGELA PACHECO",
+    desc: t("testimonials.description2"),
+  },
+  {
+    name: "SUSANA TORRES",
+    desc: t("testimonials.description3"),
+  },
+];
 ---
 
 <section class="bg-crema py-16 px-20">
   <div
-    class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-4 w-full"
+    class="max-w-7xl mx-auto flex flex-col md:flex-row justify-stretch items-start"
   >
     <div class="w-full md:w-1/2">
       <h2 class="font-serif text-3xl md:text-5xl mb-5 md:mb-10 lg:ml-12">
         {t("testimonials.title")}
       </h2>
 
-      <p class="font-sans text-base lg:ml-12 w-full md:w-72 lg:w-80">
+      <p class="font-sans text-base lg:ml-12 md:w-72 lg:w-80">
         {t("testimonials.description")}
       </p>
     </div>
 
     <div class="w-full md:w-1/2 mt-20">
-      <h2 class="uppercase font-serif text-base md:text-lg mb-5">
-        Carlos Silva
-      </h2>
-
-      <p class="font-serif text-2xl w-full lg:w-96">
-        {t("testimonials.name.description")}
-      </p>
-      <div class="flex justify-start items-center my-10 gap-5">
-        <button
-          id="testimonialLeft"
-          class="border border-black
-    py-1 px-1 rounded-full"
-          aria-label="Slide testimonial left"
-        >
-          <Arrow className="size-4 stroke-black" />
-        </button>
-        <div class="h-px w-32 bg-black"></div>
-        <button
-          id="testimonialright"
-          class="border border-black
-    py-1 px-1 rounded-full"
-          aria-label="Slide testimonial right"
-        >
-          <Arrow className="size-4 stroke-black rotate-180" />
-        </button>
-      </div>
+      <TestimonialsSlider testimonials={testimonials} client:load />
     </div>
   </div>
 </section>

@@ -1,5 +1,6 @@
 ---
 import Photos from "@/components/icons/Photos.astro";
+import PropertyAllGalery from "./PropertyAllGalery.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -19,6 +20,9 @@ const total = photos.length;
     <Photos className="size-4 stroke-black" />
     <span class="text-xs">{t("buyer.overview.photos")}</span>
   </button>
+
+  <PropertyAllGalery photos={photos} />
+
   {
     total >= 4 && (
       <div class="w-full h-96 grid md:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -121,3 +125,12 @@ const total = photos.length;
     )
   }
 </header>
+
+<script>
+  const but = document.getElementById("photosButton"),
+    win = document.getElementById("photosAllDialog") as HTMLDialogElement;
+
+  but?.addEventListener("click", () => {
+    win?.showModal();
+  });
+</script>

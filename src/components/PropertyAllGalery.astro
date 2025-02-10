@@ -1,0 +1,42 @@
+---
+const { photos } = Astro.props;
+---
+
+<dialog
+  class="my-4 mx-auto w-[80%] max-w-7xl h-dvh p-4 rounded-2xl overflow-hidden"
+  id="photosAllDialog"
+>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 h-full overflow-y-scroll touch-pan-y scroll-smooth"
+  >
+    {
+      photos.map((photo: string, index: number) => {
+        const randomCol = Math.floor(Math.random() * 3);
+        const randomRow = Math.floor(Math.random() * 3);
+        const isColSpan = index % 3 == randomCol;
+        const isRowSpan = index % 3 == randomRow;
+
+        return (
+          <div
+            class={`${isColSpan ? "col-span-2" : ""} ${isRowSpan ? "row-span-2" : ""}`}
+          >
+            <img
+              class="h-full w-full object-cover rounded-lg"
+              src={photo}
+              alt={`photo ${index}`}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById(
+    "photosAllDialog"
+  ) as HTMLDialogElement;
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+</script>

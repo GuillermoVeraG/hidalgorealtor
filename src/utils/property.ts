@@ -17,6 +17,10 @@ export interface PropertySearchParams {
   "max-sqft": number;
 }
 
+export interface PropertyLocationParams {
+  address: string;
+}
+
 export interface PropertyParamsItems {
   data: PropertyParams;
   key: string;
@@ -109,6 +113,13 @@ export function getUrlSearchParams(params: PropertySearchParams) {
   return encodeURI(searchParams);
 }
 
+export function getUrlLocationParams(params: PropertyLocationParams) {
+  let searchParams =
+    "sale/" + params.address + "/none/0-5000000/0-5000/0/0/none/1/";
+
+  return encodeURI(searchParams);
+}
+
 export function getApiSearchParams(params: PropertySearchParams) {
   let searchParams = "&and[0][MlsStatus][in]=Active,Pending",
     index = 1;
@@ -142,7 +153,7 @@ export function getApiSearchParams(params: PropertySearchParams) {
     }
   }
 
-  if (params.subtype) {
+  if (params.subtype && params.subtype != "none") {
     searchParams +=
       "&and[" + index + "][PropertySubType][eq]=" + params.subtype;
     index += 1;

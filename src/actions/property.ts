@@ -4,6 +4,7 @@ import {
   getApiSearchParams,
   getFullUrl,
   getUrlSearchParams,
+  getUrlLocationParams,
   getPropertyParams,
 } from "@/utils/property";
 import type { PropertyResult, PropertyResultItems } from "@/utils/property";
@@ -27,6 +28,16 @@ export const property = {
     }),
     handler: async (input) => {
       const searchParams = getUrlSearchParams(input);
+      return searchParams;
+    },
+  }),
+  getUrlLocationParams: defineAction({
+    accept: "form",
+    input: z.object({
+      address: z.string(),
+    }),
+    handler: async (input) => {
+      const searchParams = getUrlLocationParams(input);
       return searchParams;
     },
   }),

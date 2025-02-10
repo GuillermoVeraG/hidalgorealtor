@@ -1,0 +1,70 @@
+/*.swiper-pagination-bullet {
+  border: 5px solid white;
+  opacity: 100%;
+  background-color: white;
+}
+
+.services .swiper-pagination-bullet {
+  border: 5px solid rgb(208 229 255);
+  opacity: 100%;
+  background-color: rgb(208 229 255);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(66 117 255);
+  border: 5px solid rgb(66 117 255);
+}
+
+.services .swiper-pagination-bullet-active {
+  background-color: rgb(66 117 255);
+  border: 5px solid rgb(66 117 255);
+}
+
+.dark .swiper-pagination-bullet {
+  border: 5px solid white;
+  outline: none;
+}
+
+.dark .swiper-pagination-bullet-active {
+  background-color: rgb(22 209 250);
+  border: 5px solid rgb(22 209 250);
+}
+
+.dark .testimonials .swiper-pagination-bullet-active {
+  background-color: rgb(140 71 255);
+  border: 5px solid rgb(140 71 255);
+}*/
+
+.citiesSwiper,
+.butSwiper {
+  margin: 0 20px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: relative;
+  display: block;
+  height: auto;
+  top: auto;
+  margin-top: auto;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: none;
+}
+
+.butSwiper {
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: fit-content !important;
+  }
+}
+
+.swiper-slide-thumb-active div {
+  border: none;
+  background-color: var(--color-primary);
+  color: white;
+}

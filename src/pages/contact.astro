@@ -110,7 +110,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     event.preventDefault();
     const formData = new FormData(form);
 
-    const { data, error } = await actions.emails.sendEmailContact(formData);
+    const { error } = await actions.emails.sendEmailContact(formData);
 
     if (error) {
       dialogFormError.showModal();

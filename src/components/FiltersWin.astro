@@ -1,0 +1,16 @@
+---
+import SaleSearch from "@/components/SaleSearch.astro";
+import Close from "@/components/icons/Close.astro";
+---
+
+<dialog
+  id="FiltersWin"
+  class="max-w-lg w-full bg-primary-50 text-black text-xs font-light rounded-xl backdrop:bg-primary-300/80 relative p-10 pt-4 overflow-hidden m-auto"
+>
+  <h3 class="font-semibold text-lg text-center mb-4">Filters</h3>
+  <button id="closeDialogForm" class="absolute top-4 right-4">
+    <Close className="size-6 stroke-black outline-none" />
+  </button>
+
+  <SaleSearch isFilter />
+</dialog>

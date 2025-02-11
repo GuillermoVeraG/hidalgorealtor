@@ -11,9 +11,9 @@ import type {
 
 import Pagination from "@/components/Pagination.astro";
 import PropertiesItem from "@/components/PropertiesItem.astro";
+import Filter from "@/components/Filters.astro";
 
 import Arrow from "@/components/icons/Arrow.astro";
-import Filter from "@/components/icons/Filter.astro";
 
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
@@ -88,13 +88,7 @@ const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
         >
       </div>
       <div>
-        <button
-          class="rounded-2xl flex justify-center items-center gap-2 hover:bg-primary-800 hover:text-white px-4 py-2 border border-black hover:border-primary-800 group/button"
-          >{t("buyer.result.filters")}
-          <Filter
-            className="size-5 stroke-black group-hover/button:stroke-white"
-          /></button
-        >
+        <Filter />
       </div>
     </div>
 

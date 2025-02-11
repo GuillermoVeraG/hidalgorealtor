@@ -1,5 +1,5 @@
 ---
-import Filter from "@/components/icons/Filter.astro";
+import Filter from "@/components/Filters.astro";
 import Search from "@/components/icons/Search.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
@@ -11,22 +11,17 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 <div
   class="absolute -bottom-6 w-4/5 md:w-3/5 lg:w-full lg:max-w-4xl h-16 bg-white hover:bg-primary-100 rounded-full flex items-center group/search drop-shadow-md hover:cursor-pointer z-20"
 >
-  <form
-    action=""
-    class="w-full flex justify-between items-center gap-2 ml-6 mr-4"
-  >
-    <input
-      type="text"
-      name="address"
-      class="w-full h-14 group-hover/search:bg-primary-100 focus-visible:border-none focus-visible:outline-none"
-      placeholder={t("home.header.search")}
-    />
+  <div class="w-full flex justify-between items-center gap-2 ml-6 mr-4">
+    <form class="w-full">
+      <input
+        type="text"
+        name="address"
+        class="w-full h-14 group-hover/search:bg-primary-100 focus-visible:border-none focus-visible:outline-none"
+        placeholder={t("home.header.search")}
+      />
+    </form>
 
-    <button
-      class="hidden rounded-3xl lg:flex justify-center items-center gap-2 hover:bg-primary-800 hover:text-white px-4 py-2 border border-black hover:border-primary-800 group/button"
-      >{t("home.header.search.button")}
-      <Filter className="size-5 stroke-black group-hover/button:stroke-white" />
-    </button>
+    <Filter />
 
     <button
       class="rounded-full p-2 flex items-center gap-2 hover:bg-primary-800 bg-primary-700"
@@ -34,7 +29,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     >
       <Search />
     </button>
-  </form>
+  </div>
 </div>
 
 <script>

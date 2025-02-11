@@ -6,13 +6,19 @@ import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const { isFilter } = Astro.props;
+
+const width = isFilter ? "w-full" : "w-full md:w-1/2";
+const flexDir = isFilter ? "flex-col" : "flex-col md:flex-row";
 ---
 
 <form
-  class="flex flex-col md:flex-row justify-between items-center gap-14"
+  class={`flex ${flexDir} justify-between items-center gap-14`}
   method="POST"
+  id="filtersForm"
 >
-  <div class="w-full md:w-1/2 flex flex-col justify-start items-start gap-4">
+  <div class={`${width} flex flex-col justify-start items-start gap-4`}>
     <div
       class="w-11/12 flex flex-col justify-start items-start gap-2 font-sans text-sm"
     >
@@ -137,7 +143,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       </div>
     </div>
   </div>
-  <div class="w-full md:w-1/2 flex flex-col justify-start items-start gap-24">
+  <div class={`${width} flex flex-col justify-start items-start gap-24`}>
     <div class="w-full flex flex-col justify-start items-start gap-2">
       <div class="font-sans text-black text-sm font-medium">
         {t("buyer.search.sale.price.title")}
@@ -174,11 +180,33 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
       />
     </div>
 
-    <button
-      type="submit"
-      class="px-16 py-2 bg-primary-700 rounded-full text-white"
-      >{t("buyer.search.sale.but")}</button
-    >
+    {
+      !isFilter && (
+        <button
+          type="submit"
+          class="px-16 py-2 bg-primary-700 rounded-full text-white"
+        >
+          {t("buyer.search.sale.but")}
+        </button>
+      )
+    }
+
+    {
+      isFilter && (
+        <footer class="w-full py-2 border-t border-t-black flex justify-between items-center gap-4">
+          <button id="clearFilters" class="font-semibold">
+            {" "}
+            Clear filters{" "}
+          </button>
+          <button
+            type="submit"
+            class="px-16 py-2 bg-primary-700 rounded-full text-white"
+          >
+            {t("buyer.search.sale.but")}
+          </button>
+        </footer>
+      )
+    }
   </div>
 </form>
 
@@ -186,8 +214,14 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
   import { actions } from "astro:actions";
   import { navigate } from "astro:transitions/client";
 
-  const form = document.querySelector("form") as HTMLFormElement;
+  const form = document.getElementById("filtersForm") as HTMLFormElement;
   const isSpa = window.location.pathname.includes("/es/");
+  const clearFilters = document.getElementById("clearFilters");
+
+  clearFilters?.addEventListener("click", (e) => {
+    e.preventDefault();
+    form.reset();
+  });
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();

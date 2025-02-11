@@ -1,0 +1,36 @@
+---
+import Filter from "@/components/icons/Filter.astro";
+import FiltersWin from "@/components/FiltersWin.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+---
+
+<button
+  id="FilterBut"
+  class="hidden rounded-3xl lg:flex justify-center items-center gap-2 hover:bg-primary-800 hover:text-white px-4 py-2 border border-black hover:border-primary-800 group/button"
+  >{t("home.header.search.button")}
+  <Filter className="size-5 stroke-black group-hover/button:stroke-white" />
+</button>
+
+<FiltersWin />
+
+<script>
+  const FilterBut = document.getElementById("FilterBut"),
+    FiltersWin = document.getElementById("FiltersWin") as HTMLDialogElement,
+    closeDialogForm = document.getElementById("closeDialogForm");
+
+  FilterBut?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    FiltersWin?.showModal();
+  });
+
+  closeDialogForm?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    FiltersWin?.close();
+  });
+</script>

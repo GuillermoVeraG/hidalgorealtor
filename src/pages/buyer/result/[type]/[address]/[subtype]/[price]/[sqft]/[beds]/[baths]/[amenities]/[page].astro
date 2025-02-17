@@ -12,6 +12,7 @@ import type {
 import Pagination from "@/components/Pagination.astro";
 import PropertiesItem from "@/components/PropertiesItem.astro";
 import Filter from "@/components/Filters.astro";
+import FiltersWin from "@/components/FiltersWin.astro";
 
 import Arrow from "@/components/icons/Arrow.astro";
 
@@ -89,6 +90,7 @@ const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
       </div>
       <div>
         <Filter />
+        <FiltersWin data={input} />
       </div>
     </div>
 

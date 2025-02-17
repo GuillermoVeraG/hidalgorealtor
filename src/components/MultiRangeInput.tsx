@@ -1,6 +1,7 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import "@/components/MultiRangeInput.css";
+import type { PropertySearchParams, SellerFormParams } from "@/utils/property";
 
 export interface MultiRangeInputProps {
   name: string;
@@ -9,6 +10,11 @@ export interface MultiRangeInputProps {
   isMoney?: boolean;
   step?: number;
   suffix?: string;
+  minVal: number;
+  maxVal: number;
+  setVal:
+    | React.Dispatch<React.SetStateAction<SellerFormParams>>
+    | React.Dispatch<React.SetStateAction<PropertySearchParams>>;
 }
 
 const MultiRangeInput = ({
@@ -18,11 +24,12 @@ const MultiRangeInput = ({
   isMoney,
   step,
   suffix,
+  minVal,
+  maxVal,
+  setVal,
 }: MultiRangeInputProps) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
-  const minValRef = useRef(min);
-  const maxValRef = useRef(max);
+  const minValRef = useRef(minVal);
+  const maxValRef = useRef(maxVal);
   const range = useRef<HTMLDivElement>(null);
   const defaultStep = step ?? 1;
 
@@ -48,7 +55,7 @@ const MultiRangeInput = ({
   // Set width of the range to decrease from the left side
   useEffect(() => {
     const minPercent = getPercent(minVal);
-    const maxPercent = getPercent(maxValRef.current);
+    const maxPercent = getPercent(maxVal);
 
     if (range.current) {
       range.current.style.left = `${minPercent}%`;
@@ -58,7 +65,7 @@ const MultiRangeInput = ({
 
   // Set width of the range to decrease from the right side
   useEffect(() => {
-    const minPercent = getPercent(minValRef.current);
+    const minPercent = getPercent(minVal);
     const maxPercent = getPercent(maxVal);
 
     if (range.current) {
@@ -76,9 +83,11 @@ const MultiRangeInput = ({
         value={minVal}
         name={`min-${name}`}
         onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
-          setMinVal(value);
-          minValRef.current = value;
+          const { name, value } = event.target;
+          const val = Math.min(Number(value), maxVal - 1);
+          setVal((prevState: any) => ({ ...prevState, [name]: val }));
+          //setMinVal(value);
+          minValRef.current = val;
         }}
         className="thumb absolute h-0 w-full outline-none z-30 pointer-events-none appearance-none accent-primary-700"
         style={{ zIndex: minVal > max - 100 ? "30" : "50" }}
@@ -91,9 +100,11 @@ const MultiRangeInput = ({
         value={maxVal}
         name={`max-${name}`}
         onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
-          setMaxVal(value);
-          maxValRef.current = value;
+          const { name, value } = event.target;
+          const val = Math.max(Number(value), minVal + 1);
+          setVal((prevState: any) => ({ ...prevState, [name]: val }));
+          //setMaxVal(value);
+          maxValRef.current = val;
         }}
         className="thumb absolute h-0 w-full outline-none z-40 pointer-events-none appearance-none accent-primary-700"
       />

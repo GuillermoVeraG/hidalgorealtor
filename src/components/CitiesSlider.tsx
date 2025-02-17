@@ -87,8 +87,8 @@ const Testimonials = ({ cities, button }: CitiesProps) => {
                     >
                       <path
                         d="m35.138.438 4.349 5.5-4.35 5.5"
-                        stroke-width=".8"
-                        stroke-linecap="round"
+                        strokeWidth=".8"
+                        strokeLinecap="round"
                       ></path>
                       <path d="M.741 5.537a.4.4 0 0 0 0 .8v-.8Zm0 .8h38.746v-.8H.74v.8Z"></path>
                     </svg>

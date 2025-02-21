@@ -5,6 +5,24 @@ import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+import type { PropertySearchParams } from "@/utils/property";
+import { MAX_PRICE, MAX_SQFT } from "@/utils/property";
+
+const data = {
+  address: "",
+  type: "sale",
+  subtype: "",
+  beds: 0,
+  baths: 0,
+  view: false,
+  parking: false,
+  pool: false,
+  "min-price": 0,
+  "max-price": MAX_PRICE,
+  "min-sqft": 0,
+  "max-sqft": MAX_SQFT,
+} as PropertySearchParams;
 ---
 
 <section
@@ -30,7 +48,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     <div class="font-serif text-2xl font-medium mb-10">
       {t("buyer.search.sale.title")}
     </div>
-    <SaleSearch />
+    <SaleSearch data={data} />
   </div>
   <div
     id="form-rent"
@@ -39,7 +57,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     <div class="font-serif text-2xl font-medium mb-10">
       {t("buyer.search.rent.title")}
     </div>
-    <SaleSearch />
+    <SaleSearch data={data} />
   </div>
 </section>
 

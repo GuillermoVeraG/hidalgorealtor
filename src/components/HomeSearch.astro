@@ -1,34 +1,55 @@
 ---
 import Filter from "@/components/Filters.astro";
+import FiltersWin from "@/components/FiltersWin.astro";
 import Search from "@/components/icons/Search.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
+import type { PropertySearchParams } from "@/utils/property";
+import { MAX_PRICE, MAX_SQFT } from "@/utils/property";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const data = {
+  address: "",
+  type: "sale",
+  subtype: "",
+  beds: 0,
+  baths: 0,
+  view: false,
+  parking: false,
+  pool: false,
+  "min-price": 0,
+  "max-price": MAX_PRICE,
+  "min-sqft": 0,
+  "max-sqft": MAX_SQFT,
+} as PropertySearchParams;
 ---
 
 <div
-  class="absolute -bottom-6 w-4/5 md:w-3/5 lg:w-full lg:max-w-4xl h-16 bg-white hover:bg-primary-100 rounded-full flex items-center group/search drop-shadow-md hover:cursor-pointer z-20"
+  class="absolute -bottom-6 w-4/5 md:w-3/5 lg:w-full lg:max-w-4xl h-16 bg-white rounded-full flex items-center group/search drop-shadow-md hover:cursor-pointer z-20"
 >
-  <div class="w-full flex justify-between items-center gap-2 ml-6 mr-4">
-    <form class="w-full">
+  <div class="w-full ml-6 mr-4">
+    <form class="w-full flex justify-between items-center gap-2">
       <input
         type="text"
         name="address"
-        class="w-full h-14 group-hover/search:bg-primary-100 focus-visible:border-none focus-visible:outline-none"
+        required
+        class="w-full h-14 focus-visible:border-none focus-visible:outline-none pl-2"
         placeholder={t("home.header.search")}
       />
+
+      <Filter />
+
+      <button
+        class="rounded-full p-2 flex items-center gap-2 hover:bg-primary-800 bg-primary-700"
+        type="submit"
+      >
+        <Search />
+      </button>
     </form>
 
-    <Filter />
-
-    <button
-      class="rounded-full p-2 flex items-center gap-2 hover:bg-primary-800 bg-primary-700"
-      type="submit"
-    >
-      <Search />
-    </button>
+    <FiltersWin data={data} />
   </div>
 </div>
 

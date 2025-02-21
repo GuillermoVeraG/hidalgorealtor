@@ -1,6 +1,5 @@
 ---
 import Filter from "@/components/icons/Filter.astro";
-import FiltersWin from "@/components/FiltersWin.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -14,8 +13,6 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
   >{t("home.header.search.button")}
   <Filter className="size-5 stroke-black group-hover/button:stroke-white" />
 </button>
-
-<FiltersWin />
 
 <script>
   const FilterBut = document.getElementById("FilterBut"),

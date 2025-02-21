@@ -1,233 +1,33 @@
 ---
-import NumberInput from "@/components/NumberInput.tsx";
-import MultiRangeInput from "@/components/MultiRangeInput";
+//import NumberInput from "@/components/NumberInput.tsx";
+//import MultiRangeInput from "@/components/MultiRangeInput";
+import SearchForm from "@/components/SearchForm";
+import type { LabelsSearchParams } from "@/utils/property";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
 
-const { isFilter } = Astro.props;
+const labels = {
+  address: t("buyer.search.sale.address"),
+  subtype: t("buyer.search.sale.type"),
+  bedsbaths: t("buyer.search.sale.bedsbaths"),
+  beds: t("buyer.search.sale.beds"),
+  baths: t("buyer.search.sale.baths"),
+  amenities: t("buyer.search.sale.amenities"),
+  view: t("buyer.search.sale.view"),
+  parking: t("buyer.search.sale.parking"),
+  pool: t("buyer.search.sale.pool"),
+  pricetitle: t("buyer.search.sale.price.title"),
+  pricedesc: t("buyer.search.sale.price.desc"),
+  sqfttitle: t("buyer.search.sale.sqft.title"),
+  sqftdesc: t("buyer.search.sale.sqft.desc"),
+  butsubmit: t("buyer.search.sale.but"),
+  butclear: "Clear filters",
+} as LabelsSearchParams;
 
-const width = isFilter ? "w-full" : "w-full md:w-1/2";
-const flexDir = isFilter ? "flex-col" : "flex-col md:flex-row";
+const { isFilter, data } = Astro.props;
 ---
 
-<form
-  class={`flex ${flexDir} justify-between items-center gap-14`}
-  method="POST"
-  id="filtersForm"
->
-  <div class={`${width} flex flex-col justify-start items-start gap-4`}>
-    <div
-      class="w-11/12 flex flex-col justify-start items-start gap-2 font-sans text-sm"
-    >
-      <label for="property-address">{t("buyer.search.sale.address")}</label>
-      <input
-        class="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
-        type="text"
-        id="property-address"
-        required
-        name="address"
-      />
-    </div>
-
-    <input type="hidden" name="type" value="sale" />
-
-    <div
-      class="w-11/12 flex flex-col justify-start items-start gap-2 font-sans text-sm"
-    >
-      <label for="property-type">{t("buyer.search.sale.type")}</label>
-      <select
-        class="w-full bg-primary-100 accent-primary-700 border border-black rounded py-1 px-2 font-sans"
-        id="property-type"
-        name="subtype"
-      >
-        <option value="Single Family Residence">Single Family</option>
-        <option value="Condominium">Condo</option>
-        <option value="Multy Family">Multy-Family</option>
-        <option value="Comercial">Comercial / Industrial / Agriculture</option>
-      </select>
-    </div>
-
-    <div class="font-sans text-black text-sm font-medium mt-4">
-      {t("buyer.search.sale.bedsbaths")}
-    </div>
-
-    <div class="flex justify-center items-center gap-2">
-      <label class="w-28" for="property-beds"
-        >{t("buyer.search.sale.beds")}</label
-      >
-      <NumberInput name="beds" client:load />
-    </div>
-
-    <div class="flex justify-center items-center gap-2">
-      <label class="w-28" for="property-baths"
-        >{t("buyer.search.sale.baths")}</label
-      >
-      <NumberInput name="baths" client:load />
-    </div>
-
-    <div class="font-sans text-black font-medium mt-4">
-      {t("buyer.search.sale.amenities")}
-    </div>
-    <div class="flex justify-center items-center gap-4">
-      <div class="flex justify-center items-center gap-2">
-        <div class="grid justify-center items-center gap-2">
-          <input
-            class="peer row-start-1 col-start-1 appearance-none size-6 bg-primary-100 border-2 border-gray-600 rounded checked:bg-primary checked:border-primary checked:text-white"
-            type="checkbox"
-            id="property-view"
-            name="view"
-          />
-          <svg
-            viewBox="0 0 14 14"
-            fill="none"
-            class="pointer-events-none invisible peer-checked:visible size-6 row-start-1 col-start-1 stroke-white"
-          >
-            <path
-              d="M3 8L6 11L11 3.5"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <label class="text-sm font-sans" for="property-view"
-          >{t("buyer.search.sale.view")}</label
-        >
-      </div>
-      <div class="flex justify-center items-center gap-2">
-        <div class="grid justify-center items-center gap-2">
-          <input
-            class="peer row-start-1 col-start-1 appearance-none size-6 bg-primary-100 border-2 border-gray-600 rounded checked:bg-primary checked:border-primary checked:text-white"
-            type="checkbox"
-            id="property-parking"
-            name="parking"
-          />
-          <svg
-            viewBox="0 0 14 14"
-            fill="none"
-            class="pointer-events-none invisible peer-checked:visible size-6 row-start-1 col-start-1 stroke-white"
-          >
-            <path
-              d="M3 8L6 11L11 3.5"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </div>
-
-        <label for="property-parking">{t("buyer.search.sale.parking")}</label>
-      </div>
-      <div class="flex justify-center items-center gap-2">
-        <div class="grid justify-center items-center gap-2">
-          <input
-            class="peer row-start-1 col-start-1 appearance-none size-6 bg-primary-100 border-2 border-gray-600 rounded checked:bg-primary checked:border-primary checked:text-white"
-            type="checkbox"
-            id="property-pool"
-            name="pool"
-          />
-          <svg
-            viewBox="0 0 14 14"
-            fill="none"
-            class="pointer-events-none invisible peer-checked:visible size-6 row-start-1 col-start-1 stroke-white"
-          >
-            <path
-              d="M3 8L6 11L11 3.5"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <label for="property-pool">{t("buyer.search.sale.pool")}</label>
-      </div>
-    </div>
-  </div>
-  <div class={`${width} flex flex-col justify-start items-start gap-24`}>
-    <div class="w-full flex flex-col justify-start items-start gap-2">
-      <div class="font-sans text-black text-sm font-medium">
-        {t("buyer.search.sale.price.title")}
-      </div>
-      <p class="font-sans text-black text-xs mb-4">
-        {t("buyer.search.sale.price.desc")}
-      </p>
-
-      <MultiRangeInput
-        name="price"
-        min={0}
-        max={5000000}
-        isMoney
-        step={500}
-        client:load
-      />
-    </div>
-
-    <div class="w-full flex flex-col justify-start items-start gap-4">
-      <div class="font-sans text-black text-sm font-medium">
-        {t("buyer.search.sale.sqft.title")}
-      </div>
-      <p class="font-sans text-black text-xs">
-        {t("buyer.search.sale.sqft.desc")}
-      </p>
-
-      <MultiRangeInput
-        name="sqft"
-        min={0}
-        max={5000}
-        step={250}
-        suffix="sqft"
-        client:load
-      />
-    </div>
-
-    {
-      !isFilter && (
-        <button
-          type="submit"
-          class="px-16 py-2 bg-primary-700 rounded-full text-white"
-        >
-          {t("buyer.search.sale.but")}
-        </button>
-      )
-    }
-
-    {
-      isFilter && (
-        <footer class="w-full py-2 border-t border-t-black flex justify-between items-center gap-4">
-          <button id="clearFilters" class="font-semibold">
-            {" "}
-            Clear filters{" "}
-          </button>
-          <button
-            type="submit"
-            class="px-16 py-2 bg-primary-700 rounded-full text-white"
-          >
-            {t("buyer.search.sale.but")}
-          </button>
-        </footer>
-      )
-    }
-  </div>
-</form>
-
-<script>
-  import { actions } from "astro:actions";
-  import { navigate } from "astro:transitions/client";
-
-  const form = document.getElementById("filtersForm") as HTMLFormElement;
-  const isSpa = window.location.pathname.includes("/es/");
-  const clearFilters = document.getElementById("clearFilters");
-
-  clearFilters?.addEventListener("click", (e) => {
-    e.preventDefault();
-    form.reset();
-  });
-
-  form?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const { data, error } = await actions.property.getUrlParams(formData);
-    if (!error) navigate(`${isSpa ? "/es" : ""}/buyer/result/${data}`);
-    else console.error(error);
-  });
-</script>
+<SearchForm labels={labels} isFilter={isFilter} data={data} client:load />

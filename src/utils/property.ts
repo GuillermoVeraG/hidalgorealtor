@@ -2,6 +2,24 @@ export interface PropertyParams {
   mlsnumber: string;
 }
 
+export interface SellerFormParams {
+  FirstName: string;
+  LastName: string;
+  Email: string;
+  Prefix: string;
+  Phone: string;
+  Location: string;
+  beds: number;
+  baths: number;
+
+  view?: boolean;
+  parking?: boolean;
+  pool?: boolean;
+
+  "min-sqft": number;
+  "max-sqft": number;
+}
+
 export interface PropertySearchParams {
   address: string;
   type: string;
@@ -15,6 +33,44 @@ export interface PropertySearchParams {
   "max-price": number;
   "min-sqft": number;
   "max-sqft": number;
+}
+
+export interface LabelsSearchParams {
+  address: string;
+  subtype: string;
+  bedsbaths: string;
+  beds: string;
+  baths: string;
+  amenities: string;
+  view: string;
+  parking: string;
+  pool: string;
+  pricetitle: string;
+  pricedesc: string;
+  sqfttitle: string;
+  sqftdesc: string;
+  butsubmit: string;
+  butclear: string;
+}
+
+export interface LabelsSellerParams {
+  title: string;
+  description: string;
+  firstname: string;
+  lastname: string;
+  email: string;
+  prefix: string;
+  phone: string;
+  location: string;
+  meters: string;
+  bedsbaths: string;
+  bedrooms: string;
+  bathrooms: string;
+  items: string;
+  parking: string;
+  pool: string;
+  view: string;
+  button: string;
 }
 
 export interface PropertyLocationParams {
@@ -90,6 +146,9 @@ export interface PropertyResultItems {
   latitude: number;
   longitude: number;
 }
+
+export const MAX_SQFT = 5000;
+export const MAX_PRICE = 5000000;
 
 export function getUrlSearchParams(params: PropertySearchParams) {
   let searchParams =

@@ -1,6 +1,8 @@
 ---
 import SaleSearch from "@/components/SaleSearch.astro";
 import Close from "@/components/icons/Close.astro";
+
+const { data } = Astro.props;
 ---
 
 <dialog
@@ -12,5 +14,5 @@ import Close from "@/components/icons/Close.astro";
     <Close className="size-6 stroke-black outline-none" />
   </button>
 
-  <SaleSearch isFilter />
+  <SaleSearch isFilter data={data} />
 </dialog>

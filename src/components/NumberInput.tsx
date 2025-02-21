@@ -1,19 +1,24 @@
-import { useState } from "react";
+import type { PropertySearchParams, SellerFormParams } from "@/utils/property";
 
 export interface NumberInputProps {
   name: string;
+  value: number;
+  setVal:
+    | React.Dispatch<React.SetStateAction<SellerFormParams>>
+    | React.Dispatch<React.SetStateAction<PropertySearchParams>>;
 }
 
-const NumberInput = ({ name }: NumberInputProps) => {
-  var [number, setNumber] = useState(0);
+const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
   return (
     <div className="relative flex items-center">
       <button
         type="button"
         className="flex-shrink-0 bg-primary-100 hover:bg-primary-700 inline-flex items-center justify-center border border-gray-600 hover:border-primary rounded-full size-6 group"
         onClick={() => {
-          console.log(number);
-          setNumber(--number);
+          setVal((prevState: any) => ({
+            ...prevState,
+            [name]: --value,
+          }));
         }}
       >
         <svg
@@ -31,19 +36,16 @@ const NumberInput = ({ name }: NumberInputProps) => {
         className="flex-shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
         placeholder=""
         name={name}
-        value={number}
+        value={value}
         required
-        onChange={(data) => {
-          console.log(data);
-        }}
+        onChange={() => {}}
       />
 
       <button
         type="button"
         className="flex-shrink-0 bg-primary-100 hover:bg-primary-700 inline-flex items-center justify-center border border-gray-600 hover:border-primary rounded-full size-6 group"
         onClick={() => {
-          console.log(number);
-          setNumber(++number);
+          setVal((prevState: any) => ({ ...prevState, [name]: ++value }));
         }}
       >
         <svg

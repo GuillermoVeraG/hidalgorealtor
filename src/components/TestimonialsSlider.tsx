@@ -43,7 +43,7 @@ const Testimonials = ({ testimonials }: TestimonilasProps) => {
         {testimonials.map(({ name, desc }, index) => {
           return (
             <SwiperSlide key={index} className="py-12">
-              <h2 className="uppercase font-serif text-base md:text-lg mb-5">
+              <h2 className="uppercase font-serif text-base md:text-lg mb-5 tracking-wider">
                 {name}
               </h2>
 
@@ -52,7 +52,7 @@ const Testimonials = ({ testimonials }: TestimonilasProps) => {
           );
         })}
 
-        <div className="flex justify-start items-center my-10 gap-5">
+        <div className="flex justify-start items-center mt-0 mb-10 -ml-2 gap-5">
           <button
             id="testimonialLeft"
             className="swiper-button-prev border border-black
@@ -73,7 +73,7 @@ const Testimonials = ({ testimonials }: TestimonilasProps) => {
               <path d="m15 6-6 6 6 6"></path>
             </svg>
           </button>
-          <div className="h-px w-32 bg-black"></div>
+          <div className="h-px w-24 mx-5 bg-black"></div>
           <button
             id="testimonialright"
             className="swiper-button-next border border-black

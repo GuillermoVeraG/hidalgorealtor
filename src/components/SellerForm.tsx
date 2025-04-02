@@ -90,7 +90,7 @@ const Seller = ({ labels }: SellerInputProps) => {
             <span className="text-red-500">*</span>
           </label>
           <input
-            className="w-full bg-primary-100 shadow-md border border-black rounded py-1 px-2 font-sans"
+            className="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
             id="seller-FirstName"
             required
             name="FirstName"

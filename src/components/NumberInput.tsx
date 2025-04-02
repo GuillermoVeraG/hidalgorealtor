@@ -33,7 +33,7 @@ const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
 
       <input
         type="text"
-        className="flex-shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
+        className="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
         placeholder=""
         name={name}
         value={value}

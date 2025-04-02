@@ -15,7 +15,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 <Layout title="Welcome a hidalgo">
   <Menu isFloating isWhite />
   <div
-    class="relative h-[500px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
+    class="relative h-[650px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
   >
     <HomeSearch />
 
@@ -26,9 +26,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     </div>
   </div>
   <main class="relative">
-    <section
-      class="bg-white pt-16 lg:pt-40 md:pt-24 px-10 md:px-20 max-w-7xl md:mx-auto"
-    >
+    <section class="bg-white pt-16 px-10 md:px-20 max-w-7xl md:mx-auto">
       <h1 class="uppercase font-serif text-3xl md:text-4xl mb-10 lg:mb-20">
         {t("home.city.title1")}
         <div class="italic normal-case mt-2">

@@ -2,14 +2,18 @@
 const { img, title, subtitle, desc1, desc2, web } = Astro.props;
 ---
 
-<article class="w-80 text-center">
-  <img class="rounded-full h-32 mx-auto" src={img} alt="Photo Alex" />
+<article class="w-full text-center">
+  <img
+    class="rounded-full h-32 w-32 mx-auto object-cover"
+    src={img}
+    alt={`Photo ${title}`}
+  />
   <h2 class="uppercase text-lg font-semibold font-sans my-6">{title}</h2>
   <h3 class="uppercase text-sm mb-6">{subtitle}</h3>
-  <p class="mb-6">
+  <p class="mb-6 w-80 xl:w-[30rem] mx-auto">
     {desc1}
   </p>
-  {desc2 && <p class="mb-6">{desc2}</p>}
+  {desc2 && <p class="mb-6 w-80 xl:w-[30rem] mx-auto">{desc2}</p>}
   <a
     href={`https://${web}`}
     target="_blank"

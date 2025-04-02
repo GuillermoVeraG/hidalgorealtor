@@ -37,6 +37,14 @@ const menuItems = [
     show: true,
   },
   {
+    id: "investor",
+    menu: t("nav.investor"),
+    url: getRelativeLocaleUrl(relativeLocale, "investor"),
+    isActive: isMenuActive(pathname, "investor"),
+    isCompActive: isCompActive(pathname, "investor"),
+    show: true,
+  },
+  {
     id: "buyer",
     menu: t("nav.buyer"),
     url: getRelativeLocaleUrl(relativeLocale, "buyer"),
@@ -169,7 +177,7 @@ const { isWhite, isFloating, isBorder } = Astro.props;
       </nav>
 
       <div
-        class={`hidden sm:flex flex-row justify-between items-center gap-1 ml-20 p-[6px] ${isWhite ? "bg-primary-100/20" : "bg-primary-100/60"} rounded-[18px] border-2 border-primary-300`}
+        class={`hidden sm:flex flex-row justify-between items-center gap-1 ml-10 xl:ml-20 p-[6px] ${isWhite ? "bg-primary-100/20" : "bg-primary-100/60"} rounded-[18px] border-2 border-primary-300`}
       >
         {
           menuLang.map(({ menu, id, url }) => {

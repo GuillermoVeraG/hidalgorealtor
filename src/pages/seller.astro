@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import SellerForm from "@/components/SellerForm.tsx";
 import ResponseForm from "@/components/ResponseForm.astro";
+import Faqs from "@/components/faqs.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -64,6 +65,8 @@ const labels = {
       <SellerForm labels={labels} client:load />
     </div>
   </section>
+
+  <Faqs type="seller" />
 </Layout>
 
 <ResponseForm

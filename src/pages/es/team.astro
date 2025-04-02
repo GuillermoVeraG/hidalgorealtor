@@ -25,6 +25,22 @@ const teamItems = [
     desc2: t("our.team.description3"),
     web: "www.hidalgorealtor.com",
   },
+  {
+    img: "/images/rociotorres.webp",
+    title: t("our.team.title1"),
+    subtitle: t("our.team.subtitle1"),
+    desc1: t("our.team.description1"),
+    desc2: undefined,
+    web: "www.innovativemlo.com",
+  },
+  {
+    img: "/images/alexhidalgo.webp",
+    title: t("our.team.title2"),
+    subtitle: t("our.team.subtitle2"),
+    desc1: t("our.team.description2"),
+    desc2: t("our.team.description3"),
+    web: "www.hidalgorealtor.com",
+  },
 ];
 ---
 
@@ -80,9 +96,7 @@ const teamItems = [
         {t("our.team.description")}
       </p>
 
-      <div
-        class="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-20 md:gap-4 mt-28"
-      >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-14 mt-28">
         {
           teamItems.map(({ img, title, subtitle, desc1, desc2, web }) => (
             <Teamitem

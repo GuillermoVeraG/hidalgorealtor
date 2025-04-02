@@ -1,0 +1,81 @@
+---
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const allQuestions = [
+  {
+    question: "When is the best time to sell?",
+    answer:
+      'The "right time" to sell is when it works best for you. While spring and fall are traditionally strong seasons, today\'s market is driven by demand. A well-positioned home will attract buyers year-round.',
+    type: "seller",
+  },
+  {
+    question: "How do I prepare my home for sale?",
+    answer:
+      "First impressions matter! Small updates like fresh paint, decluttering, and enhancing curb appeal can make a huge difference. I’ll help you pinpoint the best ways to showcase your home’s value.",
+    type: "seller",
+  },
+  {
+    question: "What are the costs of selling?",
+    answer:
+      "Expect closing costs, title insurance, state transfer taxes, and agent commissions. If you still have a mortgage, payoff fees may apply. I’ll break down the numbers for you upfront.",
+    type: "seller",
+  },
+  {
+    question: "How long does it take to sell?",
+    answer:
+      "It depends on factors like pricing, property condition, and demand. Some homes sell within days, while others take a bit longer. The key is positioning your home strategically in the market to attract the right buyers.",
+    type: "seller",
+  },
+  {
+    question: "How do I price my home correctly?",
+    answer:
+      "Pricing is both a science and an art. I’ll conduct a Comparative Market Analysis (CMA) to help you set a competitive price that maximizes value while ensuring buyer interest.",
+    type: "seller",
+  },
+];
+
+const { type } = Astro.props;
+const questions = allQuestions.filter((val) => val.type == type);
+---
+
+<section class="bg-crema py-16 px-20">
+  <div class="max-w-2xl mx-auto flex flex-col justify-center items-center">
+    <h2 class="font-serif text-4xl mb-5 md:mb-10">Frequent Questions Asks</h2>
+
+    {
+      questions.map(({ question, answer }) => {
+        return (
+          <details class="flex flex-col justify-center items-center gap-2 cursor-pointer group/faq w-full  border-b border-black">
+            <summary class="flex justify-start items-center gap-8 py-4 relative w-full">
+              <h3 class="text-base text-pretty text-black capitalize">
+                {question}
+              </h3>
+              <div class="absolute top-auto bottom-auto left-auto right-8">
+                <button
+                  data-open="false"
+                  class="butOpenClose w-6 h-6 flex justify-center items-center
+                before:content-[''] before:content-center before:bg-black/70 before:w-6 before:h-0.5
+                after:content-[''] after:content-center after:bg-black/70 after:w-0.5 after:h-6 after:-translate-x-3 after:transition-transform after:duration-500"
+                />
+              </div>
+            </summary>
+            <div class="mb-4 w-full">
+              <p class="text-left text-black ">{answer}</p>
+            </div>
+          </details>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  details[open] summary button::after {
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+</style>

@@ -10,6 +10,7 @@ export const ui = {
     "nav.home": "Home",
     "nav.seller": "Seller",
     "nav.buyer": "Buyer",
+    "nav.investor": "Investor",
     "nav.contact": "Contact",
     "nav.about": "About",
     "nav.team": "Team",

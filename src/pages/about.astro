@@ -26,9 +26,12 @@ const items = [
     desc: t("about.choose.description3"),
   },
 ];
+
+const title = t("SEO.about.title");
+const description = t("SEO.about.description");
 ---
 
-<Layout title="Welcome a hidalgo">
+<Layout title={title} description={description}>
   <Menu isFloating isWhite />
   <div
     class="h-[473px] w-full bg-about-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
@@ -42,7 +45,7 @@ const items = [
     <section class="flex flex-col items-center py-20">
       <img
         class="rounded-full h-56 sm:h-64 absolute -top-24"
-        src="/images/alexhidalgo.webp"
+        src="/images/team/alexhidalgo.webp"
         alt="Photo Alex"
       />
       <h2

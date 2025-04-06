@@ -81,7 +81,7 @@ const Seller = ({ labels }: SellerInputProps) => {
       className="px-12 pt-8 pb-16 bg-primary-100 rounded-xl w-full lg:w-1/2"
     >
       <h3 className="font-serif text-4xl">{labels.title}</h3>
-      <p className="w-3/5 mt-2 mb-8">{labels.description}</p>
+      <p className="w-full mt-2 mb-8">{labels.description}</p>
 
       <div className="flex justify-around items-center gap-6 w-full">
         <div className="w-full my-6">

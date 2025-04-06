@@ -7,44 +7,131 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const allQuestions = [
   {
-    question: "When is the best time to sell?",
-    answer:
-      'The "right time" to sell is when it works best for you. While spring and fall are traditionally strong seasons, today\'s market is driven by demand. A well-positioned home will attract buyers year-round.',
+    question: t("faq.seller.question1"),
+    answer: t("faq.seller.answer1"),
     type: "seller",
   },
   {
-    question: "How do I prepare my home for sale?",
-    answer:
-      "First impressions matter! Small updates like fresh paint, decluttering, and enhancing curb appeal can make a huge difference. I’ll help you pinpoint the best ways to showcase your home’s value.",
+    question: t("faq.seller.question2"),
+    answer: t("faq.seller.answer2"),
     type: "seller",
   },
   {
-    question: "What are the costs of selling?",
-    answer:
-      "Expect closing costs, title insurance, state transfer taxes, and agent commissions. If you still have a mortgage, payoff fees may apply. I’ll break down the numbers for you upfront.",
+    question: t("faq.seller.question3"),
+    answer: t("faq.seller.answer3"),
     type: "seller",
   },
   {
-    question: "How long does it take to sell?",
-    answer:
-      "It depends on factors like pricing, property condition, and demand. Some homes sell within days, while others take a bit longer. The key is positioning your home strategically in the market to attract the right buyers.",
+    question: t("faq.seller.question4"),
+    answer: t("faq.seller.answer4"),
     type: "seller",
   },
   {
-    question: "How do I price my home correctly?",
-    answer:
-      "Pricing is both a science and an art. I’ll conduct a Comparative Market Analysis (CMA) to help you set a competitive price that maximizes value while ensuring buyer interest.",
+    question: t("faq.seller.question5"),
+    answer: t("faq.seller.answer5"),
     type: "seller",
+  },
+
+  {
+    question: t("faq.buyer.question1"),
+    answer: t("faq.buyer.answer1"),
+    type: "buyer",
+  },
+  {
+    question: t("faq.buyer.question2"),
+    answer: t("faq.buyer.answer2"),
+    type: "buyer",
+  },
+  {
+    question: t("faq.buyer.question3"),
+    answer: t("faq.buyer.answer3"),
+    type: "buyer",
+  },
+  {
+    question: t("faq.buyer.question4"),
+    answer: t("faq.buyer.answer4"),
+    type: "buyer",
+  },
+  {
+    question: t("faq.buyer.question5"),
+    answer: t("faq.buyer.answer5"),
+    type: "buyer",
+  },
+
+  {
+    question: t("faq.investor.question1"),
+    answer: t("faq.investor.answer1"),
+    type: "investor",
+  },
+  {
+    question: t("faq.investor.question2"),
+    answer: t("faq.investor.answer2"),
+    type: "investor",
+  },
+  {
+    question: t("faq.investor.question3"),
+    answer: t("faq.investor.answer3"),
+    type: "investor",
+  },
+
+  {
+    question: t("faq.rent.question1"),
+    answer: t("faq.rent.answer1"),
+    type: "rent",
+  },
+  {
+    question: t("faq.rent.question2"),
+    answer: t("faq.rent.answer2"),
+    type: "rent",
+  },
+  {
+    question: t("faq.rent.question3"),
+    answer: t("faq.rent.answer3"),
+    type: "rent",
+  },
+  {
+    question: t("faq.rent.question4"),
+    answer: t("faq.rent.answer4"),
+    type: "rent",
+  },
+  {
+    question: t("faq.rent.question5"),
+    answer: t("faq.rent.answer5"),
+    type: "rent",
+  },
+  {
+    question: t("faq.rent.question6"),
+    answer: t("faq.rent.answer6"),
+    type: "rent",
   },
 ];
 
-const { type } = Astro.props;
+const { type, className, id } = Astro.props;
 const questions = allQuestions.filter((val) => val.type == type);
 ---
 
-<section class="bg-crema py-16 px-20">
+<section id={id} class={`bg-crema py-16 px-20 ${className}`}>
   <div class="max-w-2xl mx-auto flex flex-col justify-center items-center">
-    <h2 class="font-serif text-4xl mb-5 md:mb-10">Frequent Questions Asks</h2>
+    <h2 class="font-serif text-4xl mb-5 md:mb-10">{t("faq.title")}</h2>
+    {
+      type == "buyer" ? (
+        <p class="text-center text-lg mb-5 md:mb-10">
+          {t("faq.buyer.description")}
+        </p>
+      ) : type == "seller" ? (
+        <p class="text-center text-lg mb-5 md:mb-10">
+          {t("faq.seller.description")}
+        </p>
+      ) : type == "investor" ? (
+        <p class="text-center text-lg mb-5 md:mb-10">
+          {t("faq.investor.description")}
+        </p>
+      ) : (
+        <p class="text-center text-lg mb-5 md:mb-10">
+          {t("faq.rent.description")}
+        </p>
+      )
+    }
 
     {
       questions.map(({ question, answer }) => {

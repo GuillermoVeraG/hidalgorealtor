@@ -1,5 +1,7 @@
 ---
 import SaleSearch from "@/components/SaleSearch.astro";
+import Faqs from "@/components/Faqs.astro";
+
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -9,9 +11,24 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 import type { PropertySearchParams } from "@/utils/property";
 import { MAX_PRICE, MAX_SQFT } from "@/utils/property";
 
-const data = {
+const dataSale = {
   address: "",
   type: "sale",
+  subtype: "",
+  beds: 0,
+  baths: 0,
+  view: false,
+  parking: false,
+  pool: false,
+  "min-price": 0,
+  "max-price": MAX_PRICE,
+  "min-sqft": 0,
+  "max-sqft": MAX_SQFT,
+} as PropertySearchParams;
+
+const dataRent = {
+  address: "",
+  type: "rent",
   subtype: "",
   beds: 0,
   baths: 0,
@@ -48,7 +65,7 @@ const data = {
     <div class="font-serif text-2xl font-medium mb-10">
       {t("buyer.search.sale.title")}
     </div>
-    <SaleSearch data={data} />
+    <SaleSearch data={dataSale} />
   </div>
   <div
     id="form-rent"
@@ -57,9 +74,12 @@ const data = {
     <div class="font-serif text-2xl font-medium mb-10">
       {t("buyer.search.rent.title")}
     </div>
-    <SaleSearch data={data} />
+    <SaleSearch data={dataRent} />
   </div>
 </section>
+
+<Faqs type="buyer" id="buyer-faqs" className="" />
+<Faqs type="rent" id="rent-faqs" className="hidden" />
 
 <script>
   var isBuyActive = true;
@@ -67,6 +87,8 @@ const data = {
   const butRent = document.querySelector("#but-rent");
   const formBuy = document.querySelector("#form-buy");
   const formRent = document.querySelector("#form-rent");
+  const faqsBuy = document.querySelector("#buyer-faqs");
+  const faqsRent = document.querySelector("#rent-faqs");
 
   const switchFormBuy = () => {
     if (!isBuyActive) {
@@ -74,6 +96,8 @@ const data = {
       formRent?.classList.toggle("hidden");
       butBuy?.classList.toggle("bg-[#CDE3E3]");
       butRent?.classList.toggle("bg-[#CDE3E3]");
+      faqsBuy?.classList.toggle("hidden");
+      faqsRent?.classList.toggle("hidden");
       isBuyActive = true;
     }
   };
@@ -84,6 +108,8 @@ const data = {
       formRent?.classList.toggle("hidden");
       butBuy?.classList.toggle("bg-[#CDE3E3]");
       butRent?.classList.toggle("bg-[#CDE3E3]");
+      faqsBuy?.classList.toggle("hidden");
+      faqsRent?.classList.toggle("hidden");
       isBuyActive = false;
     }
   };

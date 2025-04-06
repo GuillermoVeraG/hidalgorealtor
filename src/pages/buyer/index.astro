@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
+
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -8,16 +9,21 @@ import FullSearch from "@/components/FullSearch.astro";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const title = t("SEO.buyer.title");
+const description = t("SEO.buyer.description");
 ---
 
-<Layout title={t("buyer.title")}>
+<Layout title={title} description={description}>
   <Menu isFloating isWhite />
   <div class="h-64 w-full bg-buyer-banner bg-cover bg-no-repeat"></div>
   <main>
     <section
-      class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-center items-center gap-16 md-gap-32 my-20"
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-16 md-gap-32 my-20"
     >
-      <h1 class="font-serif italic text-3xl md:text-4xl max-w-64">
+      <h1
+        class="font-serif italic text-3xl md:text-4xl text-center lg:text-left max-w-7/12 lg:max-w-3/12"
+      >
         {t("buyer.title")}
       </h1>
       <p

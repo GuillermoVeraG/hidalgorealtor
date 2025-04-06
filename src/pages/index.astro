@@ -10,9 +10,12 @@ import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const title = t("SEO.home.title");
+const description = t("SEO.home.description");
 ---
 
-<Layout title="Welcome a hidalgo">
+<Layout title={title} description={description}>
   <Menu isFloating isWhite />
   <div
     class="relative h-[650px] w-full bg-home-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"

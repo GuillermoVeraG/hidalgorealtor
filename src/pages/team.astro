@@ -11,40 +11,43 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 const teamItems = [
   {
     img: "/images/team/josemiguelarreaza.webp",
-    title: t("our.team.title2"),
-    subtitle: t("our.team.subtitle2"),
-    desc1: t("our.team.description2"),
-    desc2: t("our.team.description3"),
-    web: "www.hidalgorealtor.com",
-  },
-  {
-    img: "/images/team/rociotorres.webp",
     title: t("our.team.title1"),
     subtitle: t("our.team.subtitle1"),
     desc1: t("our.team.description1"),
+    desc2: undefined,
+    web: "www.floridanewdream.com",
+  },
+  {
+    img: "/images/team/rociotorres.webp",
+    title: t("our.team.title2"),
+    subtitle: t("our.team.subtitle2"),
+    desc1: t("our.team.description2"),
     desc2: undefined,
     web: "www.innovativemlo.com",
   },
   {
     img: "/images/team/yerlyspacheco.webp",
-    title: t("our.team.title1"),
-    subtitle: t("our.team.subtitle1"),
-    desc1: t("our.team.description1"),
+    title: t("our.team.title3"),
+    subtitle: t("our.team.subtitle3"),
+    desc1: t("our.team.description3"),
     desc2: undefined,
-    web: "www.innovativemlo.com",
+    web: undefined,
   },
   {
     img: "/images/team/alexhidalgo.webp",
-    title: t("our.team.title2"),
-    subtitle: t("our.team.subtitle2"),
-    desc1: t("our.team.description2"),
-    desc2: t("our.team.description3"),
+    title: t("our.team.title4"),
+    subtitle: t("our.team.subtitle4"),
+    desc1: t("our.team.description4"),
+    desc2: undefined,
     web: "www.hidalgorealtor.com",
   },
 ];
+
+const title = t("SEO.team.title");
+const description = t("SEO.team.description");
 ---
 
-<Layout title="Welcome a hidalgo">
+<Layout title={title} description={description}>
   <Menu isFloating isWhite />
   <div
     class="h-[473px] w-full bg-team-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"

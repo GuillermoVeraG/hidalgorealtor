@@ -16,73 +16,126 @@ export const ui = {
     "nav.team": "Team",
     "nav.services": "Services",
 
+    "SEO.home.title": "Broward Real Estate",
+    "SEO.home.description":
+      "Hidalgo Realtor is your trusted partner in Broward County real estate. Whether you're buying, selling, renting, or investing, we offer expert guidance, market insights, and personalized service. Explore Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and beyond. Your real estate journey starts here!",
+    "SEO.seller.title": "Sell Your Property",
+    "SEO.seller.description":
+      "Selling your house or property in Broward County is simpler with Hidalgo Realtor. From precise home valuations to strategic marketing, professional negotiation, and smooth closings, we help you achieve top value. Serving Miramar, Pembroke Pines, Weston,Southwest Ranches, and surrounding communities—let’s make your selling experience effortless and successful.",
+    "SEO.investor.title": "Investment",
+    "SEO.investor.description":
+      "Grow your real estate portfolio or find ideal commercial opportunities in Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and Broward County. Hidalgo Realtor specializes in residential investments, commercial properties, business locations, and strategic real estate opportunities. Build your financial future with personalized, market-driven guidance.",
+    "SEO.buyer.title": "Buy your next Home",
+    "SEO.buyer.description":
+      "Find the perfect home in Miramar, Pembroke Pines, Weston, Davie, Southwest Ranches, or Cooper City, with Hidalgo Realtor. We offer customized property searches, insightful market analysis, and personalized support to match your lifestyle and goals. Let us guide your home-buying journey in Broward with expertise and care.",
+
+    "SEO.buyer.result.title": "",
+    "SEO.buyer.result.description": "",
+
+    "SEO.about.title": "About Hidalgo Realtor",
+    "SEO.about.description":
+      "Real estate is about people and their unique stories. At Hidalgo Realtor, part of the Florida New Dream family, we help clients navigate Southwest Broward’s vibrant real estate market. With the statewide expertise of Florida New Dream behind us, we offer local market insights and personalized service. Discover our values, our mission, and how we turn your buying, selling, renting, or investment dreams into reality.",
+    "SEO.team.title": "Our Team",
+    "SEO.team.description":
+      "Meet Hidalgo Realtor’s professional team dedicated to making your real estate journey exceptional. Experienced, approachable, and knowledgeable, we specialize in buying, selling, investing, and renting properties across Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and throughout Broward County. Discover the difference our team makes.",
+
+    "SEO.services.title": "",
+    "SEO.services.description": "",
+
+    "SEO.contact.title": "Contact Us!",
+    "SEO.contact.description":
+      "Ready for your next move? Contact Hidalgo Realtor for personalized, expert real estate assistance in Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and all of Southwest Broward County. Whether buying, selling, investing, or just curious, we're here to provide professional, friendly guidance every step of the way.",
+
     "home.header.title": "Home is Where your story begins",
     "home.header.search": "Search city, code or MLS#",
     "home.header.search.button": "Filters",
     "home.header.window.desc.":
-      "If you have any questions, we're here to help.",
-    "home.city.title1": "Let's explore",
-    "home.city.title2": "Broward's real estate together!",
+      "Have a question? I’m here to help. Let’s chat!",
+    "home.city.title1": "Let’s Discover",
+    "home.city.title2": "Broward’s Finest Real Estate Together.",
     "home.city1.title": "Miramar",
-    "home.city1.subtitle": "The World Traveler",
+    "home.city1.subtitle": "The Cosmopolitan Explorer",
     "home.city1.description":
-      "Miramar is like having a friend who's a globe-trotter. They're open-minded, culturally diverse, and always up for international adventures.",
+      "Miramar is like your well-traveled friend-worldly, dynamic, and effortlessly blending cultures. It’s a vibrant, diverse city with an international spirit, offering a mix of modern convenience and rich cultural experiences.",
     "home.city2.title": "Pembroke Pines",
     "home.city2.subtitle": "The Family Guardian",
     "home.city2.description":
-      "Pembroke Pines resembles a friend who's the ultimate family person. They're reliable, warm, and always looking out for their loved ones.",
+      "Pembroke Pines is the ultimate family-focused city-reliable, welcoming, and designed for connection. With lush parks, top-rated schools, and a strong sense of community, it’s a place where families thrive.",
     "home.city3.title": "Southwest Ranches",
-    "home.city3.subtitle": "The Country Soul",
+    "home.city3.subtitle": "The Rustic Sophisticate",
     "home.city3.description":
-      "Southwest Ranches is like a friend with a rustic heart. They're laid-back, enjoy wide-open spaces, and have a love for the great outdoors.",
+      "Southwest Ranches is your private, nature-loving friend-spacious, serene, and committed to exclusivity. If you value privacy and luxury with a rural touch, this is your escape.",
     "home.city4.title": "Weston",
-    "home.city4.subtitle": "The elegant aristocrat",
+    "home.city4.subtitle": "The Elegant Visionary",
     "home.city4.description":
-      "Weston is like a friend who embodies elegance and luxury. They appreciate the finer things in life and enjoy upscale experiences.",
+      "Weston is the friend who has everything perfectly planned-refined, exclusive, and effortlessly sophisticated. It’s known for its stunning landscapes, upscale communities, and high quality of life.",
     "home.city5.title": "Cooper City",
-    "home.city5.subtitle": "The Unconditional",
+    "home.city5.subtitle": "The Heart of the Community",
     "home.city5.description":
-      "Cooper City is like that friend who's unconditional. They're known for their unwavering loyalty and dependable presence who value their community's warmth, sense of belonging, and comfort.",
+      "Cooper City is the friend who always has your back-loyal, dependable, and rooted in community. It’s a place where neighbors become friends, and the small-town charm is real.",
     "home.city6.title": "Davie",
-    "home.city6.subtitle": "The Cowboy Adventurer",
+    "home.city6.subtitle": "The Modern Pioneer",
     "home.city6.description":
-      "Davie resembles a friend with a cowboy spirit. They're easygoing, love the outdoors, and are always up for a relaxed adventure.",
+      "Davie is your adventurous, outdoorsy friend-laid-back yet modern, embracing open spaces and a relaxed, nature-driven lifestyle. Known for its equestrian charm, it blends rustic beauty with contemporary convenience.",
     "home.city.boton1": "View Property",
     "home.city.boton2": "Show More",
     "home.city.boton3": "Show less",
 
-    "seller.title1": "Let's help you sell",
-    "seller.title2": "your home today",
+    "seller.title1": "Your Next Chapter Awaits",
+    "seller.title2": "Let’s Sell Your Property Effortlessly",
     "seller.description":
-      "Finding the right realtor is crucial when navigating the complex world of real estate. A skilled realtor not only understands the local market but also possesses the expertise to guide you through the buying or selling process.",
-    "seller.form.title": "Get a Value",
+      "Selling your property often marks the beginning of a new adventure. At Hidalgo Realtor, I focus on making this transition seamless, efficient, and rewarding. With expert market knowledge and a personalized approach, your property will be positioned thoughtfully and strategically, allowing you to naturally progress to your next step without stress or uncertainty. Let me handle the details so you can focus on what's ahead.",
+    "seller.form.title": "Wondering about your property's true value?",
     "seller.form.description":
-      "Please complete this form to receive an accurate valuation of your property.",
+      "A professional valuation provides clear insights, empowering you to confidently plan your next move. Understanding your property's market potential makes the path forward simpler and clearer.",
     "seller.form.first.name": "First name",
     "seller.form.last.name": "Last name",
     "seller.form.email": "Email",
     "seller.form.prefix": "Prefix",
     "seller.form.phone": "Phone (optional)",
-    "seller.form.location": "Location",
-    "seller.form.square.meters": "Square meters",
+    "seller.form.location": "City, Zip Code or MLS number",
+    "seller.form.square.meters": "Square Footage",
     "seller.form.bedrooms.bathrooms": "Bedrooms and bathrooms",
     "seller.form.bedrooms": "Bedroom",
     "seller.form.bathrooms": "Bathroom",
-    "seller.form.selec.items": "Select items",
+    "seller.form.selec.items": "Amenities",
     "seller.form.parking": "Parking",
     "seller.form.pool": "Pool",
     "seller.form.view": "View",
-    "seller.form.botton": "Submit",
+    "seller.form.botton": "Take the Next Step with Ease",
 
-    "buyer.title": "Let's find your dream home today",
+    "investor.title1": "Invest Wisely. Grow Strategically",
+    "investor.title2": "Real estate investment isn't just about transactions",
+    "investor.description":
+      "It's about strategic vision and informed decisions. At Hidalgo Realtor, I leverage extensive local market expertise and insightful analysis to help you identify and capitalize on the right opportunities. Whether your goals are short-term profitability or long-term wealth-building, I'll guide you smoothly through every step, ensuring clarity and precision in your investments.",
+    "investor.form.title": "Effortlessly explore and evaluate",
+    "investor.form.description":
+      "Unlock opportunities and build your real estate portfolio with expert guidance and strategic insights tailored specifically for savvy investors.",
+    "investor.form.first.name": "First name",
+    "investor.form.last.name": "Last name",
+    "investor.form.email": "Email",
+    "investor.form.prefix": "Prefix",
+    "investor.form.phone": "Phone (optional)",
+    "investor.form.location": "City, Zip Code or MLS number",
+    "investor.form.square.meters": "Square Footage",
+    "investor.form.bedrooms.bathrooms": "Bedrooms and bathrooms",
+    "investor.form.bedrooms": "Bedroom",
+    "investor.form.bathrooms": "Bathroom",
+    "investor.form.selec.items": "Amenities",
+    "investor.form.parking": "Parking",
+    "investor.form.pool": "Pool",
+    "investor.form.view": "View",
+    "investor.form.botton": "Ready to Expand Your Portfolio?",
+
+    "buyer.title": "Discover the House You've Always Imagined-Effortlessly",
     "buyer.description":
-      "Whether you’re dreaming of renting or ready to buy, I’m here to help you find a place that feels like home. Let’s work together to discover the perfect property that suits your lifestyle, budget, and needs. Your next home is waiting — let’s go find it",
+      "Searching for your next property is about more than just the right location or features—it's about envisioning the lifestyle you desire and bringing that vision to life. At Hidalgo Realtor, I carefully listen, understand your needs, and apply strategic market insights to find homes uniquely suited to you. My goal is to make your journey not just easy, but enjoyable, allowing you to naturally envision yourself in your perfect space.",
     "buyer.tab.sale.title": "I'm Looking to Buy",
     "buyer.tab.rent.title": "I'm Looking to Rent",
 
     "buyer.search.sale.title": "For Sale",
     "buyer.search.sale.address": "City, Zip Code or MLS number",
-    "buyer.search.sale.type": "Property type",
+    "buyer.search.sale.type": "Property Style",
     "buyer.search.sale.bedsbaths": "Bedrooms and bathrooms",
     "buyer.search.sale.beds": "Bedroom",
     "buyer.search.sale.baths": "Bathroom",
@@ -90,17 +143,17 @@ export const ui = {
     "buyer.search.sale.view": "View",
     "buyer.search.sale.parking": "Parking",
     "buyer.search.sale.pool": "Pool",
-    "buyer.search.sale.price.title": "Price Range",
+    "buyer.search.sale.price.title": "Budget",
     "buyer.search.sale.price.desc":
       "Enter the minimun and maximum amount you want to spend",
-    "buyer.search.sale.sqft.title": "Square meters range",
+    "buyer.search.sale.sqft.title": "Square Footage",
     "buyer.search.sale.sqft.desc":
       "Enter the minimun and maximum amount you want",
-    "buyer.search.sale.but": "Search",
+    "buyer.search.sale.but": "Ready to Discover Your Ideal Property? ",
 
     "buyer.search.rent.title": "For Rent",
     "buyer.search.rent.address": "City, Zip Code or MLS number",
-    "buyer.search.rent.type": "Property type",
+    "buyer.search.rent.type": "Property Style",
     "buyer.search.rent.bedsbaths": "Bedrooms and bathrooms",
     "buyer.search.rent.beds": "Bedroom",
     "buyer.search.rent.baths": "Bathroom",
@@ -108,13 +161,13 @@ export const ui = {
     "buyer.search.rent.view": "View",
     "buyer.search.rent.parking": "Parking",
     "buyer.search.rent.pool": "Pool",
-    "buyer.search.rent.price.title": "Price Range",
+    "buyer.search.rent.price.title": "Budget",
     "buyer.search.rent.price.desc":
       "Enter the minimun and maximum amount you want to spend",
-    "buyer.search.rent.sqft.title": "Square meters range",
+    "buyer.search.rent.sqft.title": "Square Footage",
     "buyer.search.rent.sqft.desc":
       "Enter the minimun and maximum amount you want",
-    "buyer.search.rent.but": "Search",
+    "buyer.search.rent.but": "Ready to Discover Your Ideal Property? ",
 
     "buyer.result.back": "Back to Search",
     "buyer.result.filters": "Filters",
@@ -138,78 +191,101 @@ export const ui = {
     "buyer.overview.agent.btn": "Get in touch",
 
     "about.header.title": "About me",
-    "about.title":
-      "Hi, I'm Alex, your go-to partner for Broward, Florida's real estate scene.",
+    "about.title": "Welcome! I'm Alex, Your Local Real Estate Guide",
     "about.description1":
-      "I'm all about making transactions smooth and connecting eager buyers with motivated sellers. Based in Broward, I'm ready to help you with selling and finding your perfect home",
+      "When I first stepped into the world of real estate, I quickly realized it wasn't just about properties-it was about the stories, dreams, and new beginnings behind every home. Each transaction became an opportunity to meet amazing people and help them navigate important life decisions with confidence and ease.",
     "about.description2":
-      "As part of the Florida New Dream family, I embrace values like integrity, hard work, and top-notch client service in every deal.",
+      "Fluent in both English and Spanish, I genuinely enjoy connecting with my clients and getting to know their unique aspirations and lifestyles. My professional background in marketing and consumer behavior equips me with a deeper understanding of market dynamics and how to best position your home or identify the perfect property for your needs.",
     "about.description3":
-      "And guess what? I speak both English and Spanish fluently, making communication a breeze.",
+      "At Hidalgo Realtor, integrity, attention to detail, and personalized service are at the core of everything I do. Whether you're buying your first home, selling a beloved family house, or exploring investment opportunities, my goal is always to ensure your real estate journey feels meaningful, smooth, and truly tailored to you.",
     "about.description4":
-      "I bring my marketing and consumer behavior professional knowledge, fresh market insights, and a touch of seasoned expertise to the table. Ensuring your property journey is well-guided. First-time buyer, seasoned investor, or looking to sell or rent? I'm here to tailor my services to your unique needs.",
-    "about.description5": "Let's dive into Broward's real estate together.",
-    "about.description6":
+      "I'd love to hear your story and discuss how I can help make your property dreams a reality.",
+    "about.description5":
       "Drop me a line at alexandra@hidalgorealtor.com and let's chat about turning properties into lasting investments.alexandra@hidalgorealtor.com and let's chat about turning properties into lasting investments.",
-    "about.choose.title": "Why choose me?",
+    "about.description6": "",
+    "about.choose.title": "Why work with me?",
     "about.choose.title1": "Integrity",
     "about.choose.description1":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "about.choose.title2": "Professional knowledge",
+      "Trust isn't given-it's earned. I build every relationship through honest advice and clear communication, ensuring transparency at every step.",
+    "about.choose.title2": "Market Expertise",
     "about.choose.description2":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "about.choose.title3": "Fluent English and Spanish",
+      "In real estate, knowledge is power. I leverage strategic insights and precise market analysis to confidently position you for the best outcomes.",
+    "about.choose.title3": "Personalized Attention",
     "about.choose.description3":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "No two journeys are alike. By truly understanding your unique needs and lifestyle, I provide tailored, thoughtful service designed specifically around you.",
 
     "team.header.title": "Our team",
     "team.title": "Who we are",
     "team.description1":
-      "Florida New Dream, is an established real estate company in South Florida, providing our clients exceptional service in residential, commercial, industrial, agricultural, and business transactions.",
+      "Florida New Dream is more than just a real estate company-we’re your trusted partner in South Florida, specializing in residential, commercial, industrial, agricultural, and business transactions.",
     "team.description2":
-      "We all know that finding a real estate agent you can trust and feel comfortable with is hard. Even more, deciding to sell and move away is a huge life decision. We understand that you want to ensure that your real estate agent is as invested in this sale as you are, and that is what we are committed to providing you.",
-    "team.description3": "Regards,",
+      "Choosing a real estate agent is a significant decision, one that goes beyond mere listings. It's about trust, comfort, and confidence that your goals are understood. We believe every client deserves an agent who is genuinely committed and invested in their success, and that’s exactly what we provide.",
+    "team.description3": "Warm regards,",
 
-    "our.team.title": "Our Dedicated Team",
+    "our.team.title": "Meet Our Team",
     "our.team.description":
-      "Our team is committed to providing expert guidance and personalised support for all your property needs.",
-    "our.team.title1": "ROCIO TORRES",
-    "our.team.subtitle1": "MORTGAGE ADVISOR | HOME OFFICER AGENT",
+      "We combine market expertise, strategic financial insight, and genuine client care to provide you with exceptional, personalized service. Our team is committed to providing expert guidance and personalized support for all your property needs.",
+
+    "our.team.title1": "José Miguel Arreaza",
+    "our.team.subtitle1":
+      "BROKER - ABR®, CRB, SRS, SRES®, e-PRO®, PSA, CBI | Founder of FND ",
     "our.team.description1":
-      "With over 9 years of industry experience, I am dedicated to providing superior service and personal expert guidance throughout the financing process.",
-    "our.team.title2": "ALEX HIDALGO",
-    "our.team.subtitle2": "REALTOR",
+      "With over 15 years in real estate, I've successfully guided numerous clients through residential and commercial transactions, including business acquisitions. As a dedicated member of the Business Brokers of Florida (BBF), the International Business Brokers Association (IBBA), the Greater Miami Realtor Association, and the Realtors Commercial Alliance, I consistently leverage industry expertise and deep market insights to ensure clarity, confidence, and success for my clients.",
+
+    "our.team.title2": "Rocío Torres",
+    "our.team.subtitle2": "Loan Officer & Broker | Mortgage Advisor ",
     "our.team.description2":
-      "Committed to finding you the right house and price, I will have the persistence, dedication, and integrity you deserve.",
+      "With over 9 years of dedicated experience in lending and brokerage, I specialize in providing clients with clear communication and strategic guidance throughout their financial journey. My personalized approach ensures that every transaction is seamless, transparent, and tailored to individual client needs.",
+
+    "our.team.title3": "Yerlys Pacheco",
+    "our.team.subtitle3": "Client Relations & Community Engagement",
     "our.team.description3":
-      "I will use all my background knowledge in marketing and consumer behavior fields to help you succeed with your selling property transactions.",
+      "Real estate is about building connections and making meaningful experiences. My role is to ensure every client feels welcomed, supported, and informed at every step of their journey. I take pride in providing thoughtful assistance and attentive care, creating an environment of ease and trust for all our clients.",
+
+    "our.team.title4": "Alexandra Hidalgo",
+    "our.team.subtitle4": "Realtor ®",
+    "our.team.description4":
+      "I believe real estate is about people and their unique stories. Committed to finding you the right property at the right price, I leverage strategic market insights, professional expertise in marketing and consumer behavior, and meticulous attention to detail. My approach ensures your experience is clear, comfortable, and tailored precisely to your goals. Your real estate journey deserves clarity, integrity, and personalized attention—exactly what I strive to provide every step of the way.",
 
     "our.services.title": "Our Services",
     "our.services.description":
-      "We offer comprehensive services to meet all your property needs, whether you're renting, buying, or selling a house. Our goal is to provide expert guidance and make the process smooth and hassle-free",
+      "No matter where you are in your real estate journey-buying, selling, investing, or renting-we provide expert guidance and tailored real estate solutions designed to make the process effortless and rewarding.",
+
     "our.services.title1": "Selling",
     "our.services.Selling.description1":
-      "Property Valuations Accurate market assessments to determine the bestprice for your home.",
+      "Get a professional home valuation to strategically position your property and achieve maximum market value.",
     "our.services.Selling.description2":
-      "Professional Marketing Highlight your property with compelling listings and extensive exposure.",
+      "Engaging real estate marketing, high-end photography, and targeted exposure to attract serious buyers.",
     "our.services.Selling.description3":
-      "Smooth Transactions From negotiations to legalities, we ensure a seamless selling process.",
+      "From negotiations to closing, I handle every detail, ensuring a smooth, seamless transaction.",
+
     "our.services.title2": "Buying",
     "our.services.buying.description1":
-      "Tailored Property Search Find your ideal home with our personalised guidance.",
+      "Thoughtfully selected luxury homes and high-end properties that align with your lifestyle and goals.",
     "our.services.buying.description2":
-      "Market Insights Stay informed with expert advice and the latest market trends.",
+      "Make confident decisions with exclusive market insights and personalized real estate strategies.",
     "our.services.buying.description3":
-      "Support Every Step From viewings to finalising the deal, we´ll be with you all the way.",
-    "our.services.title3": "Renting",
+      "From property tours to finalizing the deal, I’ll guide you through every step of the home-buying process.",
+
+    "our.services.title3": "Investing",
+    "our.services.investing.description1":
+      "Discover strategic real estate investment opportunities with high potential for long-term growth.",
+    "our.services.investing.description2":
+      "Leverage in-depth market analysis and data-driven insights to make profitable real estate decisions.",
+    "our.services.investing.description3":
+      "Build and diversify your real estate portfolio with expert advice and tailored solutions.",
+
+    "our.services.title4": "Renting",
     "our.services.renting.description1":
-      "For Tenants A wide selection of houses to suit all preferences and budgets, with transparent terms and personalised assistance.",
+      "A wide selection of rental properties suited to your lifestyle, budget, and preferences.",
     "our.services.renting.description2":
-      "For Landlords Expert marketing, tenant management, and property care to maximise your rental income.",
+      "Expert marketing, tenant screening, and property management to maximize your rental income.",
+    "our.services.renting.description3":
+      "Clear communication and full-service support for a stress-free leasing experience.",
 
     "contact.title": "General enquiry",
     "contact.description":
-      "Contact us via the form below and we’ll get back to you as soon as we can.",
+      "Have a question or ready to explore your real estate options? Whether you're looking for guidance, market insights, or tailored solutions, I’m here to help. Reach out, and let’s start the conversation",
     "contact.form.name": "Name",
     "contact.form.your.name": "Your name here",
     "contact.form.email": "Email",
@@ -220,17 +296,88 @@ export const ui = {
     "contact.form.your.massage": "Your message here",
     "contact.form.botton": "Submit",
     "contact.form.description":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "Let’s turn your real estate goals into reality. Whether you're exploring options or ready to take the next step, I’m here to guide you with expertise and a personalized approach. Send me a message, and let’s get started",
 
-    "testimonials.title": "What customer say",
+    "testimonials.title": "Our Clients' Journeys",
     "testimonials.description":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "A seamless real estate experience isn’t just our promise—it’s what our clients say. See how we’ve helped them achieve their goals",
     "testimonials.description1":
-      "I highly recommend it. I will continue to use your services for any real estate agent needs in the future. Very nice to work with Alex!",
+      "Alex was attentive to every detail, ensuring a smooth transaction. His expertise was invaluable, and I couldn’t be more satisfied",
     "testimonials.description2":
-      "Everything went in a timely manner, he did an excellent job and I am very grateful for the outcome of the transaction. Very professional!",
+      "Professional, knowledgeable, and incredibly efficient. Working with Alex was a pleasure, and I highly recommend his services",
     "testimonials.description3":
-      "An excellent attention!!! He was attentive to every detail and his help was invaluable. I was completely satisfied.",
+      "Exceptional service and a seamless process. Alex guided me through every detail, making my experience stress-free and successful",
+
+    "faq.title": "Frequently Asked Questions",
+    "faq.seller.description":
+      "Selling a home is a big decision, and you deserve guidance that makes the process simple and rewarding. If you're wondering about pricing, timing, or preparation, let's talk-I’m here to answer every question along the way.",
+    "faq.investor.description":
+      "Investing in real estate is about making smart, informed decisions. Whether you’re experienced or just getting started, let’s discuss how to build wealth through strategic investments.",
+    "faq.buyer.description":
+      "Finding the right home is an exciting journey, and every question along the way matters. Whether you're wondering about market trends, financing, or the best approach, I’m here to guide you through every step-no question is too small.",
+    "faq.rent.description":
+      "Renting out a property or finding the right place to live should be straightforward and stress-free. No matter what your questions are, I’m here to make sure you feel informed and secure in your decisions.",
+
+    "faq.seller.question1": "When is the best time to sell?",
+    "faq.seller.answer1":
+      'The "right time" to sell is when it works best for you. While spring and fall are traditionally strong seasons, today\'s market is driven by demand. A well-positioned home will attract buyers year-round.',
+    "faq.seller.question2": "How do I prepare my home for sale?",
+    "faq.seller.answer2":
+      "First impressions matter! Small updates like fresh paint, decluttering, and enhancing curb appeal can make a huge difference. I’ll help you pinpoint the best ways to showcase your home’s value.",
+    "faq.seller.question3": "What are the costs of selling?",
+    "faq.seller.answer3":
+      "Expect closing costs, title insurance, state transfer taxes, and agent commissions. If you still have a mortgage, payoff fees may apply. I’ll break down the numbers for you upfront.",
+    "faq.seller.question4": "How long does it take to sell?",
+    "faq.seller.answer4":
+      "It depends on factors like pricing, property condition, and demand. Some homes sell within days, while others take a bit longer. The key is positioning your home strategically in the market to attract the right buyers.",
+    "faq.seller.question5": "How do I price my home correctly?",
+    "faq.seller.answer5":
+      "Pricing is both a science and an art. I’ll conduct a Comparative Market Analysis (CMA) to help you set a competitive price that maximizes value while ensuring buyer interest.",
+
+    "faq.investor.question1": "How do I choose the right investment property?",
+    "faq.investor.answer1":
+      "Every investor’s goals are different—some focus on cash flow, others on long-term appreciation. I’ll help you analyze opportunities that align with your financial strategy.",
+    "faq.investor.question2": "What should I consider before investing?",
+    "faq.investor.answer2":
+      "Location, property type, rental demand, and financing options all play a role. We’ll go over the key factors to ensure your investment works for you.",
+    "faq.investor.question3": "How can I maximize returns?",
+    "faq.investor.answer3":
+      "Through smart property selection, effective tenant management, and long-term strategy. I’ll help you make data-driven decisions for sustainable growth.",
+
+    "faq.buyer.question1": "When is the right time to buy a home?",
+    "faq.buyer.answer1":
+      'There’s no single "perfect" time-it’s about when you are ready. Market trends, interest rates, and inventory all play a role, but the key is to be financially prepared and to find a home that aligns with your needs and goals.',
+    "faq.buyer.question2": "How can I prepare for buying a home?",
+    "faq.buyer.answer2":
+      "Start by defining what you’re looking for, setting a budget, and securing mortgage pre-approval if needed. From there, I’ll help you navigate the search, so you feel confident and prepared at every turn.",
+    "faq.buyer.question3": "What costs should I expect?",
+    "faq.buyer.answer3":
+      "Beyond the purchase price, buyers should plan for closing costs (2–5% of the home’s value), inspections, title insurance, and loan fees. I'll walk you through everything upfront so there are no surprises.",
+    "faq.buyer.question4": "How long does the home-buying process take?",
+    "faq.buyer.answer4":
+      "Every transaction is different! Once you find the right home and your offer is accepted, closing typically takes 30–45 days with financing. Cash purchases may move faster, but factors like inspections and appraisals can affect timing.",
+    "faq.buyer.question5": "What happens during closing?",
+    "faq.buyer.answer5":
+      "The closing process is where everything comes together—finalizing your mortgage, reviewing documents, securing title insurance, and ensuring all legal aspects are in place. I’ll be right there to walk you through it so you feel confident signing those final papers.",
+
+    "faq.rent.question1": "Can I restrict pets in my rental?",
+    "faq.rent.answer1":
+      "You can set pet policies, but service animals and emotional support animals (ESAs) are legally protected. Understanding rental laws ensures compliance and clarity.",
+    "faq.rent.question2": "Who handles maintenance?",
+    "faq.rent.answer2":
+      "Landlords typically manage major repairs, while tenants handle day-to-day upkeep. I’ll help you structure a lease that clearly defines responsibilities.",
+    "faq.rent.question3": "How do I set the right rental price?",
+    "faq.rent.answer3":
+      "A market analysis will help us determine a rate that’s competitive and profitable—one that attracts tenants while maximizing your returns.",
+    "faq.rent.question4": "When is the best time to rent?",
+    "faq.rent.answer4":
+      "Spring and summer have more availability, while fall and winter may offer better deals. The key is balancing your needs and the current market.",
+    "faq.rent.question5": "What should I look for in a lease before signing?",
+    "faq.rent.answer5":
+      "Security deposit terms, maintenance responsibilities, and lease duration should all be clearly defined. I’ll walk you through the fine print so you feel confident moving forward.",
+    "faq.rent.question6": "How do I find great tenants?",
+    "faq.rent.answer6":
+      "Screening is key! We’ll conduct background checks, verify rental history, and ensure you have responsible, qualified tenants.",
 
     "footer.follow": "Follow us",
     "footer.contac": "Contact",
@@ -239,204 +386,276 @@ export const ui = {
     "nav.home": "Inicio",
     "nav.seller": "Venta",
     "nav.buyer": "Compra",
+    "nav.investor": "Inversión",
     "nav.contact": "Contacto",
     "nav.about": "Acerca De",
     "nav.team": "Equipo",
     "nav.services": "Servicios",
 
+    "SEO.home.title": "Hidalgo Bienes Raíces en Broward",
+    "SEO.home.description":
+      "Hidalgo Realtor es su socio de confianza en bienes raíces del condado de Broward. Ya sea que esté comprando, vendiendo, alquilando o invirtiendo, ofrecemos orientación experta, información del mercado y un servicio personalizado. Explore Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y más allá. ¡Su viaje de bienes raíces comienza aquí!",
+    "SEO.seller.title": "Venda su propiedad",
+    "SEO.seller.description":
+      "Vender su casa o propiedad en el condado de Broward es más sencillo con Hidalgo Realtor. Desde valoraciones precisas de viviendas hasta marketing estratégico, negociación profesional y cierres sin problemas, le ayudamos a lograr el máximo valor. Sirviendo a Miramar, Pembroke Pines, Weston, Southwest Ranches y las comunidades circundantes, hagamos que su experiencia de venta sea fácil y exitosa.",
+    "SEO.investor.title": "Inversión",
+    "SEO.investor.description":
+      "Haga crecer su cartera de bienes raíces o encuentre oportunidades comerciales ideales en Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y el condado de Broward. Hidalgo Realtor se especializa en inversiones residenciales, propiedades comerciales, ubicaciones comerciales y oportunidades estratégicas de bienes raíces. Construya su futuro financiero con una guía personalizada e impulsada por el mercado.",
+    "SEO.buyer.title": "Compre su próximo hogar",
+    "SEO.buyer.description":
+      "Encuentre la casa perfecta en Miramar, Pembroke Pines, Weston, Davie, Southwest Ranches o Cooper City, con Hidalgo Realtor. Ofrecemos búsquedas de propiedades personalizadas, análisis perspicaces del mercado y soporte personalizado para que coincida con su estilo de vida y sus objetivos. Permítanos guiar su viaje de compra de vivienda en Broward con experiencia y cuidado.",
+    "SEO.buyer.result.title": "",
+    "SEO.buyer.result.description": "",
+    "SEO.about.title": "Acerca de Hidalgo Realtor",
+    "SEO.about.description":
+      "Los bienes raíces se tratan de personas y sus historias únicas. En Hidalgo Realtor, parte de la familia Florida New Dream, ayudamos a los clientes a navegar por el vibrante mercado de bienes raíces del suroeste de Broward. Con la experiencia en todo el estado de Florida New Dream detrás de nosotros, ofrecemos información del mercado local y un servicio personalizado. Descubra nuestros valores, nuestra misión y cómo convertimos sus sueños de compra, venta, alquiler o inversión en realidad.",
+    "SEO.team.title": "Nuestro equipo",
+    "SEO.team.description":
+      "Conozca al equipo profesional de Hidalgo Realtor dedicado a hacer que su viaje de bienes raíces sea excepcional. Experimentados, accesibles y conocedores, nos especializamos en la compra, venta, inversión y alquiler de propiedades en Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y en todo el condado de Broward. Descubra la diferencia que hace nuestro equipo.",
+    "SEO.services.title": "",
+    "SEO.services.description": "",
+    "SEO.contact.title": "¡Contáctenos!",
+    "SEO.contact.description":
+      "Listo para su próximo movimiento? Póngase en contacto con Hidalgo Realtor para obtener asistencia inmobiliaria personalizada y experta en Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y todo el suroeste del condado de Broward. Ya sea que compre, venda, invierta o simplemente tenga curiosidad, estamos aquí para brindarle una guía profesional y amigable en cada paso del camino.",
+
     "home.header.title": "El hogar es donde comienza tu historia",
     "home.header.search": "Buscar ciudad, código o MLS#",
     "home.header.search.button": "Filtros",
     "home.header.window.desc.":
-      "Si tienes alguna pregunta, estamos aquí para ayudarte.",
-    "home.city.title1": "Exploremos",
-    "home.city.title2": "¡Los bienes raíces de Broward juntos!",
+      "¿Tienes alguna pregunta? Estoy aquí para ayudarte. ¡Charlemos!",
+    "home.city.title1": "Descubramos juntos",
+    "home.city.title2": "Las mejores propiedades inmobiliarias de Broward.",
     "home.city1.title": "Miramar",
-    "home.city1.subtitle": "El viajero mundial",
+    "home.city1.subtitle": "El Explorador Cosmopolita",
     "home.city1.description":
-      "Miramar es como tener un amigo trotamundos. Son de mente abierta, culturalmente diversos y siempre están dispuestos a vivir aventuras internacionales.",
+      "Miramar es como tu amigo viajado: cosmopolita, dinámico y que mezcla culturas sin esfuerzo. Es una ciudad vibrante y diversa con un espíritu internacional, que ofrece una mezcla de conveniencia moderna y ricas experiencias culturales.",
     "home.city2.title": "Pembroke Pines",
-    "home.city2.subtitle": "El guardián de la familia",
+    "home.city2.subtitle": "El Guardián de la Familia",
     "home.city2.description":
-      "Pembroke Pines parece un amigo que es la mejor persona de familia. Son confiables, cálidos y siempre cuidan de sus seres queridos.",
+      "Pembroke Pines es la ciudad definitiva centrada en la familia: confiable, acogedora y diseñada para la conexión. Con exuberantes parques, escuelas de primer nivel y un fuerte sentido de comunidad, es un lugar donde las familias prosperan.",
     "home.city3.title": "Southwest Ranches",
-    "home.city3.subtitle": "El alma del campo",
+    "home.city3.subtitle": "El Sofisticado Rústico",
     "home.city3.description":
-      "Southwest Ranches es como un amigo con un corazón rústico. Son tranquilos, disfrutan de los espacios abiertos y les encanta el aire libre.",
+      "Southwest Ranches es tu amigo privado y amante de la naturaleza: espacioso, sereno y comprometido con la exclusividad. Si valoras la privacidad y el lujo con un toque rural, este es tu escape.",
     "home.city4.title": "Weston",
-    "home.city4.subtitle": "El aristócrata elegante",
+    "home.city4.subtitle": "El Visionario Elegante",
     "home.city4.description":
-      "Weston es como un amigo que encarna la elegancia y el lujo. Aprecian las cosas buenas de la vida y disfrutan de experiencias exclusivas.",
+      "Weston es el amigo que lo tiene todo perfectamente planeado: refinado, exclusivo e inherentemente sofisticado. Es conocido por sus impresionantes paisajes, comunidades exclusivas y alta calidad de vida.",
     "home.city5.title": "Cooper City",
-    "home.city5.subtitle": "El incondicional",
+    "home.city5.subtitle": "El Corazón de la Comunidad",
     "home.city5.description":
-      "Cooper City es como ese amigo incondicional. Son conocidos por su lealtad inquebrantable y presencia confiable y valoran la calidez, el sentido de pertenencia y la comodidad de su comunidad.",
+      "Cooper City es el amigo que siempre te apoya: leal, confiable y arraigado en la comunidad. Es un lugar donde los vecinos se convierten en amigos, y el encanto de pueblo pequeño es real.",
     "home.city6.title": "Davie",
-    "home.city6.subtitle": "El vaquero aventurero",
+    "home.city6.subtitle": "El Pionero Moderno",
     "home.city6.description":
-      "Davie parece un amigo con espíritu de vaquero. Son tranquilos, aman el aire libre y siempre están dispuestos a vivir una aventura relajada.",
-    "home.city.boton1": "Ver propiedad",
-    "home.city.boton2": "Mostrar más",
+      "Davie es tu amigo aventurero y amante del aire libre: relajado pero moderno, que abraza los espacios abiertos y un estilo de vida relajado impulsado por la naturaleza. Conocido por su encanto ecuestre, combina la belleza rústica con la comodidad contemporánea.",
+    "home.city.boton1": "Ver Propiedad",
+    "home.city.boton2": "Mostrar Más",
     "home.city.boton3": "Mostrar menos",
 
-    "seller.title1": "Te ayudamos a vender",
-    "seller.title2": "tu casa hoy",
+    "seller.title1": "Tu Próximo Capítulo Te Espera",
+    "seller.title2": "Vendamos Tu Propiedad Sin Esfuerzo",
     "seller.description":
-      "Encontrar el agente inmobiliario adecuado es crucial a la hora de navegar por el complejo mundo de los bienes raíces. Un agente inmobiliario capacitado no sólo comprende el mercado local sino que también posee la experiencia para guiarlo a través del proceso de compra o venta.",
-    "seller.form.title": "Obtenga un valor",
+      "Vender tu propiedad a menudo marca el comienzo de una nueva aventura. En Hidalgo Realtor, me enfoco en hacer esta transición fluida, eficiente y gratificante. Con un conocimiento experto del mercado y un enfoque personalizado, tu propiedad se posicionará de manera reflexiva y estratégica, permitiéndote avanzar naturalmente a tu próximo paso sin estrés ni incertidumbre. Permíteme manejar los detalles para que puedas concentrarte en lo que está por venir.",
+    "seller.form.title":
+      "¿Te preguntas sobre el verdadero valor de tu propiedad?",
     "seller.form.description":
-      "Complete este formulario para recibir una valoración precisa de su propiedad.",
+      "Una valoración profesional proporciona información clara, lo que te permite planificar con confianza tu próximo movimiento. Comprender el potencial de mercado de tu propiedad hace que el camino a seguir sea más simple y claro.",
     "seller.form.first.name": "Nombre",
     "seller.form.last.name": "Apellido",
     "seller.form.email": "Correo electrónico",
     "seller.form.prefix": "Prefijo",
     "seller.form.phone": "Teléfono (opcional)",
-    "seller.form.location": "Ubicación",
-    "seller.form.square.meters": "Metros cuadrados",
-    "seller.form.bedrooms.bathrooms": "Dormitorios y baños",
-    "seller.form.bedrooms": "Dormitorios",
-    "seller.form.bathrooms": "Baños",
-    "seller.form.selec.items": "Seleccionar elementos",
+    "seller.form.location": "Ciudad, Código Postal o número de MLS",
+    "seller.form.square.meters": "Metraje Cuadrado",
+    "seller.form.bedrooms.bathrooms": "Habitaciones y baños",
+    "seller.form.bedrooms": "Habitación",
+    "seller.form.bathrooms": "Baño",
+    "seller.form.selec.items": "Comodidades",
     "seller.form.parking": "Estacionamiento",
     "seller.form.pool": "Piscina",
     "seller.form.view": "Vista",
-    "seller.form.botton": "Entregar",
+    "seller.form.botton": "Da el Siguiente Paso con Facilidad",
 
-    "buyer.site.title": "Compra Hidalgo",
-    "buyer.title": "Encontremos tu casa soñada",
+    "investor.title1": "Invierte Sabiamente. Crece Estratégicamente",
+    "investor.title2":
+      "La inversión inmobiliaria no se trata solo de transacciones",
+    "investor.description":
+      "Se trata de visión estratégica y decisiones informadas. En Hidalgo Realtor, aprovecho una amplia experiencia en el mercado local y un análisis perspicaz para ayudarte a identificar y capitalizar las oportunidades adecuadas. Ya sean tus objetivos la rentabilidad a corto plazo o la creación de riqueza a largo plazo, te guiaré sin problemas en cada paso, asegurando claridad y precisión en tus inversiones.",
+    "investor.form.title": "Explora y evalúa sin esfuerzo",
+    "investor.form.description":
+      "Desbloquea oportunidades y construye tu cartera de bienes raíces con la guía experta y los conocimientos estratégicos diseñados específicamente para inversores inteligentes.",
+    "investor.form.first.name": "Nombre",
+    "investor.form.last.name": "Apellido",
+    "investor.form.email": "Correo electrónico",
+    "investor.form.prefix": "Prefijo",
+    "investor.form.phone": "Teléfono (opcional)",
+    "investor.form.location": "Ciudad, Código Postal o número de MLS",
+    "investor.form.square.meters": "Metraje Cuadrado",
+    "investor.form.bedrooms.bathrooms": "Habitaciones y baños",
+    "investor.form.bedrooms": "Habitación",
+    "investor.form.bathrooms": "Baño",
+    "investor.form.selec.items": "Comodidades",
+    "investor.form.parking": "Estacionamiento",
+    "investor.form.pool": "Piscina",
+    "investor.form.view": "Vista",
+    "investor.form.botton": "¿Listo para Expandir Tu Cartera?",
+
+    "buyer.title": "Descubre la Casa que Siempre Has Imaginado, Sin Esfuerzo",
     "buyer.description":
-      "Cualquiera que sea tu sueño, si rentar o listo para comprar, yo estoy aqui para ayudarte a buscar un lugar que lo sientas como tu casa. Trabajemos juntos para descubrir la propiedad perfecta que encaje con tu estilo de vida, presupuesto y necesidades. Tu siguiente casa esta esperando — vamos a buscarla",
+      "Buscar tu próxima propiedad se trata de algo más que la ubicación o las características correctas: se trata de imaginar el estilo de vida que deseas y hacer realidad esa visión. En Hidalgo Realtor, escucho atentamente, entiendo tus necesidades y aplico información estratégica del mercado para encontrar hogares que se adapten exclusivamente a ti. Mi objetivo es hacer que tu viaje no solo sea fácil, sino agradable, permitiéndote imaginarte naturalmente en tu espacio perfecto.",
+    "buyer.tab.sale.title": "Estoy Buscando Comprar",
+    "buyer.tab.rent.title": "Estoy Buscando Alquilar",
 
-    "buyer.tab.sale.title": "Buscando para Comprar",
-    "buyer.tab.rent.title": "Buscando para Alquilar",
-
-    "buyer.search.sale.title": "Comprar",
-    "buyer.search.sale.address": "Ciudad, Código Postal ó Número MLS",
-    "buyer.search.sale.type": "Tipo de Propiedad",
-    "buyer.search.sale.bedsbaths": "Habitaciones y Baños",
-    "buyer.search.sale.beds": "Habitaciones",
-    "buyer.search.sale.baths": "Baños",
+    "buyer.search.sale.title": "En Venta",
+    "buyer.search.sale.address": "Ciudad, Código Postal o número de MLS",
+    "buyer.search.sale.type": "Estilo de Propiedad",
+    "buyer.search.sale.bedsbaths": "Habitaciones y baños",
+    "buyer.search.sale.beds": "Habitación",
+    "buyer.search.sale.baths": "Baño",
     "buyer.search.sale.amenities": "Comodidades",
     "buyer.search.sale.view": "Vista",
     "buyer.search.sale.parking": "Estacionamiento",
     "buyer.search.sale.pool": "Piscina",
-    "buyer.search.sale.price.title": "Rangos de Precios",
-    "buyer.search.sale.price.desc": "Selecciona lo minimo y maximo del precio",
-    "buyer.search.sale.sqft.title": "Rango Metros Cuadrados",
-    "buyer.search.sale.sqft.desc": "Selecciona lo minimo y maximo del tamaño",
-    "buyer.search.sale.but": "Buscar",
+    "buyer.search.sale.price.title": "Presupuesto",
+    "buyer.search.sale.price.desc":
+      "Ingresa el monto mínimo y máximo que deseas gastar",
+    "buyer.search.sale.sqft.title": "Metraje Cuadrado",
+    "buyer.search.sale.sqft.desc":
+      "Ingresa el monto mínimo y máximo que deseas",
+    "buyer.search.sale.but": "¿Listo para Descubrir Tu Propiedad Ideal?",
 
-    "buyer.search.rent.title": "Alquilar",
-    "buyer.search.rent.address": "Ciudad, Código Postal ó Número MLS",
-    "buyer.search.rent.type": "Tipo de Propiedad",
-    "buyer.search.rent.bedsbaths": "Habitaciones y Baños",
-    "buyer.search.rent.beds": "Habitaciones",
-    "buyer.search.rent.baths": "Baños",
+    "buyer.search.rent.title": "En Alquiler",
+    "buyer.search.rent.address": "Ciudad, Código Postal o número de MLS",
+    "buyer.search.rent.type": "Estilo de Propiedad",
+    "buyer.search.rent.bedsbaths": "Habitaciones y baños",
+    "buyer.search.rent.beds": "Habitación",
+    "buyer.search.rent.baths": "Baño",
     "buyer.search.rent.amenities": "Comodidades",
     "buyer.search.rent.view": "Vista",
-    "buyer.search.rent.parking": "Estacinamiento",
+    "buyer.search.rent.parking": "Estacionamiento",
     "buyer.search.rent.pool": "Piscina",
-    "buyer.search.rent.price.title": "Rangos de Precios",
-    "buyer.search.rent.price.desc": "Selecciona lo minimo y maximo del precio",
-    "buyer.search.rent.sqft.title": "Rango Metros Cuadrados",
-    "buyer.search.rent.sqft.desc": "Selecciona lo minimo y maximo del tamaño",
-    "buyer.search.rent.but": "Buscar",
+    "buyer.search.rent.price.title": "Presupuesto",
+    "buyer.search.rent.price.desc":
+      "Ingresa el monto mínimo y máximo que deseas gastar",
+    "buyer.search.rent.sqft.title": "Metraje Cuadrado",
+    "buyer.search.rent.sqft.desc":
+      "Ingresa el monto mínimo y máximo que deseas",
+    "buyer.search.rent.but": "¿Listo para Descubrir Tu Propiedad Ideal?",
 
-    "buyer.result.back": "Volver a la Busquedad",
+    "buyer.result.back": "Volver a la Búsqueda",
     "buyer.result.filters": "Filtros",
-    "buyer.result.listings": "Propiedades",
+    "buyer.result.listings": "Listados",
     "buyer.result.btn": "Ver Propiedad",
-    "buyer.result.paging.page": "Pagina",
+    "buyer.result.paging.page": "Página",
     "buyer.result.paging.of": "de",
 
     "buyer.overview.back": "Volver a los Resultados",
     "buyer.overview.share": "Compartir",
     "buyer.overview.photos": "Mostrar todas las fotos",
-    "buyer.overview.description": "Descripción de la propiedad",
-    "buyer.overview.details": "Detalles de la propiedad",
-    "buyer.overview.details.year": "Años",
+    "buyer.overview.description": "descripción de la propiedad",
+    "buyer.overview.details": "detalles de la propiedad",
+    "buyer.overview.details.year": "Año de Construcción",
     "buyer.overview.details.bath": "Baños",
     "buyer.overview.details.beds": "Habitaciones",
     "buyer.overview.details.parking": "Estacionamiento",
-    "buyer.overview.location": "Ubicación de la propiedad",
-
-    "buyer.overview.agent.title": "Agente de la propiedad",
-    "buyer.overview.agent.btn": "Ponte en contacto",
+    "buyer.overview.location": "ubicación de la propiedad",
+    "buyer.overview.agent.title": "Agente de Propiedad",
+    "buyer.overview.agent.btn": "Ponerse en contacto",
 
     "about.header.title": "Acerca de mí",
-    "about.title":
-      "Hola, soy Alex, tu socio de referencia para la escena inmobiliaria de Broward, Florida.",
+    "about.title": "¡Bienvenido! Soy Alex, Tu Guía Inmobiliario Local",
     "about.description1":
-      "Mi objetivo es facilitar las transacciones y conectar a compradores entusiastas con vendedores motivados. Con base en Broward, estoy listo para ayudarlo a vender y encontrar su casa perfecta.",
+      "Cuando entré por primera vez en el mundo de los bienes raíces, rápidamente me di cuenta de que no se trataba solo de propiedades, sino de las historias, los sueños y los nuevos comienzos detrás de cada hogar. Cada transacción se convirtió en una oportunidad para conocer gente increíble y ayudarlos a navegar decisiones importantes de la vida con confianza y facilidad.",
     "about.description2":
-      "Como parte de la familia Florida New Dream, adopto valores como la integridad, el trabajo duro y el servicio al cliente de primer nivel en cada trato.",
+      "Con fluidez tanto en inglés como en español, disfruto genuinamente conectando con mis clientes y conociendo sus aspiraciones y estilos de vida únicos. Mi experiencia profesional en marketing y comportamiento del consumidor me brinda una comprensión más profunda de la dinámica del mercado y de cómo posicionar mejor tu hogar o identificar la propiedad perfecta para tus necesidades.",
     "about.description3":
-      "¿Y adivina qué? Hablo inglés y español con fluidez, lo que facilita la comunicación.",
+      "En Hidalgo Realtor, la integridad, la atención al detalle y el servicio personalizado son el núcleo de todo lo que hago. Ya sea que estés comprando tu primer hogar, vendiendo una querida casa familiar o explorando oportunidades de inversión, mi objetivo es siempre asegurar que tu viaje inmobiliario se sienta significativo, fluido y verdaderamente adaptado a ti.",
     "about.description4":
-      "Aporto mi conocimiento profesional sobre marketing y comportamiento del consumidor, nuevos conocimientos del mercado y un toque de experiencia experimentada. Garantizar que su recorrido inmobiliario esté bien guiado. ¿Comprador por primera vez, inversionista experimentado o buscando vender o alquilar? Estoy aquí para adaptar mis servicios a sus necesidades únicas.",
+      "Me encantaría escuchar tu historia y discutir cómo puedo ayudarte a hacer realidad tus sueños de propiedad.",
     "about.description5":
-      "Profundicemos juntos en los bienes raíces de Broward.",
-    "about.description6":
-      "Escríbame a Escríbame a alexandra@hidalgorealtor.com y conversemos sobre cómo convertir propiedades en inversiones duraderas.alexandra@hidalgorealtor.com y conversemos sobre cómo convertir propiedades en inversiones duraderas.",
-    "about.choose.title": "¿Por qué elegirme?",
+      "Escríbeme a alexandra@hidalgorealtor.com y charlemos sobre cómo convertir las propiedades en inversiones duraderas. alexandra@hidalgorealtor.com y charlemos sobre cómo convertir las propiedades en inversiones duraderas.",
+    "about.description6": "",
+
+    "about.choose.title": "¿Por qué trabajar conmigo?",
     "about.choose.title1": "Integridad",
     "about.choose.description1":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "about.choose.title2": "Conocimiento profesional",
+      "La confianza no se da, se gana. Construyo cada relación a través de consejos honestos y una comunicación clara, asegurando la transparencia en cada paso.",
+    "about.choose.title2": "Experiencia en el Mercado",
     "about.choose.description2":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "about.choose.title3": "Inglés y español fluidos",
+      "En bienes raíces, el conocimiento es poder. Aprovecho información estratégica y un análisis de mercado preciso para posicionarte con confianza para los mejores resultados.",
+    "about.choose.title3": "Atención Personalizada",
     "about.choose.description3":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "No hay dos viajes iguales. Al comprender verdaderamente tus necesidades y estilo de vida únicos, brindo un servicio personalizado y reflexivo diseñado específicamente para ti.",
 
     "team.header.title": "Nuestro equipo",
-    "team.title": "Quienes somos",
+    "team.title": "Quiénes somos",
     "team.description1":
-      "Florida New Dream, es una empresa de bienes raíces establecida en el sur de Florida, que brinda a nuestros clientes un servicio excepcional en transacciones residenciales, comerciales, industriales, agrícolas y comerciales.",
+      "Florida New Dream es más que una simple empresa de bienes raíces: somos tu socio de confianza en el sur de Florida, especializado en transacciones residenciales, comerciales, industriales, agrícolas y de negocios.",
     "team.description2":
-      "Todos sabemos que es difícil encontrar un agente de bienes raíces en el que pueda confiar y con el que se sienta cómodo. Es más, decidir vender y mudarse es una decisión de vida enorme. Entendemos que usted desea asegurarse de que su agente de bienes raíces invierta tanto como usted en esta venta, y eso es lo que nos comprometemos a brindarle.",
-    "team.description3": "Saludos,",
+      "Elegir un agente de bienes raíces es una decisión importante, que va más allá de los simples listados. Se trata de confianza, comodidad y la seguridad de que se comprenden tus objetivos. Creemos que cada cliente merece un agente que esté genuinamente comprometido e invertido en su éxito, y eso es exactamente lo que brindamos.",
+    "team.description3": "Saludos cordiales,",
 
-    "our.team.title": "Nuestro equipo dedicado",
+    "our.team.title": "Conoce a Nuestro Equipo",
     "our.team.description":
-      "Nuestro equipo está comprometido a brindar orientación experta y soporte personalizado para todas sus necesidades inmobiliarias.",
-    "our.team.title1": "ROCIO TORRES",
-    "our.team.subtitle1": "ASESOR HIPOTECARIO | AGENTE OFICIAL DEL INTERIOR",
+      "Combinamos experiencia en el mercado, visión financiera estratégica y atención genuina al cliente para brindarte un servicio excepcional y personalizado. Nuestro equipo está comprometido a brindar orientación experta y apoyo personalizado para todas tus necesidades de propiedad.",
+    "our.team.title1": "José Miguel Arreaza",
+    "our.team.subtitle1":
+      "BROKER - ABR®, CRB, SRS, SRES®, e-PRO®, PSA, CBI | Fundador de FND",
     "our.team.description1":
-      "Con más de 9 años de experiencia en la industria, me dedico a brindar un servicio superior y orientación personal experta durante todo el proceso de financiamiento.",
-    "our.team.title2": "ALEX HIDALGO",
-    "our.team.subtitle2": "CORREDOR DE BIENES RAÍCES",
+      "Con más de 15 años en bienes raíces, he guiado con éxito a numerosos clientes a través de transacciones residenciales y comerciales, incluidas las adquisiciones de negocios. Como miembro dedicado de Business Brokers of Florida (BBF), International Business Brokers Association (IBBA), Greater Miami Realtor Association y Realtors Commercial Alliance, aprovecho constantemente la experiencia de la industria y el profundo conocimiento del mercado para garantizar claridad, confianza y éxito para mis clientes.",
+    "our.team.title2": "Rocío Torres",
+    "our.team.subtitle2": "Oficial de Préstamos y Broker | Asesora Hipotecaria",
     "our.team.description2":
-      "Comprometido a encontrarle la casa y el precio adecuados, tendré la perseverancia, dedicación e integridad que se merece.",
+      "Con más de 9 años de experiencia dedicada en préstamos y corretaje, me especializo en brindar a los clientes una comunicación clara y orientación estratégica a lo largo de su viaje financiero. Mi enfoque personalizado asegura que cada transacción sea fluida, transparente y adaptada a las necesidades individuales del cliente.",
+    "our.team.title3": "Yerlys Pacheco",
+    "our.team.subtitle3": "Relaciones con el Cliente y Compromiso Comunitario",
     "our.team.description3":
-      "Utilizaré todos mis conocimientos en los campos de marketing y comportamiento del consumidor para ayudarle a tener éxito en sus transacciones de venta de propiedades.",
+      "Los bienes raíces se tratan de construir conexiones y crear experiencias significativas. Mi función es asegurar que cada cliente se sienta bienvenido, apoyado e informado en cada paso de su viaje. Me enorgullezco de brindar asistencia reflexiva y atención atenta, creando un ambiente de tranquilidad y confianza para todos nuestros clientes.",
+    "our.team.title4": "Alexandra Hidalgo",
+    "our.team.subtitle4": "Realtor ®",
+    "our.team.description4":
+      "Creo que los bienes raíces se tratan de las personas y sus historias únicas. Comprometida a encontrar la propiedad adecuada al precio adecuado, aprovecho información estratégica del mercado, experiencia profesional en marketing y comportamiento del consumidor, y una meticulosa atención al detalle. Mi enfoque asegura que tu experiencia sea clara, cómoda y adaptada precisamente a tus objetivos. Tu viaje inmobiliario merece claridad, integridad y atención personalizada, exactamente lo que me esfuerzo por brindar en cada paso del camino.",
 
     "our.services.title": "Nuestros Servicios",
     "our.services.description":
-      "Ofrecemos servicios integrales para satisfacer todas sus necesidades inmobiliarias, ya sea que esté alquilando, comprando o vendiendo una casa. Nuestro objetivo es brindar orientación experta y hacer que el proceso sea fluido y sin complicaciones.",
+      "No importa en qué etapa te encuentres de tu viaje inmobiliario, ya sea comprando, vendiendo, invirtiendo o alquilando, brindamos orientación experta y soluciones inmobiliarias personalizadas diseñadas para hacer que el proceso sea sencillo y gratificante.",
+
     "our.services.title1": "Venta",
     "our.services.Selling.description1":
-      "Tasaciones de propiedades Evaluaciones precisas del mercado para determinar el mejor precio para su casa.",
+      "Obtén una valoración profesional de tu vivienda para posicionar estratégicamente tu propiedad y alcanzar el máximo valor de mercado.",
     "our.services.Selling.description2":
-      "Marketing profesional Resalte su propiedad con anuncios atractivos y una amplia exposición.",
+      "Marketing inmobiliario atractivo, fotografía de alta calidad y exposición dirigida para atraer compradores serios.",
     "our.services.Selling.description3":
-      "Transacciones fluidas Desde negociaciones hasta aspectos legales, garantizamos un proceso de venta fluido.",
-    "our.services.title2": "Comprar",
+      "Desde las negociaciones hasta el cierre, manejo cada detalle, asegurando una transacción fluida y sin problemas.",
+
+    "our.services.title2": "Compra",
     "our.services.buying.description1":
-      "Búsqueda de Propiedades a Medida Encuentra tu casa ideal con nuestra orientación personalizada.",
+      "Viviendas de lujo y propiedades de alta gama cuidadosamente seleccionadas que se alinean con tu estilo de vida y objetivos.",
     "our.services.buying.description2":
-      "Información sobre el mercado Manténgase informado con asesoramiento de expertos y las últimas tendencias del mercado.",
+      "Toma decisiones con confianza gracias a información exclusiva del mercado y estrategias inmobiliarias personalizadas.",
     "our.services.buying.description3":
-      "Apoye cada paso Desde las visitas hasta la finalización del trato, estaremos con usted en todo momento.",
-    "our.services.title3": "Alquiler",
+      "Desde los recorridos por las propiedades hasta la finalización del acuerdo, te guiaré en cada paso del proceso de compra de vivienda.",
+
+    "our.services.title3": "Inversión",
+    "our.services.investing.description1":
+      "Descubre oportunidades estratégicas de inversión inmobiliaria con un alto potencial de crecimiento a largo plazo.",
+    "our.services.investing.description2":
+      "Aprovecha el análisis de mercado en profundidad y la información basada en datos para tomar decisiones inmobiliarias rentables.",
+    "our.services.investing.description3":
+      "Construye y diversifica tu cartera de bienes raíces con asesoramiento experto y soluciones personalizadas.",
+
+    "our.services.title4": "Alquiler",
     "our.services.renting.description1":
-      "Para Inquilinos Una amplia selección de casas para todos los gustos y presupuestos, con condiciones transparentes y asistencia personalizada.",
+      "Una amplia selección de propiedades de alquiler que se adaptan a tu estilo de vida, presupuesto y preferencias.",
     "our.services.renting.description2":
-      "Para propietarios Expertos en marketing, gestión de inquilinos y cuidado de la propiedad para maximizar sus ingresos por alquiler.",
+      "Marketing experto, selección de inquilinos y administración de propiedades para maximizar tus ingresos por alquiler.",
+    "our.services.renting.description3":
+      "Comunicación clara y soporte de servicio completo para una experiencia de arrendamiento sin estrés.",
 
     "contact.title": "Consulta general",
     "contact.description":
-      "Contáctenos a través del siguiente formulario y nos comunicaremos con usted lo antes posible.",
+      "¿Tienes alguna pregunta o estás listo para explorar tus opciones inmobiliarias? Ya sea que busques orientación, información del mercado o soluciones personalizadas, estoy aquí para ayudarte. Ponte en contacto y comencemos la conversación.",
     "contact.form.name": "Nombre",
     "contact.form.your.name": "Tu nombre aquí",
     "contact.form.email": "Correo electrónico",
@@ -445,21 +664,95 @@ export const ui = {
     "contact.form.your.phone": "Tu teléfono aquí",
     "contact.form.massage": "Mensaje",
     "contact.form.your.massage": "Tu mensaje aquí",
-    "contact.form.botton": "Entregar",
+    "contact.form.botton": "Enviar",
     "contact.form.description":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "Convirtamos tus objetivos inmobiliarios en realidad. Ya sea que estés explorando opciones o listo para dar el siguiente paso, estoy aquí para guiarte con experiencia y un enfoque personalizado. Envíame un mensaje y comencemos.",
 
-    "testimonials.title": "Lo que dice el cliente",
+    "testimonials.title": "Las Experiencias de Nuestros Clientes",
     "testimonials.description":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Una experiencia inmobiliaria fluida no es solo nuestra promesa, es lo que dicen nuestros clientes. Mira cómo les hemos ayudado a alcanzar sus objetivos.",
     "testimonials.description1":
-      "La recomiendo altamente. Continuaré utilizando sus servicios para cualquier necesidad de agente inmobiliario en el futuro.  Muy agradable trabajar con Alex!",
+      "Alex estuvo atento a cada detalle, asegurando una transacción fluida. Su experiencia fue invaluable y no podría estar más satisfecho.",
     "testimonials.description2":
-      "Todo salió de manera oportuna, hizo un excelente trabajo y estoy muy agradecida por el resultado de la transacción. Muy profesional!",
+      "Profesional, conocedor e increíblemente eficiente. Trabajar con Alex fue un placer y recomiendo encarecidamente sus servicios.",
     "testimonials.description3":
-      "Una atención excelente!!! Estuvo pendientes de cada detalle y su ayuda fue invaluable. Quedé completamente satisfecha.",
+      "Servicio excepcional y un proceso sin problemas. Alex me guio en cada detalle, haciendo que mi experiencia fuera exitosa y sin estrés.",
 
-    "footer.follow": "Síganos",
+    "faq.title": "Preguntas Frecuentes",
+    "faq.seller.description":
+      "Vender una casa es una gran decisión, y mereces una guía que haga el proceso simple y gratificante. Si te preguntas sobre precios, plazos o preparación, hablemos. Estoy aquí para responder todas tus preguntas en el camino.",
+    "faq.investor.description":
+      "Invertir en bienes raíces se trata de tomar decisiones inteligentes e informadas. Ya seas experimentado o estés comenzando, discutamos cómo construir riqueza a través de inversiones estratégicas.",
+    "faq.buyer.description":
+      "Encontrar el hogar adecuado es un viaje emocionante, y cada pregunta en el camino importa. Ya sea que te preguntes sobre las tendencias del mercado, la financiación o el mejor enfoque, estoy aquí para guiarte en cada paso; ninguna pregunta es demasiado pequeña.",
+    "faq.rent.description":
+      "Alquilar una propiedad o encontrar el lugar adecuado para vivir debe ser sencillo y sin estrés. No importa cuáles sean tus preguntas, estoy aquí para asegurarme de que te sientas informado y seguro en tus decisiones.",
+
+    "faq.seller.question1": "¿Cuándo es el mejor momento para vender?",
+    "faq.seller.answer1":
+      'El "momento adecuado" para vender es cuando mejor te funcione a ti. Si bien la primavera y el otoño son tradicionalmente temporadas fuertes, el mercado actual está impulsado por la demanda. Una casa bien posicionada atraerá compradores durante todo el año.',
+    "faq.seller.question2": "¿Cómo preparo mi casa para la venta?",
+    "faq.seller.answer2":
+      "¡Las primeras impresiones importan! Pequeñas actualizaciones como pintura fresca, ordenar y mejorar el atractivo exterior pueden marcar una gran diferencia. Te ayudaré a identificar las mejores maneras de mostrar el valor de tu casa.",
+    "faq.seller.question3": "¿Cuáles son los costos de vender?",
+    "faq.seller.answer3":
+      "Espera costos de cierre, seguro de título, impuestos de transferencia estatal y comisiones de agente. Si aún tienes una hipoteca, pueden aplicarse tarifas de cancelación. Te desglosaré los números por adelantado.",
+    "faq.seller.question4": "¿Cuánto tiempo se tarda en vender?",
+    "faq.seller.answer4":
+      "Depende de factores como el precio, el estado de la propiedad y la demanda. Algunas casas se venden en días, mientras que otras tardan un poco más. La clave es posicionar estratégicamente tu casa en el mercado para atraer a los compradores adecuados.",
+    "faq.seller.question5": "¿Cómo le pongo precio a mi casa correctamente?",
+    "faq.seller.answer5":
+      "La fijación de precios es tanto una ciencia como un arte. Realizaré un Análisis Comparativo de Mercado (CMA) para ayudarte a establecer un precio competitivo que maximice el valor al tiempo que garantiza el interés del comprador.",
+
+    "faq.investor.question1": "¿Cómo elijo la propiedad de inversión adecuada?",
+    "faq.investor.answer1":
+      "Los objetivos de cada inversor son diferentes: algunos se centran en el flujo de efectivo, otros en la apreciación a largo plazo. Te ayudaré a analizar las oportunidades que se alinean con tu estrategia financiera.",
+    "faq.investor.question2": "¿Qué debo considerar antes de invertir?",
+    "faq.investor.answer2":
+      "La ubicación, el tipo de propiedad, la demanda de alquiler y las opciones de financiación juegan un papel importante. Revisaremos los factores clave para asegurarnos de que tu inversión funcione para ti.",
+    "faq.investor.question3": "¿Cómo puedo maximizar los rendimientos?",
+    "faq.investor.answer3":
+      "A través de una selección inteligente de propiedades, una gestión eficaz de los inquilinos y una estrategia a largo plazo. Te ayudaré a tomar decisiones basadas en datos para un crecimiento sostenible.",
+
+    "faq.buyer.question1":
+      "¿Cuándo es el momento adecuado para comprar una casa?",
+    "faq.buyer.answer1":
+      'No hay un momento "perfecto", se trata de cuándo estás listo. Las tendencias del mercado, las tasas de interés y el inventario juegan un papel importante, pero la clave es estar preparado financieramente y encontrar una casa que se alinee con tus necesidades y objetivos.',
+    "faq.buyer.question2": "¿Cómo puedo prepararme para comprar una casa?",
+    "faq.buyer.answer2":
+      "Comienza por definir lo que estás buscando, establecer un presupuesto y obtener una preaprobación hipotecaria si es necesario. A partir de ahí, te ayudaré a navegar por la búsqueda, para que te sientas seguro y preparado en cada paso.",
+    "faq.buyer.question3": "¿Qué costos debo esperar?",
+    "faq.buyer.answer3":
+      "Además del precio de compra, los compradores deben planificar los costos de cierre (2-5% del valor de la vivienda), las inspecciones, el seguro de título y las tarifas del préstamo. Te explicaré todo por adelantado para que no haya sorpresas.",
+    "faq.buyer.question4":
+      "¿Cuánto tiempo lleva el proceso de compra de una vivienda?",
+    "faq.buyer.answer4":
+      "¡Cada transacción es diferente! Una vez que encuentras la casa adecuada y se acepta tu oferta, el cierre suele tardar entre 30 y 45 días con financiación. Las compras en efectivo pueden moverse más rápido, pero factores como las inspecciones y las tasaciones pueden afectar los plazos.",
+    "faq.buyer.question5": "¿Qué sucede durante el cierre?",
+    "faq.buyer.answer5":
+      "El proceso de cierre es donde todo se une: finalizar tu hipoteca, revisar documentos, obtener un seguro de título y garantizar que todos los aspectos legales estén en su lugar. Estaré allí mismo para guiarte para que te sientas seguro al firmar esos documentos finales.",
+
+    "faq.rent.question1": "¿Puedo restringir las mascotas en mi alquiler?",
+    "faq.rent.answer1":
+      "Puedes establecer políticas de mascotas, pero los animales de servicio y los animales de apoyo emocional (ESA) están legalmente protegidos. Comprender las leyes de alquiler garantiza el cumplimiento y la claridad.",
+    "faq.rent.question2": "¿Quién se encarga del mantenimiento?",
+    "faq.rent.answer2":
+      "Los propietarios suelen gestionar las reparaciones importantes, mientras que los inquilinos se encargan del mantenimiento diario. Te ayudaré a estructurar un contrato de arrendamiento que defina claramente las responsabilidades.",
+    "faq.rent.question3": "¿Cómo establezco el precio de alquiler correcto?",
+    "faq.rent.answer3":
+      "Un análisis de mercado nos ayudará a determinar una tarifa que sea competitiva y rentable, una que atraiga inquilinos al tiempo que maximiza tus ganancias.",
+    "faq.rent.question4": "¿Cuándo es el mejor momento para alquilar?",
+    "faq.rent.answer4":
+      "La primavera y el verano tienen más disponibilidad, mientras que el otoño y el invierno pueden ofrecer mejores ofertas. La clave es equilibrar tus necesidades y el mercado actual.",
+    "faq.rent.question5":
+      "¿Qué debo buscar en un contrato de arrendamiento antes de firmar?",
+    "faq.rent.answer5":
+      "Los términos del depósito de seguridad, las responsabilidades de mantenimiento y la duración del contrato de arrendamiento deben estar claramente definidos. Te guiaré a través de la letra pequeña para que te sientas seguro al seguir adelante.",
+    "faq.rent.question6": "¿Cómo encuentro buenos inquilinos?",
+    "faq.rent.answer6":
+      "¡La selección es clave! Realizaremos verificaciones de antecedentes, verificaremos el historial de alquiler y nos aseguraremos de que tengas inquilinos responsables y calificados.",
+
+    "footer.follow": "Síguenos",
     "footer.contac": "Contacto",
   },
 } as const;

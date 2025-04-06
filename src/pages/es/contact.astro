@@ -7,9 +7,12 @@ import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const title = t("SEO.contact.title");
+const description = t("SEO.contact.description");
 ---
 
-<Layout title="Welcome a hidalgo">
+<Layout title={title} description={description}>
   <Menu isFloating isWhite />
   <div
     class="h-[1281px] w-full bg-contact-banner bg-cover bg-center bg-no-repeat flex justify-center items-center"
@@ -19,7 +22,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
         <h3 class="font-serif italic text-5xl text-center my-10">
           {t("contact.title")}
         </h3>
-        <p class="w-auto md:w-80 text-sm text-center md:mx-48">
+        <p class="w-auto md:w-[70%] text-sm text-center md:mx-auto">
           {t("contact.description")}
         </p>
 
@@ -92,7 +95,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
   </div>
 
   <ResponseForm
-    msgSuccess="Thank you for your message! We will contact you soon."
+    msgSuccess="Your message has been received-expect a prompt and personalized response. Let’s make your real estate journey effortless and rewarding"
     msgError="We are experiencing problems at this time. Please try again later."
   />
 </Layout>

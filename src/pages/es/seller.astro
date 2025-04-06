@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import SellerForm from "@/components/SellerForm.tsx";
 import ResponseForm from "@/components/ResponseForm.astro";
+import Faqs from "@/components/Faqs.astro";
+
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -30,9 +32,12 @@ const labels = {
   view: t("seller.form.view"),
   button: t("seller.form.botton"),
 } as LabelsSellerParams;
+
+const title = t("SEO.seller.title");
+const description = t("SEO.seller.description");
 ---
 
-<Layout title="Welcome a hidalgo">
+<Layout title={title} description={description}>
   <Menu isFloating isWhite />
   <div
     class="h-[276px] w-full bg-seller-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
@@ -41,15 +46,17 @@ const labels = {
 
   <section class="max-w-7xl mx-auto mb-10 mt-20 px-10">
     <div
-      class="flex flex-col lg:flex-row justify-between items-center my-10 mx-auto gap-20"
+      class="flex flex-col lg:flex-row justify-between items-center my-10 mx-auto gap-10 lg:gap-20"
     >
       <h2
-        class="w-full text-center lg:text-left lg:w-[500px] italic font-serif text-4xl md:text-5xl leading-10 mb-4"
+        class="w-full text-center lg:text-left lg:w-[500px] uppercase font-serif text-3xl md:text-4xl"
       >
         {t("seller.title1")}
-        <br />{t("seller.title2")}
+        <div class="italic normal-case mt-2">
+          {t("seller.title2")}
+        </div>
       </h2>
-      <p class="w-full lg:w-1/2">
+      <p class="w-full text-center lg:text-left lg:w-1/2">
         {t("seller.description")}
       </p>
     </div>
@@ -64,6 +71,8 @@ const labels = {
       <SellerForm labels={labels} client:load />
     </div>
   </section>
+
+  <Faqs type="seller" />
 </Layout>
 
 <ResponseForm

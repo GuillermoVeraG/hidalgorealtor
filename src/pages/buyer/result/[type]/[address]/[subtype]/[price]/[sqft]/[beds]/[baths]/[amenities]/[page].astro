@@ -70,9 +70,12 @@ const { data } = await Astro.callAction(actions.property.getProperties, search);
 const { total, dataProperty } = data ?? { total: 0, dataProperty: [] };
 
 const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
+
+const title = t("SEO.buyer.result.title");
+const description = t("SEO.buyer.result.description");
 ---
 
-<Layout title="result test">
+<Layout title={title} description={description}>
   <Menu isBorder />
   <main
     class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"

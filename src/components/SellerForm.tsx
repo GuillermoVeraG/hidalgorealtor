@@ -193,12 +193,18 @@ const Seller = ({ labels }: SellerInputProps) => {
       <div className="flex justify-around items-center gap-4 w-full my-10">
         <div className="flex justify-start items-center gap-4 w-full">
           <label htmlFor="seller-beds">{labels.bedrooms}</label>
-          <NumberInput name="beds" value={formData.beds} setVal={setFormData} />
+          <NumberInput
+            id="seller-beds"
+            name="beds"
+            value={formData.beds}
+            setVal={setFormData}
+          />
         </div>
 
         <div className="flex justify-start items-center gap-4 w-full">
           <label htmlFor="seller-baths">{labels.bathrooms}</label>
           <NumberInput
+            id="seller-baths"
             name="baths"
             value={formData.baths}
             setVal={setFormData}

@@ -130,6 +130,7 @@ const Search = ({ isFilter, data, labels }: SearchInputProps) => {
           </label>
           <NumberInput
             name="beds"
+            id="property-beds"
             value={formData.beds ? formData.beds : 0}
             setVal={setFormData}
           />
@@ -141,6 +142,7 @@ const Search = ({ isFilter, data, labels }: SearchInputProps) => {
           </label>
           <NumberInput
             name="baths"
+            id="property-baths"
             value={formData.baths ? formData.baths : 0}
             setVal={setFormData}
           />

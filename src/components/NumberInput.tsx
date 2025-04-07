@@ -2,13 +2,14 @@ import type { PropertySearchParams, SellerFormParams } from "@/utils/property";
 
 export interface NumberInputProps {
   name: string;
+  id: string;
   value: number;
   setVal:
     | React.Dispatch<React.SetStateAction<SellerFormParams>>
     | React.Dispatch<React.SetStateAction<PropertySearchParams>>;
 }
 
-const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
+const NumberInput = ({ name, value, id, setVal }: NumberInputProps) => {
   return (
     <div className="relative flex items-center">
       <button
@@ -35,6 +36,7 @@ const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
         type="text"
         className="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
         placeholder=""
+        id={id}
         name={name}
         value={value}
         required

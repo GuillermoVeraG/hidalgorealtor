@@ -197,6 +197,8 @@ export const ui = {
 
     "buyer.overview.agent.title": "Property Agent",
     "buyer.overview.agent.btn": "Get in touch",
+    "buyer.overview.agent.btn.call": "Call",
+    "buyer.overview.agent.btn.sms": "Menssage",
 
     "about.header.title": "About me",
     "about.title": "Welcome! I'm Alex, Your Local Real Estate Guide",
@@ -578,6 +580,8 @@ export const ui = {
     "buyer.overview.location": "ubicación de la propiedad",
     "buyer.overview.agent.title": "Agente de Propiedad",
     "buyer.overview.agent.btn": "Ponerse en contacto",
+    "buyer.overview.agent.btn.call": "Llamar",
+    "buyer.overview.agent.btn.sms": "Mensaje",
 
     "about.header.title": "Acerca de mí",
     "about.title": "¡Bienvenido! Soy Alex, Tu Guía Inmobiliario Local",

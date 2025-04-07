@@ -15,6 +15,7 @@ const NumberInput = ({ name, value, id, setVal }: NumberInputProps) => {
       <button
         type="button"
         className="flex-shrink-0 bg-primary-100 hover:bg-primary-700 inline-flex items-center justify-center border border-gray-600 hover:border-primary rounded-full size-6 group"
+        aria-label="Decrease"
         onClick={() => {
           setVal((prevState: any) => ({
             ...prevState,
@@ -45,6 +46,7 @@ const NumberInput = ({ name, value, id, setVal }: NumberInputProps) => {
 
       <button
         type="button"
+        aria-label="Increase"
         className="flex-shrink-0 bg-primary-100 hover:bg-primary-700 inline-flex items-center justify-center border border-gray-600 hover:border-primary rounded-full size-6 group"
         onClick={() => {
           setVal((prevState: any) => ({ ...prevState, [name]: ++value }));

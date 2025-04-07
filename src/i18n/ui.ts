@@ -50,7 +50,7 @@ export const ui = {
 
     "home.header.title": "Home is Where your story begins",
     "home.header.search": "Search city, code or MLS#",
-    "home.header.search.button": "Filters",
+    "home.header.search.button": "Customize",
     "home.header.window.desc.":
       "Have a question? I’m here to help. Let’s chat!",
     "home.city.title1": "Let’s Discover",
@@ -104,7 +104,8 @@ export const ui = {
     "seller.form.parking": "Parking",
     "seller.form.pool": "Pool",
     "seller.form.view": "View",
-    "seller.form.botton": "Take the Next Step with Ease",
+    "seller.form.text": "Take the Next Step with Ease",
+    "seller.form.botton": "Submit",
 
     "investor.title1": "Invest Wisely. Grow Strategically",
     "investor.title2": "Real estate investment isn't just about transactions",
@@ -127,7 +128,8 @@ export const ui = {
     "investor.form.parking": "Parking",
     "investor.form.pool": "Pool",
     "investor.form.view": "View",
-    "investor.form.botton": "Ready to Expand Your Portfolio?",
+    "investor.form.text": "Ready to Expand Your Portfolio?",
+    "investor.form.botton": "Submit",
 
     "buyer.title": "Discover the House You've Always Imagined-Effortlessly",
     "buyer.description":
@@ -151,7 +153,9 @@ export const ui = {
     "buyer.search.sale.sqft.title": "Square Footage",
     "buyer.search.sale.sqft.desc":
       "Enter the minimun and maximum amount you want",
-    "buyer.search.sale.but": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.sale.text": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.sale.but": "Search",
+    "buyer.search.sale.but.clear": "Clear filters",
 
     "buyer.search.rent.title": "For Rent",
     "buyer.search.rent.address": "City, Zip Code or MLS number",
@@ -169,10 +173,12 @@ export const ui = {
     "buyer.search.rent.sqft.title": "Square Footage",
     "buyer.search.rent.sqft.desc":
       "Enter the minimun and maximum amount you want",
-    "buyer.search.rent.but": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.rent.text": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.rent.but": "Search",
+    "buyer.search.rent.but.clear": "Clear filters",
 
     "buyer.result.back": "Back to Search",
-    "buyer.result.filters": "Filters",
+    "buyer.result.filters": "Customize",
     "buyer.result.listings": "Listings",
     "buyer.result.btn": "View Property",
     "buyer.result.paging.page": "Page",
@@ -424,7 +430,7 @@ export const ui = {
 
     "home.header.title": "El hogar es donde comienza tu historia",
     "home.header.search": "Buscar ciudad, código o MLS#",
-    "home.header.search.button": "Filtros",
+    "home.header.search.button": "Personalizar",
     "home.header.window.desc.":
       "¿Tienes alguna pregunta? Estoy aquí para ayudarte. ¡Charlemos!",
     "home.city.title1": "Descubramos juntos",
@@ -479,7 +485,8 @@ export const ui = {
     "seller.form.parking": "Estacionamiento",
     "seller.form.pool": "Piscina",
     "seller.form.view": "Vista",
-    "seller.form.botton": "Da el Siguiente Paso con Facilidad",
+    "seller.form.text": "Da el Siguiente Paso con Facilidad",
+    "seller.form.botton": "Enviar",
 
     "investor.title1": "Invierte Sabiamente. Crece Estratégicamente",
     "investor.title2":
@@ -503,7 +510,8 @@ export const ui = {
     "investor.form.parking": "Estacionamiento",
     "investor.form.pool": "Piscina",
     "investor.form.view": "Vista",
-    "investor.form.botton": "¿Listo para Expandir Tu Cartera?",
+    "investor.form.text": "¿Listo para Expandir Tu Cartera?",
+    "investor.form.botton": "Enviar",
 
     "buyer.title": "Descubre la Casa que Siempre Has Imaginado, Sin Esfuerzo",
     "buyer.description":
@@ -527,7 +535,9 @@ export const ui = {
     "buyer.search.sale.sqft.title": "Metraje Cuadrado",
     "buyer.search.sale.sqft.desc":
       "Ingresa el monto mínimo y máximo que deseas",
-    "buyer.search.sale.but": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.sale.text": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.sale.but": "Buscar",
+    "buyer.search.sale.but.clear": "Limpiar Perzonalizaciones",
 
     "buyer.search.rent.title": "En Alquiler",
     "buyer.search.rent.address": "Ciudad, Código Postal o número de MLS",
@@ -545,10 +555,12 @@ export const ui = {
     "buyer.search.rent.sqft.title": "Metraje Cuadrado",
     "buyer.search.rent.sqft.desc":
       "Ingresa el monto mínimo y máximo que deseas",
-    "buyer.search.rent.but": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.rent.text": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.rent.but": "Buscar",
+    "buyer.search.rent.but.clear": "Limpiar Perzonalizaciones",
 
     "buyer.result.back": "Volver a la Búsqueda",
-    "buyer.result.filters": "Filtros",
+    "buyer.result.filters": "Personalizar",
     "buyer.result.listings": "Listados",
     "buyer.result.btn": "Ver Propiedad",
     "buyer.result.paging.page": "Página",

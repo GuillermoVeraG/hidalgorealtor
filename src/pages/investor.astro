@@ -32,6 +32,7 @@ const labels = {
   pool: t("investor.form.pool"),
   view: t("investor.form.view"),
   button: t("investor.form.botton"),
+  buttontext: t("investor.form.text"),
 } as LabelsSellerParams;
 
 const title = t("SEO.investor.title");
@@ -71,7 +72,7 @@ const description = t("SEO.investor.description");
           {t("investor.title2")}
         </div>
       </h2>
-      <p class="w-full text-center lg:text-left lg:w-1/2">
+      <p class="w-full text-center lg:text-left lg:w-1/2 text-pretty">
         {t("investor.description")}
       </p>
     </div>
@@ -79,7 +80,7 @@ const description = t("SEO.investor.description");
     <div class="flex justify-between items-start gap-20 mt-20 mb-48">
       <Picture
         width={500}
-        height={333}
+        height={750}
         src="/images/investor.webp"
         formats={["avif", "webp", "jpeg"]}
         alt="background home image"

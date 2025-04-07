@@ -16,33 +16,35 @@ export const ui = {
     "nav.team": "Team",
     "nav.services": "Services",
 
-    "SEO.home.title": "Broward Real Estate",
+    "SEO.home.title": "Broward Real Estate | Hidalgo Realtor",
     "SEO.home.description":
       "Hidalgo Realtor is your trusted partner in Broward County real estate. Whether you're buying, selling, renting, or investing, we offer expert guidance, market insights, and personalized service. Explore Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and beyond. Your real estate journey starts here!",
-    "SEO.seller.title": "Sell Your Property",
+    "SEO.seller.title": "Sell Your Property | Hidalgo Realtor",
     "SEO.seller.description":
       "Selling your house or property in Broward County is simpler with Hidalgo Realtor. From precise home valuations to strategic marketing, professional negotiation, and smooth closings, we help you achieve top value. Serving Miramar, Pembroke Pines, Weston,Southwest Ranches, and surrounding communities—let’s make your selling experience effortless and successful.",
-    "SEO.investor.title": "Investment",
+    "SEO.investor.title": "Investment | Hidalgo Realtor",
     "SEO.investor.description":
       "Grow your real estate portfolio or find ideal commercial opportunities in Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and Broward County. Hidalgo Realtor specializes in residential investments, commercial properties, business locations, and strategic real estate opportunities. Build your financial future with personalized, market-driven guidance.",
-    "SEO.buyer.title": "Buy your next Home",
+    "SEO.buyer.title": "Buy your next Home | Hidalgo Realtor",
     "SEO.buyer.description":
       "Find the perfect home in Miramar, Pembroke Pines, Weston, Davie, Southwest Ranches, or Cooper City, with Hidalgo Realtor. We offer customized property searches, insightful market analysis, and personalized support to match your lifestyle and goals. Let us guide your home-buying journey in Broward with expertise and care.",
 
-    "SEO.buyer.result.title": "",
-    "SEO.buyer.result.description": "",
+    "SEO.buyer.result.title": "Property Listings | Hidalgo Realtor",
+    "SEO.buyer.result.description":
+      "Explore curated homes for sale in Broward County, including Miramar, Pembroke Pines, Weston, and beyond. Discover single-family homes, luxury estates, and investment-ready properties-all selected to match your lifestyle and goals. Begin your next chapter with Hidalgo Realtor.",
 
-    "SEO.about.title": "About Hidalgo Realtor",
+    "SEO.about.title": "About | Hidalgo Realtor",
     "SEO.about.description":
       "Real estate is about people and their unique stories. At Hidalgo Realtor, part of the Florida New Dream family, we help clients navigate Southwest Broward’s vibrant real estate market. With the statewide expertise of Florida New Dream behind us, we offer local market insights and personalized service. Discover our values, our mission, and how we turn your buying, selling, renting, or investment dreams into reality.",
-    "SEO.team.title": "Our Team",
+    "SEO.team.title": "Our Team | Hidalgo Realtor",
     "SEO.team.description":
       "Meet Hidalgo Realtor’s professional team dedicated to making your real estate journey exceptional. Experienced, approachable, and knowledgeable, we specialize in buying, selling, investing, and renting properties across Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and throughout Broward County. Discover the difference our team makes.",
 
-    "SEO.services.title": "",
-    "SEO.services.description": "",
+    "SEO.services.title": "Our Services | Hidalgo Realtor",
+    "SEO.services.description":
+      "Discover expert real estate services tailored for buyers, sellers, renters, and investors in Broward County. From personalized property searches to strategic home sales and real estate investment guidance, Hidalgo Realtor delivers a seamless experience with market expertise and trusted support.",
 
-    "SEO.contact.title": "Contact Us!",
+    "SEO.contact.title": "Contact Us! | Hidalgo Realtor",
     "SEO.contact.description":
       "Ready for your next move? Contact Hidalgo Realtor for personalized, expert real estate assistance in Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City, and all of Southwest Broward County. Whether buying, selling, investing, or just curious, we're here to provide professional, friendly guidance every step of the way.",
 
@@ -392,29 +394,31 @@ export const ui = {
     "nav.team": "Equipo",
     "nav.services": "Servicios",
 
-    "SEO.home.title": "Hidalgo Bienes Raíces en Broward",
+    "SEO.home.title": "Hidalgo Bienes Raíces en Broward | Hidalgo Realtor",
     "SEO.home.description":
       "Hidalgo Realtor es su socio de confianza en bienes raíces del condado de Broward. Ya sea que esté comprando, vendiendo, alquilando o invirtiendo, ofrecemos orientación experta, información del mercado y un servicio personalizado. Explore Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y más allá. ¡Su viaje de bienes raíces comienza aquí!",
-    "SEO.seller.title": "Venda su propiedad",
+    "SEO.seller.title": "Venda su propiedad | Hidalgo Realtor",
     "SEO.seller.description":
       "Vender su casa o propiedad en el condado de Broward es más sencillo con Hidalgo Realtor. Desde valoraciones precisas de viviendas hasta marketing estratégico, negociación profesional y cierres sin problemas, le ayudamos a lograr el máximo valor. Sirviendo a Miramar, Pembroke Pines, Weston, Southwest Ranches y las comunidades circundantes, hagamos que su experiencia de venta sea fácil y exitosa.",
-    "SEO.investor.title": "Inversión",
+    "SEO.investor.title": "Inversión | Hidalgo Realtor",
     "SEO.investor.description":
       "Haga crecer su cartera de bienes raíces o encuentre oportunidades comerciales ideales en Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y el condado de Broward. Hidalgo Realtor se especializa en inversiones residenciales, propiedades comerciales, ubicaciones comerciales y oportunidades estratégicas de bienes raíces. Construya su futuro financiero con una guía personalizada e impulsada por el mercado.",
-    "SEO.buyer.title": "Compre su próximo hogar",
+    "SEO.buyer.title": "Compre su próximo hogar | Hidalgo Realtor",
     "SEO.buyer.description":
       "Encuentre la casa perfecta en Miramar, Pembroke Pines, Weston, Davie, Southwest Ranches o Cooper City, con Hidalgo Realtor. Ofrecemos búsquedas de propiedades personalizadas, análisis perspicaces del mercado y soporte personalizado para que coincida con su estilo de vida y sus objetivos. Permítanos guiar su viaje de compra de vivienda en Broward con experiencia y cuidado.",
-    "SEO.buyer.result.title": "",
-    "SEO.buyer.result.description": "",
-    "SEO.about.title": "Acerca de Hidalgo Realtor",
+    "SEO.buyer.result.title": "Listados de Propiedades | Hidalgo Realtor",
+    "SEO.buyer.result.description":
+      "Explore viviendas cuidadosamente seleccionadas a la venta en el condado de Broward, incluyendo Miramar, Pembroke Pines, Weston y más allá. Descubra casas unifamiliares, propiedades de lujo e inmuebles listos para inversión, todos seleccionados para ajustarse a su estilo de vida y objetivos. Comience su próximo capítulo con Hidalgo Realtor.",
+    "SEO.about.title": "Acerca de Hidalgo Realtor | Hidalgo Realtor",
     "SEO.about.description":
       "Los bienes raíces se tratan de personas y sus historias únicas. En Hidalgo Realtor, parte de la familia Florida New Dream, ayudamos a los clientes a navegar por el vibrante mercado de bienes raíces del suroeste de Broward. Con la experiencia en todo el estado de Florida New Dream detrás de nosotros, ofrecemos información del mercado local y un servicio personalizado. Descubra nuestros valores, nuestra misión y cómo convertimos sus sueños de compra, venta, alquiler o inversión en realidad.",
-    "SEO.team.title": "Nuestro equipo",
+    "SEO.team.title": "Nuestro equipo | Hidalgo Realtor",
     "SEO.team.description":
       "Conozca al equipo profesional de Hidalgo Realtor dedicado a hacer que su viaje de bienes raíces sea excepcional. Experimentados, accesibles y conocedores, nos especializamos en la compra, venta, inversión y alquiler de propiedades en Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y en todo el condado de Broward. Descubra la diferencia que hace nuestro equipo.",
-    "SEO.services.title": "",
-    "SEO.services.description": "",
-    "SEO.contact.title": "¡Contáctenos!",
+    "SEO.services.title": "Nuestros Servicios | Hidalgo Realtor",
+    "SEO.services.description":
+      "Descubra servicios inmobiliarios expertos diseñados para compradores, vendedores, arrendatarios e inversores en el condado de Broward. Desde búsquedas de propiedades personalizadas hasta ventas estratégicas de viviendas y asesoramiento en inversiones inmobiliarias, Hidalgo Realtor ofrece una experiencia fluida con experiencia en el mercado y soporte confiable.",
+    "SEO.contact.title": "¡Contáctenos! | Hidalgo Realtor",
     "SEO.contact.description":
       "Listo para su próximo movimiento? Póngase en contacto con Hidalgo Realtor para obtener asistencia inmobiliaria personalizada y experta en Miramar, Pembroke Pines, Weston, Southwest Ranches, Davie, Cooper City y todo el suroeste del condado de Broward. Ya sea que compre, venda, invierta o simplemente tenga curiosidad, estamos aquí para brindarle una guía profesional y amigable en cada paso del camino.",
 

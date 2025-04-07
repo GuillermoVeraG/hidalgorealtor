@@ -232,9 +232,9 @@ const Seller = ({ labels }: SellerInputProps) => {
             >
               <path
                 d="M3 8L6 11L11 3.5"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth={1}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </div>
@@ -260,9 +260,9 @@ const Seller = ({ labels }: SellerInputProps) => {
             >
               <path
                 d="M3 8L6 11L11 3.5"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth={1}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </div>
@@ -287,9 +287,9 @@ const Seller = ({ labels }: SellerInputProps) => {
             >
               <path
                 d="M3 8L6 11L11 3.5"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth={1}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </div>

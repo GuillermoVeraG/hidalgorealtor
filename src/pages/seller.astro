@@ -77,10 +77,18 @@ const description = t("SEO.seller.description");
     </div>
 
     <div class="flex justify-between items-start gap-20 mt-20 mb-48">
-      <img
+      <Picture
+        width={503}
+        height={505}
         src="/images/seller.webp"
-        alt="seller"
-        class="hidden lg:block rounded-xl w-10 lg:w-[400px] xl:w-fit"
+        formats={["avif", "webp", "jpeg"]}
+        alt="background home image"
+        style={{
+          borderRadius: "1rem",
+        }}
+        pictureAttributes={{
+          class: "hidden lg:block w-[500px] xl:w-fit",
+        }}
       />
 
       <SellerForm labels={labels} client:load />

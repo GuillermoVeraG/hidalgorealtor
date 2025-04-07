@@ -211,7 +211,7 @@ const { isWhite, isFloating, isBorder } = Astro.props;
     <nav
       id="menuNavMobile"
       class="lg:hidden flex flex-col justify-start items-center
-    h-screen w-screen z-30 pt-24
+    h-screen w-screen z-50 pt-24
     absolute top-0 left-0
     bg-white
     -translate-y-[120vh] duration-700"
@@ -231,6 +231,23 @@ const { isWhite, isFloating, isBorder } = Astro.props;
           </div>
         ))
       }
+      <div
+        class={`flex flex-row justify-between items-center gap-1 p-[6px] bg-primary-100/20 rounded-[18px] border-2 border-primary-300 mt-5`}
+      >
+        {
+          menuLang.map(({ menu, id, url }) => {
+            return (
+              <a href={url}>
+                <div
+                  class={`font-sans capitalize px-3 py-1  ${(id == "es" && isSpa) || (id == "en" && !isSpa) ? "bg-primary rounded-xl text-white" : "text-primary"}`}
+                >
+                  {menu}
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
     </nav>
   </div>
 </section>

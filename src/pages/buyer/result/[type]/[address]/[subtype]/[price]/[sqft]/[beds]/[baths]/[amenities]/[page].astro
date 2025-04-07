@@ -26,6 +26,23 @@ const url = new URL(Astro.url);
 const { type, subtype, address, beds, baths, price, sqft, amenities, page } =
   Astro.params;
 
+console.log(address);
+
+var descHeaderText = t("buyer.result.header.global");
+if (address === "miramar") {
+  descHeaderText = t("buyer.result.header.miramar");
+} else if (address === "pembroke pines") {
+  descHeaderText = t("buyer.result.header.pembroke_pines");
+} else if (address === "southwest ranches") {
+  descHeaderText = t("buyer.result.header.southwest_ranches");
+} else if (address === "weston") {
+  descHeaderText = t("buyer.result.header.weston");
+} else if (address === "cooper city") {
+  descHeaderText = t("buyer.result.header.cooper_city");
+} else if (address === "davie") {
+  descHeaderText = t("buyer.result.header.davie");
+}
+
 const paths = url.pathname.split("/");
 const baseUrl = paths.slice(0, -2).join("/") + "/";
 
@@ -80,7 +97,7 @@ const description = t("SEO.buyer.result.description");
   <main
     class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
   >
-    <div class="flex justify-between items-center w-full py-8 font-sans">
+    <div class="flex justify-between items-center w-full pt-8 font-sans">
       <div>
         <a
           href={getRelativeLocaleUrl(relativeLocale, "/buyer/")}
@@ -95,6 +112,10 @@ const description = t("SEO.buyer.result.description");
         <Filter />
         <FiltersWin data={input} />
       </div>
+    </div>
+
+    <div class="my-4 text-left text-pretty w-full md:w-10/12 lg:w-8/12 text-sm">
+      {descHeaderText}
     </div>
 
     <div class="flex justify-start items-center w-full pb-4 font-sans">

@@ -165,7 +165,7 @@ const image = property && property.photos ? property.photos[0] : "";
               <div class="flex justify-start items-center gap-4 w-52 lg:w-64">
                 <img
                   class="size-14 rounded-full"
-                  src="/images/alexhidalgo.webp"
+                  src="/images/team/alexhidalgo.webp"
                   alt="agent photo"
                 />
                 <div class="flex flex-col justify-start items-start gap-1">
@@ -185,6 +185,14 @@ const image = property && property.photos ? property.photos[0] : "";
                 {t("buyer.overview.agent.btn")}
               </a>
             </aside>
+            <div class="flex md:hidden fixed bottom-0 left-0 bg-white py-2 w-full justify-between items-center z-40">
+              <button class="px-16 py-4 ml-5 hover:bg-primary-800 bg-primary-700 rounded-4xl text-white cursor-pointer w-[40%]">
+                {t("buyer.overview.agent.btn.sms")}
+              </button>
+              <button class="px-16 py-4 mr-5 hover:bg-primary-800 bg-primary-700 rounded-4xl text-white cursor-pointer w-[40%]">
+                {t("buyer.overview.agent.btn.call")}
+              </button>
+            </div>
           </div>
         </section>
       )

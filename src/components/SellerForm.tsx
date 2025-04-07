@@ -299,10 +299,11 @@ const Seller = ({ labels }: SellerInputProps) => {
 
       <button
         type="submit"
-        className="px-16 py-2 bg-primary-700 rounded-full text-white"
+        className="w-55 py-4 bg-primary-700 rounded-full text-white mt-8"
       >
         {labels.button}
       </button>
+      <h4 className="font-sans text-md mt-2 ml-1">{labels.buttontext}</h4>
     </form>
   );
 };

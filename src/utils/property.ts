@@ -49,6 +49,7 @@ export interface LabelsSearchParams {
   pricedesc: string;
   sqfttitle: string;
   sqftdesc: string;
+  buttext: string;
   butsubmit: string;
   butclear: string;
 }
@@ -71,6 +72,7 @@ export interface LabelsSellerParams {
   pool: string;
   view: string;
   button: string;
+  buttontext: string;
 }
 
 export interface PropertyLocationParams {

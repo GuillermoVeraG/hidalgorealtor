@@ -4,6 +4,7 @@ import Menu from "@/components/Menu.astro";
 import Teamitem from "@/components/TeamItem.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
+import Picture from "astro/components/Picture.astro";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
@@ -49,12 +50,26 @@ const description = t("SEO.team.description");
 
 <Layout title={title} description={description}>
   <Menu isFloating isWhite />
-  <div
-    class="h-[473px] w-full bg-team-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
-  >
-    <div class="font-serif italic text-6xl sm:text-7xl text-white">
+  <div class="h-[473px] w-full flex justify-center items-center">
+    <div class="absolute font-serif italic text-6xl sm:text-7xl text-white">
       {t("team.header.title")}
     </div>
+    <Picture
+      width={1280}
+      height={471}
+      src="/images/bg/bg-team.webp"
+      formats={["avif", "webp", "jpeg"]}
+      alt="background home image"
+      style={{
+        objectFit: "cover",
+        objectPosition: "bottom",
+        width: "100%",
+        height: "100%",
+      }}
+      pictureAttributes={{
+        class: "w-full h-full",
+      }}
+    />
   </div>
 
   <section

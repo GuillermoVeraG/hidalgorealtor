@@ -166,6 +166,7 @@ const { isWhite, isFloating, isBorder } = Astro.props;
               >
                 <a
                   href={url}
+                  rel={show ? "" : "nofollow"}
                   class={`font-sans capitalize ${isWhite ? "text-white" : "text-black"} group-hover/menu:text-white group-hover/menu:bg-primary group-hover/menu:rounded-xl group-[.active-menu]/menu:text-white group-[.active-menu]/menu:bg-primary group-[.active-menu]/menu:rounded-xl px-3 py-1 text-sm`}
                 >
                   {menu}
@@ -210,18 +211,19 @@ const { isWhite, isFloating, isBorder } = Astro.props;
     <nav
       id="menuNavMobile"
       class="lg:hidden flex flex-col justify-start items-center
-    h-screen w-screen z-10 pt-24
+    h-screen w-screen z-30 pt-24
     absolute top-0 left-0
     bg-white
     -translate-y-[120vh] duration-700"
     >
       {
-        menuItems.map(({ menu, url, isActive }) => (
+        menuItems.map(({ menu, url, isActive, show }) => (
           <div
-            class={`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive ? "active-menu" : ""}`}
+            class={`${show ? "flex" : "hidden"} flex-col justify-center items-center overflow-hidden group/menu ${isActive ? "active-menu" : ""}`}
           >
             <a
               href={url}
+              rel={show ? "" : "nofollow"}
               class="capitalize text-black group-hover/menu:text-primary group-[.active-menu]/menu:text-primary pt-4 pb-2 text-sm"
             >
               {menu}

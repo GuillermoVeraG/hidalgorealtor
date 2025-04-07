@@ -18,7 +18,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     />
     <p class="w-52 text-sm">{t("home.header.window.desc.")}</p>
 
-    <button class="absolute flex -top-2 -right-2"
+    <button class="absolute flex -top-2 -right-2" aria-label="Close window"
       ><Close className="size-5 stroke-black" /></button
     >
   </div>

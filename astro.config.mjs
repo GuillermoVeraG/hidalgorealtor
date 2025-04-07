@@ -7,9 +7,12 @@ import cloudflare from "@astrojs/cloudflare";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  site: "https://hidalgorealtor.pages.dev",
+  integrations: [react(), sitemap()],
 
   i18n: {
     defaultLocale: "en",

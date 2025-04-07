@@ -50,7 +50,7 @@ export const ui = {
 
     "home.header.title": "Home is Where your story begins",
     "home.header.search": "Search city, code or MLS#",
-    "home.header.search.button": "Filters",
+    "home.header.search.button": "Customize",
     "home.header.window.desc.":
       "Have a question? I’m here to help. Let’s chat!",
     "home.city.title1": "Let’s Discover",
@@ -104,7 +104,8 @@ export const ui = {
     "seller.form.parking": "Parking",
     "seller.form.pool": "Pool",
     "seller.form.view": "View",
-    "seller.form.botton": "Take the Next Step with Ease",
+    "seller.form.text": "Take the Next Step with Ease",
+    "seller.form.botton": "Submit",
 
     "investor.title1": "Invest Wisely. Grow Strategically",
     "investor.title2": "Real estate investment isn't just about transactions",
@@ -127,7 +128,8 @@ export const ui = {
     "investor.form.parking": "Parking",
     "investor.form.pool": "Pool",
     "investor.form.view": "View",
-    "investor.form.botton": "Ready to Expand Your Portfolio?",
+    "investor.form.text": "Ready to Expand Your Portfolio?",
+    "investor.form.botton": "Submit",
 
     "buyer.title": "Discover the House You've Always Imagined-Effortlessly",
     "buyer.description":
@@ -151,7 +153,9 @@ export const ui = {
     "buyer.search.sale.sqft.title": "Square Footage",
     "buyer.search.sale.sqft.desc":
       "Enter the minimun and maximum amount you want",
-    "buyer.search.sale.but": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.sale.text": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.sale.but": "Search",
+    "buyer.search.sale.but.clear": "Clear filters",
 
     "buyer.search.rent.title": "For Rent",
     "buyer.search.rent.address": "City, Zip Code or MLS number",
@@ -169,14 +173,30 @@ export const ui = {
     "buyer.search.rent.sqft.title": "Square Footage",
     "buyer.search.rent.sqft.desc":
       "Enter the minimun and maximum amount you want",
-    "buyer.search.rent.but": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.rent.text": "Ready to Discover Your Ideal Property? ",
+    "buyer.search.rent.but": "Search",
+    "buyer.search.rent.but.clear": "Clear filters",
 
     "buyer.result.back": "Back to Search",
-    "buyer.result.filters": "Filters",
+    "buyer.result.filters": "Customize",
     "buyer.result.listings": "Listings",
     "buyer.result.btn": "View Property",
     "buyer.result.paging.page": "Page",
     "buyer.result.paging.of": "of",
+    "buyer.result.header.global":
+      "Southeast Florida blends coastal elegance with metropolitan energy—offering a lifestyle of year-round sunshine, cultural richness, and diverse communities. From business hubs to beach towns, it's a region where opportunity meets quality of life, attracting professionals, families, and investors alike. With world-class amenities, strong market demand, and a dynamic pace of growth, Southeast Florida continues to stand out as one of the most desirable places to live, invest, and thrive.",
+    "buyer.result.header.miramar":
+      "Miramar is where global influences meet suburban comfort. This diverse, dynamic city is home to a thriving cultural scene, world-class dining, and a range of international communities, making it perfect for those who love a cosmopolitan lifestyle with suburban ease. Strategically located between Miami and Fort Lauderdale, Miramar offers a mix of modern residential developments and established neighborhoods, with homes ranging from stylish townhouses to spacious single-family residences. Residents enjoy easy access to major highways, top-rated schools, and lush parks, making it an attractive choice for professionals, families, and those who value convenience with an urban touch. Whether you're looking for a place to settle or invest, Miramar's steady growth and prime location make it an exciting market.",
+    "buyer.result.header.pembroke_pines":
+      "Pembroke Pines offers a balanced mix of suburban charm and urban convenience, making it a sought-after destination for homebuyers. Safe neighborhoods, great schools, and abundant recreational options make it a magnet for those looking to establish roots. The real estate market features diverse housing, from townhomes to spacious single-family residences, with easy access to major highways, shopping centers, and entertainment hubs. Whether you're raising a family or looking for long-term stability, Pembroke Pines remains one of Broward County’s most desirable places to call home.",
+    "buyer.result.header.southwest_ranches":
+      "Known for its sprawling estates and equestrian-friendly lifestyle, Southwest Ranches prioritizes space, nature, and tranquility. Unlike most cities in Broward County, this town is dedicated to preserving its rural charm while offering luxurious custom-built homes. With wide-open green spaces and easy access to major highways, it’s perfect for those seeking exclusivity without sacrificing convenience.",
+    "buyer.result.header.weston":
+      "Ranked among the safest and best places to live in Florida, Weston offers gated neighborhoods, A-rated schools, and premier amenities. Its beautifully designed communities, lush greenery, and private country clubs create a luxurious yet family-friendly atmosphere. The real estate market here is competitive, with waterfront properties, modern estates, and elegant townhomes. For those who seek a blend of tranquility and prestige, Weston delivers in every aspect.",
+    "buyer.result.header.cooper_city":
+      "This tight-knit community is known for its top-tier schools, family-friendly atmosphere, and welcoming vibe. Well-maintained parks, safe streets, and a suburban feel make it one of Broward County’s most appealing places to live. The real estate market offers townhomes and single-family residences, all designed for comfort and long-term stability. With easy access to shopping, dining, and major highways, Cooper City truly embodies the warmth of home.",
+    "buyer.result.header.davie":
+      "With sprawling green landscapes and a unique ranch-style appeal, Davie is perfect for those who love space and nature. Home to Nova Southeastern University, the town carries a vibrant academic influence while maintaining its country-inspired charm. The real estate market is diverse, featuring larger lot sizes and custom-built homes, ideal for those seeking a more private and peaceful living environment. Whether you're drawn to its relaxed ambiance, outdoor recreation, or excellent schools, Davie provides a lifestyle unlike any other in Broward County.",
 
     "buyer.overview.back": "Back to Results",
     "buyer.overview.share": "Share",
@@ -191,6 +211,8 @@ export const ui = {
 
     "buyer.overview.agent.title": "Property Agent",
     "buyer.overview.agent.btn": "Get in touch",
+    "buyer.overview.agent.btn.call": "Call",
+    "buyer.overview.agent.btn.sms": "Menssage",
 
     "about.header.title": "About me",
     "about.title": "Welcome! I'm Alex, Your Local Real Estate Guide",
@@ -424,7 +446,7 @@ export const ui = {
 
     "home.header.title": "El hogar es donde comienza tu historia",
     "home.header.search": "Buscar ciudad, código o MLS#",
-    "home.header.search.button": "Filtros",
+    "home.header.search.button": "Personalizar",
     "home.header.window.desc.":
       "¿Tienes alguna pregunta? Estoy aquí para ayudarte. ¡Charlemos!",
     "home.city.title1": "Descubramos juntos",
@@ -479,7 +501,8 @@ export const ui = {
     "seller.form.parking": "Estacionamiento",
     "seller.form.pool": "Piscina",
     "seller.form.view": "Vista",
-    "seller.form.botton": "Da el Siguiente Paso con Facilidad",
+    "seller.form.text": "Da el Siguiente Paso con Facilidad",
+    "seller.form.botton": "Enviar",
 
     "investor.title1": "Invierte Sabiamente. Crece Estratégicamente",
     "investor.title2":
@@ -503,7 +526,8 @@ export const ui = {
     "investor.form.parking": "Estacionamiento",
     "investor.form.pool": "Piscina",
     "investor.form.view": "Vista",
-    "investor.form.botton": "¿Listo para Expandir Tu Cartera?",
+    "investor.form.text": "¿Listo para Expandir Tu Cartera?",
+    "investor.form.botton": "Enviar",
 
     "buyer.title": "Descubre la Casa que Siempre Has Imaginado, Sin Esfuerzo",
     "buyer.description":
@@ -527,7 +551,9 @@ export const ui = {
     "buyer.search.sale.sqft.title": "Metraje Cuadrado",
     "buyer.search.sale.sqft.desc":
       "Ingresa el monto mínimo y máximo que deseas",
-    "buyer.search.sale.but": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.sale.text": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.sale.but": "Buscar",
+    "buyer.search.sale.but.clear": "Limpiar Perzonalizaciones",
 
     "buyer.search.rent.title": "En Alquiler",
     "buyer.search.rent.address": "Ciudad, Código Postal o número de MLS",
@@ -545,14 +571,30 @@ export const ui = {
     "buyer.search.rent.sqft.title": "Metraje Cuadrado",
     "buyer.search.rent.sqft.desc":
       "Ingresa el monto mínimo y máximo que deseas",
-    "buyer.search.rent.but": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.rent.text": "¿Listo para Descubrir Tu Propiedad Ideal?",
+    "buyer.search.rent.but": "Buscar",
+    "buyer.search.rent.but.clear": "Limpiar Perzonalizaciones",
 
     "buyer.result.back": "Volver a la Búsqueda",
-    "buyer.result.filters": "Filtros",
+    "buyer.result.filters": "Personalizar",
     "buyer.result.listings": "Listados",
     "buyer.result.btn": "Ver Propiedad",
     "buyer.result.paging.page": "Página",
     "buyer.result.paging.of": "de",
+    "buyer.result.header.global":
+      "El sureste de Florida combina la elegancia costera con la energía metropolitana, ofreciendo un estilo de vida de sol durante todo el año, riqueza cultural y comunidades diversas. Desde centros de negocios hasta pueblos costeros, es una región donde la oportunidad se une a la calidad de vida, atrayendo a profesionales, familias e inversores por igual. Con comodidades de clase mundial, una fuerte demanda del mercado y un ritmo de crecimiento dinámico, el sureste de Florida continúa destacándose como uno de los lugares más deseables para vivir, invertir y prosperar.",
+    "buyer.result.header.miramar":
+      "Miramar es donde las influencias globales se encuentran con la comodidad suburbana. Esta ciudad diversa y dinámica alberga una próspera escena cultural, restaurantes de clase mundial y una variedad de comunidades internacionales, lo que la hace perfecta para quienes aman un estilo de vida cosmopolita con facilidad suburbana. Estratégicamente ubicada entre Miami y Fort Lauderdale, Miramar ofrece una mezcla de modernos desarrollos residenciales y vecindarios establecidos, con viviendas que van desde elegantes casas adosadas hasta espaciosas residencias unifamiliares. Los residentes disfrutan de fácil acceso a las principales autopistas, escuelas de primer nivel y exuberantes parques, lo que la convierte en una opción atractiva para profesionales, familias y aquellos que valoran la conveniencia con un toque urbano. Ya sea que esté buscando un lugar para establecerse o invertir, el crecimiento constante y la ubicación privilegiada de Miramar la convierten en un mercado emocionante.",
+    "buyer.result.header.pembroke_pines":
+      "Pembroke Pines ofrece una mezcla equilibrada de encanto suburbano y conveniencia urbana, lo que la convierte en un destino codiciado para los compradores de vivienda. Los vecindarios seguros, las excelentes escuelas y las abundantes opciones recreativas la convierten en un imán para quienes buscan echar raíces. El mercado inmobiliario presenta viviendas diversas, desde casas adosadas hasta espaciosas residencias unifamiliares, con fácil acceso a las principales autopistas, centros comerciales y centros de entretenimiento. Ya sea que esté criando una familia o buscando estabilidad a largo plazo, Pembroke Pines sigue siendo uno de los lugares más deseables del condado de Broward para llamar hogar.",
+    "buyer.result.header.southwest_ranches":
+      "Conocido por sus extensas fincas y su estilo de vida ecuestre, Southwest Ranches prioriza el espacio, la naturaleza y la tranquilidad. A diferencia de la mayoría de las ciudades del condado de Broward, esta ciudad está dedicada a preservar su encanto rural al tiempo que ofrece lujosas casas hechas a medida. Con amplios espacios verdes y fácil acceso a las principales autopistas, es perfecto para quienes buscan exclusividad sin sacrificar la comodidad.",
+    "buyer.result.header.weston":
+      "Clasificado entre los lugares más seguros y mejores para vivir en Florida, Weston ofrece vecindarios cerrados, escuelas con calificación A y servicios de primer nivel. Sus comunidades bellamente diseñadas, su exuberante vegetación y sus clubes de campo privados crean un ambiente lujoso pero familiar. El mercado inmobiliario aquí es competitivo, con propiedades frente al mar, fincas modernas y elegantes casas adosadas. Para aquellos que buscan una mezcla de tranquilidad y prestigio, Weston cumple en todos los aspectos.",
+    "buyer.result.header.cooper_city":
+      "Esta comunidad unida es conocida por sus escuelas de primer nivel, su ambiente familiar y su ambiente acogedor. Los parques bien mantenidos, las calles seguras y un ambiente suburbano lo convierten en uno de los lugares más atractivos del condado de Broward para vivir. El mercado inmobiliario ofrece casas adosadas y residencias unifamiliares, todas diseñadas para la comodidad y la estabilidad a largo plazo. Con fácil acceso a tiendas, restaurantes y las principales autopistas, Cooper City realmente encarna la calidez del hogar.",
+    "buyer.result.header.davie":
+      "Con extensos paisajes verdes y un atractivo único de estilo rancho, Davie es perfecto para quienes aman el espacio y la naturaleza. Hogar de la Nova Southeastern University, la ciudad tiene una vibrante influencia académica al tiempo que mantiene su encanto de inspiración campestre. El mercado inmobiliario es diverso, con lotes más grandes y casas hechas a medida, ideal para quienes buscan un entorno de vida más privado y tranquilo. Ya sea que te atraiga su ambiente relajado, la recreación al aire libre o sus excelentes escuelas, Davie ofrece un estilo de vida diferente a cualquier otro en el condado de Broward.",
 
     "buyer.overview.back": "Volver a los Resultados",
     "buyer.overview.share": "Compartir",
@@ -566,6 +608,8 @@ export const ui = {
     "buyer.overview.location": "ubicación de la propiedad",
     "buyer.overview.agent.title": "Agente de Propiedad",
     "buyer.overview.agent.btn": "Ponerse en contacto",
+    "buyer.overview.agent.btn.call": "Llamar",
+    "buyer.overview.agent.btn.sms": "Mensaje",
 
     "about.header.title": "Acerca de mí",
     "about.title": "¡Bienvenido! Soy Alex, Tu Guía Inmobiliario Local",

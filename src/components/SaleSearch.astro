@@ -6,26 +6,49 @@ import { languages } from "@/i18n/ui";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
-
-const labels = {
-  address: t("buyer.search.sale.address"),
-  subtype: t("buyer.search.sale.type"),
-  bedsbaths: t("buyer.search.sale.bedsbaths"),
-  beds: t("buyer.search.sale.beds"),
-  baths: t("buyer.search.sale.baths"),
-  amenities: t("buyer.search.sale.amenities"),
-  view: t("buyer.search.sale.view"),
-  parking: t("buyer.search.sale.parking"),
-  pool: t("buyer.search.sale.pool"),
-  pricetitle: t("buyer.search.sale.price.title"),
-  pricedesc: t("buyer.search.sale.price.desc"),
-  sqfttitle: t("buyer.search.sale.sqft.title"),
-  sqftdesc: t("buyer.search.sale.sqft.desc"),
-  butsubmit: t("buyer.search.sale.but"),
-  butclear: "Clear filters",
-} as LabelsSearchParams;
-
 const { isFilter, data } = Astro.props;
+
+const isRent = data.type === "rent";
+
+if (isRent) {
+  var labels = {
+    address: t("buyer.search.rent.address"),
+    subtype: t("buyer.search.rent.type"),
+    bedsbaths: t("buyer.search.rent.bedsbaths"),
+    beds: t("buyer.search.rent.beds"),
+    baths: t("buyer.search.rent.baths"),
+    amenities: t("buyer.search.rent.amenities"),
+    view: t("buyer.search.rent.view"),
+    parking: t("buyer.search.rent.parking"),
+    pool: t("buyer.search.rent.pool"),
+    pricetitle: t("buyer.search.rent.price.title"),
+    pricedesc: t("buyer.search.rent.price.desc"),
+    sqfttitle: t("buyer.search.rent.sqft.title"),
+    sqftdesc: t("buyer.search.rent.sqft.desc"),
+    buttext: t("buyer.search.rent.text"),
+    butsubmit: t("buyer.search.rent.but"),
+    butclear: t("buyer.search.rent.but.clear"),
+  } as LabelsSearchParams;
+} else {
+  var labels = {
+    address: t("buyer.search.sale.address"),
+    subtype: t("buyer.search.sale.type"),
+    bedsbaths: t("buyer.search.sale.bedsbaths"),
+    beds: t("buyer.search.sale.beds"),
+    baths: t("buyer.search.sale.baths"),
+    amenities: t("buyer.search.sale.amenities"),
+    view: t("buyer.search.sale.view"),
+    parking: t("buyer.search.sale.parking"),
+    pool: t("buyer.search.sale.pool"),
+    pricetitle: t("buyer.search.sale.price.title"),
+    pricedesc: t("buyer.search.sale.price.desc"),
+    sqfttitle: t("buyer.search.sale.sqft.title"),
+    sqftdesc: t("buyer.search.sale.sqft.desc"),
+    buttext: t("buyer.search.sale.text"),
+    butsubmit: t("buyer.search.sale.but"),
+    butclear: t("buyer.search.sale.but.clear"),
+  } as LabelsSearchParams;
+}
 ---
 
 <SearchForm labels={labels} isFilter={isFilter} data={data} client:load />

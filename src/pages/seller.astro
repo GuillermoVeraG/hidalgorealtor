@@ -1,4 +1,5 @@
 ---
+import Picture from "astro/components/Picture.astro";
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import SellerForm from "@/components/SellerForm.tsx";
@@ -39,9 +40,23 @@ const description = t("SEO.seller.description");
 
 <Layout title={title} description={description}>
   <Menu isFloating isWhite />
-  <div
-    class="h-[276px] w-full bg-seller-banner bg-cover bg-bottom bg-no-repeat flex justify-center items-center"
-  >
+  <div class="h-[276px] w-full flex justify-center items-center">
+    <Picture
+      width={1280}
+      height={257}
+      src="/images/bg/bg-seller.webp"
+      formats={["avif", "webp", "jpeg"]}
+      alt="background home image"
+      style={{
+        objectFit: "cover",
+        objectPosition: "bottom",
+        width: "100%",
+        height: "100%",
+      }}
+      pictureAttributes={{
+        class: "w-full h-full",
+      }}
+    />
   </div>
 
   <section class="max-w-7xl mx-auto mb-10 mt-20 px-10">

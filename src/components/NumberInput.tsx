@@ -2,18 +2,20 @@ import type { PropertySearchParams, SellerFormParams } from "@/utils/property";
 
 export interface NumberInputProps {
   name: string;
+  id: string;
   value: number;
   setVal:
     | React.Dispatch<React.SetStateAction<SellerFormParams>>
     | React.Dispatch<React.SetStateAction<PropertySearchParams>>;
 }
 
-const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
+const NumberInput = ({ name, value, id, setVal }: NumberInputProps) => {
   return (
     <div className="relative flex items-center">
       <button
         type="button"
         className="flex-shrink-0 bg-primary-100 hover:bg-primary-700 inline-flex items-center justify-center border border-gray-600 hover:border-primary rounded-full size-6 group"
+        aria-label="Decrease"
         onClick={() => {
           setVal((prevState: any) => ({
             ...prevState,
@@ -35,6 +37,7 @@ const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
         type="text"
         className="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
         placeholder=""
+        id={id}
         name={name}
         value={value}
         required
@@ -43,6 +46,7 @@ const NumberInput = ({ name, value, setVal }: NumberInputProps) => {
 
       <button
         type="button"
+        aria-label="Increase"
         className="flex-shrink-0 bg-primary-100 hover:bg-primary-700 inline-flex items-center justify-center border border-gray-600 hover:border-primary rounded-full size-6 group"
         onClick={() => {
           setVal((prevState: any) => ({ ...prevState, [name]: ++value }));

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hidalgorealtor.pages.dev/sitemap-index.xml

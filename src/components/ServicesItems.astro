@@ -2,6 +2,7 @@
 import RealEstate from "@/components/icons/RealEstate.astro";
 import HouseMoney from "@/components/icons/HouseMoney.astro";
 import Keys from "@/components/icons/Keys.astro";
+import Investing from "@/components/icons/Investing.astro";
 
 const { icon, title, desc1, desc2, desc3 } = Astro.props;
 ---
@@ -12,10 +13,10 @@ const { icon, title, desc1, desc2, desc3 } = Astro.props;
   <div
     class="bg-primary rounded-full bg-center p-6 size-24 lg:size-24 mx-auto mb-8"
   >
-    {icon == "selling" && <RealEstate {icon} />}
-    {icon == "buying" && <HouseMoney {icon} />}
-    {icon == "renting" && <Keys {icon} />}
-    {icon == "investing" && <Keys {icon} />}
+    {icon == "selling" && <RealEstate />}
+    {icon == "buying" && <HouseMoney />}
+    {icon == "renting" && <Keys />}
+    {icon == "investing" && <Investing />}
   </div>
   <h2 class="text-lg text-center font-semibold mx-auto">{title}</h2>
   <p class="text-center mg:w-auto my-6">

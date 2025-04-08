@@ -13,6 +13,8 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 
 import type { LabelsSellerParams } from "@/utils/property";
 import Picture from "astro/components/Picture.astro";
+import localImage from "@/../public/images/bg/bg-investor.webp";
+import investorImage from "@/../public/images/investor.webp";
 
 const labels = {
   title: t("investor.form.title"),
@@ -43,9 +45,7 @@ const description = t("SEO.investor.description");
   <Menu isFloating isWhite />
   <div class="h-[276px] w-full flex justify-center items-center">
     <Picture
-      width={1280}
-      height={404}
-      src="/images/bg/bg-investor.webp"
+      src={localImage}
       formats={["avif", "webp", "jpeg"]}
       alt="background home image"
       style={{
@@ -79,9 +79,7 @@ const description = t("SEO.investor.description");
 
     <div class="flex justify-between items-start gap-20 mt-20 mb-48">
       <Picture
-        width={500}
-        height={750}
-        src="/images/investor.webp"
+        src={investorImage}
         formats={["avif", "webp", "jpeg"]}
         alt="background home image"
         style={{

@@ -7,6 +7,7 @@ import { languages } from "@/i18n/ui";
 
 import FullSearch from "@/components/FullSearch.astro";
 import Picture from "astro/components/Picture.astro";
+import localImage from "@/../public/images/bg/bg-buyer.webp";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
@@ -19,9 +20,7 @@ const description = t("SEO.buyer.description");
   <Menu isFloating isWhite />
   <div class="h-64 w-full">
     <Picture
-      width={1280}
-      height={253}
-      src="/images/bg/bg-buyer.webp"
+      src={localImage}
       formats={["avif", "webp", "jpeg"]}
       alt="background home image"
       style={{

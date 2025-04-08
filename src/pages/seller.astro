@@ -1,5 +1,7 @@
 ---
 import Picture from "astro/components/Picture.astro";
+import localImage from "@/../public/images/bg/bg-seller.webp";
+import sellerImage from "@/../public/images/seller.webp";
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import SellerForm from "@/components/SellerForm.tsx";
@@ -43,9 +45,7 @@ const description = t("SEO.seller.description");
   <Menu isFloating isWhite />
   <div class="h-[276px] w-full flex justify-center items-center">
     <Picture
-      width={1280}
-      height={257}
-      src="/images/bg/bg-seller.webp"
+      src={localImage}
       formats={["avif", "webp", "jpeg"]}
       alt="background home image"
       style={{
@@ -79,9 +79,7 @@ const description = t("SEO.seller.description");
 
     <div class="flex justify-between items-start gap-20 mt-20 mb-48">
       <Picture
-        width={503}
-        height={505}
-        src="/images/seller.webp"
+        src={sellerImage}
         formats={["avif", "webp", "jpeg"]}
         alt="background home image"
         style={{

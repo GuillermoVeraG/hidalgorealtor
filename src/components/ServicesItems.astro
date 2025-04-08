@@ -12,10 +12,10 @@ const { icon, title, desc1, desc2, desc3 } = Astro.props;
   <div
     class="bg-primary rounded-full bg-center p-6 size-24 lg:size-24 mx-auto mb-8"
   >
-    {icon == "RealEstate" && <RealEstate {icon} />}
-    {icon == "HouseMoney" && <HouseMoney {icon} />}
-    {icon == "Keys" && <Keys {icon} />}
-    {icon == "Keys" && <Keys {icon} />}
+    {icon == "selling" && <RealEstate {icon} />}
+    {icon == "buying" && <HouseMoney {icon} />}
+    {icon == "renting" && <Keys {icon} />}
+    {icon == "investing" && <Keys {icon} />}
   </div>
   <h2 class="text-lg text-center font-semibold mx-auto">{title}</h2>
   <p class="text-center mg:w-auto my-6">

@@ -217,15 +217,14 @@ export const ui = {
     "about.header.title": "About me",
     "about.title": "Welcome! I'm Alex, Your Local Real Estate Guide",
     "about.description1":
-      "When I first stepped into the world of real estate, I quickly realized it wasn't just about properties-it was about the stories, dreams, and new beginnings behind every home. Each transaction became an opportunity to meet amazing people and help them navigate important life decisions with confidence and ease.",
+      "When I first stepped into the world of real estate, I quickly realized it wasn’t just about properties—it was about the stories, dreams, and new beginnings behind every home. Every transaction became a meaningful opportunity to meet incredible people and help them navigate life’s important transitions with confidence and ease.",
     "about.description2":
-      "Fluent in both English and Spanish, I genuinely enjoy connecting with my clients and getting to know their unique aspirations and lifestyles. My professional background in marketing and consumer behavior equips me with a deeper understanding of market dynamics and how to best position your home or identify the perfect property for your needs.",
+      "Fluent in both English and Spanish, I truly enjoy building real connections with my clients and understanding their unique goals and lifestyles. With a background in marketing and consumer behavior, I bring a strategic edge to every journey—whether it’s positioning your home for maximum value or finding a space that fits your vision perfectly.",
     "about.description3":
-      "At Hidalgo Realtor, integrity, attention to detail, and personalized service are at the core of everything I do. Whether you're buying your first home, selling a beloved family house, or exploring investment opportunities, my goal is always to ensure your real estate journey feels meaningful, smooth, and truly tailored to you.",
+      "At Hidalgo Realtor, integrity, attention to detail, and personalized service are at the heart of everything I do. Whether you’re buying your first home, selling a beloved property, or exploring investment opportunities, my goal is to make the process feel smooth, thoughtful, and tailored entirely to you.",
     "about.description4":
-      "I'd love to hear your story and discuss how I can help make your property dreams a reality.",
-    "about.description5":
-      "Drop me a line at alexandra@hidalgorealtor.com and let's chat about turning properties into lasting investments.alexandra@hidalgorealtor.com and let's chat about turning properties into lasting investments.",
+      "I’d love to hear your story and explore how I can help bring your real estate goals to life. Reach me at alexandra@hidalgorealtor.com — let’s chat about turning properties into lasting investments.",
+    "about.description5": "",
     "about.description6": "",
     "about.choose.title": "Why work with me?",
     "about.choose.title1": "Integrity",
@@ -614,15 +613,14 @@ export const ui = {
     "about.header.title": "Acerca de mí",
     "about.title": "¡Bienvenido! Soy Alex, Tu Guía Inmobiliario Local",
     "about.description1":
-      "Cuando entré por primera vez en el mundo de los bienes raíces, rápidamente me di cuenta de que no se trataba solo de propiedades, sino de las historias, los sueños y los nuevos comienzos detrás de cada hogar. Cada transacción se convirtió en una oportunidad para conocer gente increíble y ayudarlos a navegar decisiones importantes de la vida con confianza y facilidad.",
+      "Cuando entré por primera vez en el mundo de los bienes raíces, rápidamente me di cuenta de que no se trataba solo de propiedades, sino de las historias, los sueños y los nuevos comienzos detrás de cada hogar. Cada transacción se convirtió en una oportunidad significativa para conocer gente increíble y ayudarlos a navegar las importantes transiciones de la vida con confianza y facilidad.",
     "about.description2":
-      "Con fluidez tanto en inglés como en español, disfruto genuinamente conectando con mis clientes y conociendo sus aspiraciones y estilos de vida únicos. Mi experiencia profesional en marketing y comportamiento del consumidor me brinda una comprensión más profunda de la dinámica del mercado y de cómo posicionar mejor tu hogar o identificar la propiedad perfecta para tus necesidades.",
+      "Con fluidez tanto en inglés como en español, disfruto mucho construyendo conexiones reales con mis clientes y comprendiendo sus objetivos y estilos de vida únicos. Con experiencia en marketing y comportamiento del consumidor, aporto una ventaja estratégica a cada viaje, ya sea posicionando tu hogar para obtener el máximo valor o encontrando un espacio que se ajuste perfectamente a tu visión.",
     "about.description3":
-      "En Hidalgo Realtor, la integridad, la atención al detalle y el servicio personalizado son el núcleo de todo lo que hago. Ya sea que estés comprando tu primer hogar, vendiendo una querida casa familiar o explorando oportunidades de inversión, mi objetivo es siempre asegurar que tu viaje inmobiliario se sienta significativo, fluido y verdaderamente adaptado a ti.",
+      "En Hidalgo Realtor, la integridad, la atención al detalle y el servicio personalizado son el corazón de todo lo que hago. Ya sea que estés comprando tu primera casa, vendiendo una propiedad querida o explorando oportunidades de inversión, mi objetivo es hacer que el proceso se sienta fluido, reflexivo y completamente adaptado a ti.",
     "about.description4":
-      "Me encantaría escuchar tu historia y discutir cómo puedo ayudarte a hacer realidad tus sueños de propiedad.",
-    "about.description5":
-      "Escríbeme a alexandra@hidalgorealtor.com y charlemos sobre cómo convertir las propiedades en inversiones duraderas. alexandra@hidalgorealtor.com y charlemos sobre cómo convertir las propiedades en inversiones duraderas.",
+      "Me encantaría escuchar tu historia y explorar cómo puedo ayudarte a hacer realidad tus objetivos inmobiliarios. Contáctame en alexandra@hidalgorealtor.com. Charlemos sobre cómo convertir propiedades en inversiones duraderas.",
+    "about.description5": "",
     "about.description6": "",
 
     "about.choose.title": "¿Por qué trabajar conmigo?",

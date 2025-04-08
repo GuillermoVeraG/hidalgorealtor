@@ -39,7 +39,9 @@ const data = {
         placeholder={t("home.header.search")}
       />
 
-      <Filter />
+      <div class="hidden lg:block">
+        <Filter />
+      </div>
 
       <button
         class="rounded-full p-2 flex items-center gap-2 hover:bg-primary-800 bg-primary-700"

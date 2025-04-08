@@ -1,4 +1,5 @@
 ---
+import ContactForm from "@/components/ContactForm.astro";
 import Close from "@/components/icons/Close.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
@@ -8,18 +9,50 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
 ---
 
 <div
+  id="ContactsChatWin"
   class="hidden lg:block fixed bottom-20 right-16 bg-white rounded-1xl p-6 shadow-xl rounded-3xl border-2 border-gray-200/30 z-40 cursor-pointer"
 >
-  <div class="relative flex justify-between items-center gap-6">
-    <img
-      class="w-auto h-16 rounded-full"
-      src="/images/team/alexhidalgo.webp"
-      alt="Photo Alex"
-    />
-    <p class="w-52 text-sm">{t("home.header.window.desc.")}</p>
-
-    <button class="absolute flex -top-2 -right-2" aria-label="Close window"
-      ><Close className="size-5 stroke-black" /></button
+  <div class="relative">
+    <button
+      id="openChatWin"
+      class="flex justify-between items-center gap-6"
+      aria-label="open form contact window"
     >
+      <img
+        class="w-auto h-16 rounded-full"
+        src="/images/team/alexhidalgo.webp"
+        alt="Photo Alex"
+      />
+      <p class="w-52 text-sm">{t("home.header.window.desc.")}</p>
+    </button>
+
+    <button
+      id="closeChatWin"
+      class="absolute flex -top-2 -right-2"
+      aria-label="Close window"
+    >
+      <Close className="size-5 stroke-black" />
+    </button>
   </div>
 </div>
+
+<ContactForm />
+
+<script>
+  const closeChatWin = document.getElementById("closeChatWin"),
+    contactsChatWin = document.getElementById("ContactsChatWin"),
+    openChatWin = document.getElementById("openChatWin"),
+    ContactsWin = document.getElementById("ContactsWin") as HTMLDialogElement;
+
+  closeChatWin?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    contactsChatWin?.classList.toggle("lg:block");
+  });
+
+  openChatWin?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    ContactsWin?.showModal();
+  });
+</script>

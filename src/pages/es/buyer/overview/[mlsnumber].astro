@@ -9,6 +9,7 @@ import type {
 
 import PropertyGalery from "@/components/PropertyGalery.astro";
 import ShareWindow from "@/components/ShareWindow.astro";
+import ContactForm from "@/components/ContactForm.astro";
 import MapStatic from "@/components/MapStatic.tsx";
 
 import Phone from "@/components/icons/Phone.astro";
@@ -81,6 +82,7 @@ const image = property && property.photos ? property.photos[0] : "";
       </div>
     </div>
     <ShareWindow address={property.address} />
+    <ContactForm />
 
     {error && <p>Property not found</p>}
     {
@@ -178,20 +180,29 @@ const image = property && property.photos ? property.photos[0] : "";
                   </p>
                 </div>
               </div>
-              <a
-                href="/contact/"
+              <button
+                id="contactButtonOverview"
                 class="bg-primary text-white py-2 px-4 rounded-2xl text-sm flex justify-center items-center w-52 lg:w-64"
               >
                 {t("buyer.overview.agent.btn")}
-              </a>
+              </button>
             </aside>
             <div class="flex md:hidden fixed bottom-0 left-0 bg-white py-2 w-full justify-between items-center z-40">
-              <button class="px-16 py-4 ml-5 hover:bg-primary-800 bg-primary-700 rounded-4xl text-white cursor-pointer w-[40%]">
+              <a
+                target="_blank"
+                href="https://wa.me/17722404094"
+                class="px-16 py-4 ml-5 hover:bg-primary-800 bg-primary-700 rounded-4xl text-white cursor-pointer w-[40%]"
+              >
                 {t("buyer.overview.agent.btn.sms")}
-              </button>
-              <button class="px-16 py-4 mr-5 hover:bg-primary-800 bg-primary-700 rounded-4xl text-white cursor-pointer w-[40%]">
+              </a>
+
+              <a
+                target="_blank"
+                href="tel:+17722404094"
+                class="px-16 py-4 mr-5 hover:bg-primary-800 bg-primary-700 rounded-4xl text-white cursor-pointer w-[40%]"
+              >
                 {t("buyer.overview.agent.btn.call")}
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -202,11 +213,19 @@ const image = property && property.photos ? property.photos[0] : "";
 <script>
   const backBt = document.getElementById("backButtonOverview"),
     shareBt = document.getElementById("shareButtonOverview"),
-    shareWin = document.getElementById("shareWin") as HTMLDialogElement;
+    contactBt = document.getElementById("contactButtonOverview"),
+    shareWin = document.getElementById("shareWin") as HTMLDialogElement,
+    ContactsWin = document.getElementById("ContactsWin") as HTMLDialogElement;
 
   backBt?.addEventListener("click", async (e) => {
     e.preventDefault();
     window.history.back();
+  });
+
+  contactBt?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    ContactsWin?.showModal();
   });
 
   shareBt?.addEventListener("click", (e) => {

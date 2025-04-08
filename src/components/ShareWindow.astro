@@ -67,25 +67,25 @@ const hashtags = "realtor,houses,hidalgorealtor";
         Copy link <Clipboard className="hidden h-4 fill-primary" < button />
       </button>
     </li>
-
-    <script>
-      const closeShareWin = document.getElementById("closeShareWin"),
-        copyBut = document.getElementById("copyBut"),
-        shareWin = document.getElementById("shareWin") as HTMLDialogElement,
-        clipboard = document.getElementById("clipboardCopy");
-
-      closeShareWin?.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        shareWin?.close();
-      });
-
-      copyBut?.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        navigator.clipboard.writeText(window.location.href);
-        clipboard?.classList.toggle("hidden");
-      });
-    </script>
   </ul>
 </dialog>
+
+<script>
+  const closeShareWin = document.getElementById("closeShareWin"),
+    copyBut = document.getElementById("copyBut"),
+    shareWin = document.getElementById("shareWin") as HTMLDialogElement,
+    clipboard = document.getElementById("clipboardCopy");
+
+  closeShareWin?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    shareWin?.close();
+  });
+
+  copyBut?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    navigator.clipboard.writeText(window.location.href);
+    clipboard?.classList.toggle("hidden");
+  });
+</script>

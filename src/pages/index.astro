@@ -6,6 +6,8 @@ import CityContainer from "@/components/CityContainer.astro";
 import Testimonials from "@/components/Testimonials.astro";
 import HomeSearch from "@/components/HomeSearch.astro";
 import HomeWindow from "@/components/HomeWindow.astro";
+import localImage from "@/../public/images/bg/bg-home.webp";
+
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 
@@ -28,9 +30,7 @@ const description = t("SEO.home.description");
       {t("home.header.title")}
     </div>
     <Picture
-      width={1280}
-      height={678}
-      src="/images/bg/bg-home.webp"
+      src={localImage}
       formats={["avif", "webp", "jpeg"]}
       alt="background home image"
       style={{

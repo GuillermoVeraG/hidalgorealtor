@@ -5,6 +5,7 @@ import Teamitem from "@/components/TeamItem.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 import Picture from "astro/components/Picture.astro";
+import localImage from "@/../public/images/bg/bg-team.webp";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
@@ -55,9 +56,7 @@ const description = t("SEO.team.description");
       {t("team.header.title")}
     </div>
     <Picture
-      width={1280}
-      height={471}
-      src="/images/bg/bg-team.webp"
+      src={localImage}
       formats={["avif", "webp", "jpeg"]}
       alt="background home image"
       style={{

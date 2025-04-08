@@ -1,11 +1,10 @@
 ---
 import Picture from "astro/components/Picture.astro";
+import localImage from "@/../public/images/investment.webp";
 ---
 
 <Picture
-  width={256}
-  height={256}
-  src="/images/investment.webp"
+  src={localImage}
   formats={["avif", "webp", "jpeg"]}
   alt="icon investing"
   style={{

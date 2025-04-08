@@ -147,7 +147,6 @@ const Seller = ({ labels }: SellerInputProps) => {
           <label htmlFor="seller-Phone">{labels.phone} </label>
           <input
             className="w-full bg-primary-100 border border-black rounded py-1 px-2 font-sans"
-            type="number"
             id="seller-Phone"
             name="Phone"
             value={formData.Phone}

@@ -6,34 +6,35 @@ import Testimonials from "@/components/Testimonials.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 import Picture from "astro/components/Picture.astro";
+import localImage from "@/../public/images/bg/bg-services.webp";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const serviceItems = [
   {
-    icon: "RealEstate",
+    icon: "selling",
     title: t("our.services.title1"),
     desc1: t("our.services.Selling.description1"),
     desc2: t("our.services.Selling.description2"),
     desc3: t("our.services.Selling.description3"),
   },
   {
-    icon: "HouseMoney",
+    icon: "buying",
     title: t("our.services.title2"),
     desc1: t("our.services.buying.description1"),
     desc2: t("our.services.buying.description2"),
     desc3: t("our.services.buying.description3"),
   },
   {
-    icon: "Keys",
+    icon: "investing",
     title: t("our.services.title3"),
     desc1: t("our.services.investing.description1"),
     desc2: t("our.services.investing.description2"),
     desc3: t("our.services.investing.description3"),
   },
   {
-    icon: "Keys",
+    icon: "renting",
     title: t("our.services.title4"),
     desc1: t("our.services.renting.description1"),
     desc2: t("our.services.renting.description2"),
@@ -49,9 +50,7 @@ const description = t("SEO.services.description");
   <Menu isFloating isWhite />
   <div class="h-[276px] w-full flex justify-center items-center">
     <Picture
-      width={1280}
-      height={277}
-      src="/images/bg/bg-services.webp"
+      src={localImage}
       formats={["avif", "webp", "jpeg"]}
       alt="background home image"
       style={{

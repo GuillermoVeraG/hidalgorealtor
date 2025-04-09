@@ -104,7 +104,9 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     dialogForm = document.getElementById("dialogForm") as HTMLDialogElement,
     dialogFormError = document.getElementById(
       "dialogFormError"
-    ) as HTMLDialogElement;
+    ) as HTMLDialogElement,
+    closeErrorDialogForm = document.getElementById("closeErrorDialogForm"),
+    closeDialogForm = document.getElementById("closeDialogForm");
 
   closeContactWin?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -127,5 +129,21 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     form?.reset();
     console.log("success", dialogForm);
     dialogForm?.showModal();
+  });
+
+  closeDialogForm?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log("close from contact", dialogForm);
+
+    dialogForm?.close();
+  });
+
+  closeErrorDialogForm?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log("close from contact", dialogFormError);
+
+    dialogFormError?.close();
   });
 </script>

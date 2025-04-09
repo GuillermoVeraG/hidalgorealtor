@@ -9,6 +9,7 @@ import type { LabelsSellerParams, SellerFormParams } from "@/utils/property";
 
 export interface SellerInputProps {
   labels: LabelsSellerParams;
+  type: "seller" | "investor";
 }
 
 const initVal = {
@@ -29,7 +30,7 @@ const initVal = {
   "max-sqft": MAX_SQFT,
 } as SellerFormParams;
 
-const Seller = ({ labels }: SellerInputProps) => {
+const Seller = ({ labels, type }: SellerInputProps) => {
   var [formData, setFormData] = useState(initVal);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,11 +64,20 @@ const Seller = ({ labels }: SellerInputProps) => {
         "dialogFormError"
       ) as HTMLDialogElement;
 
-    const { error } = await actions.emails.sendEmailSeller(formData);
+    if(type == "seller"){
+      const { error } = await actions.emails.sendEmailSeller(formData);
 
-    if (error) {
-      dialogFormError?.showModal();
-      return;
+      if (error) {
+        dialogFormError?.showModal();
+        return;
+      }
+    }else{
+      const { error } = await actions.emails.sendEmailInvestor(formData);
+
+      if (error) {
+        dialogFormError?.showModal();
+        return;
+      }
     }
 
     e.currentTarget?.reset();

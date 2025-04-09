@@ -39,7 +39,8 @@ export const emails = {
 
       const { data, error } = await resend.emails.send({
         from: emailFrom,
-        to: ["alexandra@hidalgorealtor.com","guilleverag@gmail.com"],
+        to: ["alexandra@hidalgorealtor.com", "guilleverag@gmail.com"],
+        replyTo: Email,
         subject: `Hidalgo Realtor Seller Form ${FirstName} ${LastName}`,
         html:
           `<p><strong>From:</strong> ${FirstName} ${LastName} (<strong>${Email}</strong>) </p>` +
@@ -90,11 +91,13 @@ export const emails = {
         view,
       } = input;
 
-      const emailFrom = "Investor Hidalgo Realtor <alexandra@hidalgorealtor.com>";
+      const emailFrom =
+        "Investor Hidalgo Realtor <alexandra@hidalgorealtor.com>";
 
       const { data, error } = await resend.emails.send({
         from: emailFrom,
-        to: ["alexandra@hidalgorealtor.com","guilleverag@gmail.com"],
+        to: ["alexandra@hidalgorealtor.com", "guilleverag@gmail.com"],
+        replyTo: Email,
         subject: `Hidalgo Realtor Investor Form ${FirstName} ${LastName}`,
         html:
           `<p><strong>From:</strong> ${FirstName} ${LastName} (<strong>${Email}</strong>) </p>` +
@@ -136,11 +139,12 @@ export const emails = {
 
       const { data, error } = await resend.emails.send({
         from: emailFrom,
-        to: ["alexandra@hidalgorealtor.com","guilleverag@gmail.com"],
+        to: ["alexandra@hidalgorealtor.com", "guilleverag@gmail.com"],
+        replyTo: email,
         subject: "Hidalgo Realtor Contact Form " + name,
         html:
           `<p><strong>From:</strong> ${name} (<strong>${email}</strong>) </p>` +
-          `<p><strong>Phone: ${phone}</strong></p>` +
+          `<p><strong>Phone:</strong> ${phone}</p>` +
           `<p>${message}</p>`,
       });
 

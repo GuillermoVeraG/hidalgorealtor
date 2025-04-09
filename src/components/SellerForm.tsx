@@ -64,14 +64,14 @@ const Seller = ({ labels, type }: SellerInputProps) => {
         "dialogFormError"
       ) as HTMLDialogElement;
 
-    if(type == "seller"){
+    if (type == "seller") {
       const { error } = await actions.emails.sendEmailSeller(formData);
 
       if (error) {
         dialogFormError?.showModal();
         return;
       }
-    }else{
+    } else {
       const { error } = await actions.emails.sendEmailInvestor(formData);
 
       if (error) {

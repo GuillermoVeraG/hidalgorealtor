@@ -1,0 +1,47 @@
+---
+import ContactForm from "@/components/ContactForm.tsx";
+import Close from "@/components/icons/Close.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+import type { LabelsContactParams } from "@/utils/property";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const labels = {
+  name: t("contact.form.name"),
+  email: t("contact.form.email"),
+  phone: t("contact.form.phone"),
+  message: t("contact.form.massage"),
+  button: t("contact.form.botton"),
+  buttontext: t("contact.form.description"),
+  ph_name: t("contact.form.your.name"),
+  ph_email: t("contact.form.your.email"),
+  ph_phone: t("contact.form.your.phone"),
+  ph_message: t("contact.form.your.massage"),
+} as LabelsContactParams;
+---
+
+<dialog
+  id="ContactsWin"
+  class="max-w-lg w-full bg-primary-50 text-black text-xs font-light rounded-xl backdrop:bg-primary-300/80 relative p-10 pt-4 overflow-hidden m-auto"
+>
+  <h3 class="font-serif font-semibold text-2xl text-center mb-4">
+    Get in Touch
+  </h3>
+  <button id="closeDialogContactForm" class="absolute top-4 right-4">
+    <Close className="size-6 stroke-black outline-none" />
+  </button>
+
+  <ContactForm labels={labels} client:load />
+</dialog>
+
+<script>
+  const closeContactWin = document.getElementById("closeDialogContactForm"),
+    contactWin = document.getElementById("ContactsWin") as HTMLDialogElement;
+
+  closeContactWin?.addEventListener("click", (e) => {
+    e.preventDefault();
+    contactWin?.close();
+  });
+</script>

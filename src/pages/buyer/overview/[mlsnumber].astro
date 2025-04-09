@@ -9,7 +9,7 @@ import type {
 
 import PropertyGalery from "@/components/PropertyGalery.astro";
 import ShareWindow from "@/components/ShareWindow.astro";
-import ContactForm from "@/components/ContactForm.astro";
+import ContactForm from "@/components/ContactForm.tsx";
 import MapStatic from "@/components/MapStatic.tsx";
 
 import Phone from "@/components/icons/Phone.astro";
@@ -21,6 +21,7 @@ import Bath from "@/components/icons/Bath.astro";
 import Parking from "@/components/icons/Parking.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
+import type { LabelsContactParams } from "@/utils/property";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
@@ -56,6 +57,19 @@ const DecimalNumber = new Intl.NumberFormat("en-US", {
 const title = property ? property.address : "property not found";
 const desc = property ? property.description : "property not found";
 const image = property && property.photos ? property.photos[0] : "";
+
+const labels = {
+  name: t("contact.form.name"),
+  email: t("contact.form.email"),
+  phone: t("contact.form.phone"),
+  message: t("contact.form.massage"),
+  button: t("contact.form.botton"),
+  buttontext: t("contact.form.description"),
+  ph_name: t("contact.form.your.name"),
+  ph_email: t("contact.form.your.email"),
+  ph_phone: t("contact.form.your.phone"),
+  ph_message: t("contact.form.your.massage"),
+} as LabelsContactParams;
 ---
 
 <MapLayout title={title} description={desc} image={image}>
@@ -82,7 +96,7 @@ const image = property && property.photos ? property.photos[0] : "";
       </div>
     </div>
     <ShareWindow address={property.address} />
-    <ContactForm />
+    <ContactForm labels={labels} />
 
     {error && <p>Property not found</p>}
     {

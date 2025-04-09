@@ -23,19 +23,19 @@ const Search = ({ isFilter, data, labels }: SearchInputProps) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(name, value);
+
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
-    console.log(name, value);
+
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
-    console.log(name, checked);
+
     setFormData((prevState) => ({ ...prevState, [name]: checked }));
   };
 
@@ -60,7 +60,6 @@ const Search = ({ isFilter, data, labels }: SearchInputProps) => {
 
   const submitForm = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submit form", e);
 
     const isSpa = window.location.pathname.includes("/es/");
     const formData = new FormData(e.currentTarget);

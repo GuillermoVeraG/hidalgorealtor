@@ -20,6 +20,13 @@ export interface SellerFormParams {
   "max-sqft": number;
 }
 
+export interface ContactFormParams {
+  Name: string;
+  Email: string;
+  Phone: string;
+  Message: string;
+}
+
 export interface PropertySearchParams {
   address: string;
   type: string;
@@ -73,6 +80,20 @@ export interface LabelsSellerParams {
   view: string;
   button: string;
   buttontext: string;
+}
+
+export interface LabelsContactParams {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  button: string;
+  buttontext: string;
+
+  ph_name: string;
+  ph_email: string;
+  ph_phone: string;
+  ph_message: string;
 }
 
 export interface PropertyLocationParams {

@@ -2,7 +2,6 @@
 import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/Menu.astro";
 import SellerForm from "@/components/SellerForm.tsx";
-import ResponseForm from "@/components/ResponseForm.astro";
 import Faqs from "@/components/Faqs.astro";
 
 import { useTranslations } from "@/i18n/utils";
@@ -90,14 +89,9 @@ const description = t("SEO.investor.description");
         }}
       />
 
-      <SellerForm labels={labels} client:load />
+      <SellerForm labels={labels} type="investor" client:load />
     </div>
   </section>
 
   <Faqs type="investor" />
 </Layout>
-
-<ResponseForm
-  msgSuccess="Thank you for your message! We will contact you soon."
-  msgError="We are experiencing problems at this time. Please try again later."
-/>

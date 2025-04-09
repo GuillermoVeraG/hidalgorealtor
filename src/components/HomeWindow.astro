@@ -1,11 +1,25 @@
 ---
-import ContactForm from "@/components/ContactForm.astro";
+import ContactForm from "@/components/ContactForm.tsx";
 import Close from "@/components/icons/Close.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
+import type { LabelsContactParams } from "@/utils/property";
 
 const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const labels = {
+  name: t("contact.form.name"),
+  email: t("contact.form.email"),
+  phone: t("contact.form.phone"),
+  message: t("contact.form.massage"),
+  button: t("contact.form.botton"),
+  buttontext: t("contact.form.description"),
+  ph_name: t("contact.form.your.name"),
+  ph_email: t("contact.form.your.email"),
+  ph_phone: t("contact.form.your.phone"),
+  ph_message: t("contact.form.your.massage"),
+} as LabelsContactParams;
 ---
 
 <div
@@ -36,7 +50,7 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
   </div>
 </div>
 
-<ContactForm />
+<ContactForm labels={labels} />
 
 <script>
   const closeChatWin = document.getElementById("closeChatWin"),

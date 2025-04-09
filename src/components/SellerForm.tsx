@@ -38,13 +38,13 @@ const Seller = ({ labels, type }: SellerInputProps) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(name, value);
+
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
-    console.log(name, checked);
+
     setFormData((prevState) => ({ ...prevState, [name]: checked }));
   };
 

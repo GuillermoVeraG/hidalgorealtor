@@ -1,5 +1,5 @@
 ---
-import ContactForm from "@/components/ContactForm.tsx";
+import ContactWin from "@/components/ContactWin.astro";
 import Close from "@/components/icons/Close.astro";
 import { useTranslations } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
@@ -50,7 +50,7 @@ const labels = {
   </div>
 </div>
 
-<ContactForm labels={labels} />
+<ContactWin />
 
 <script>
   const closeChatWin = document.getElementById("closeChatWin"),

@@ -104,13 +104,10 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     dialogForm = document.getElementById("dialogForm") as HTMLDialogElement,
     dialogFormError = document.getElementById(
       "dialogFormError"
-    ) as HTMLDialogElement,
-    closeErrorDialogForm = document.getElementById("closeErrorDialogForm"),
-    closeDialogForm = document.getElementById("closeDialogForm");
+    ) as HTMLDialogElement;
 
   closeContactWin?.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("close");
     contactWin?.close();
   });
 
@@ -121,29 +118,25 @@ const t = useTranslations(relativeLocale as keyof typeof languages);
     const { error } = await actions.emails.sendEmailContact(formData);
 
     if (error) {
-      console.log("error", dialogFormError);
       dialogFormError?.showModal();
+      const closeErrorDialogForm = document.getElementById(
+        "closeErrorDialogForm"
+      );
+      closeErrorDialogForm?.addEventListener("click", (e) => {
+        e.preventDefault();
+        dialogFormError?.close();
+      });
       return;
     }
 
     form?.reset();
-    console.log("success", dialogForm);
+    contactWin?.close();
     dialogForm?.showModal();
-  });
 
-  closeDialogForm?.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    console.log("close from contact", dialogForm);
-
-    dialogForm?.close();
-  });
-
-  closeErrorDialogForm?.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    console.log("close from contact", dialogFormError);
-
-    dialogFormError?.close();
+    const closeDialogForm = document.getElementById("closeDialogForm");
+    closeDialogForm?.addEventListener("click", (e) => {
+      e.preventDefault();
+      dialogForm?.close();
+    });
   });
 </script>

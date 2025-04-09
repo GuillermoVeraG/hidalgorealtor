@@ -39,11 +39,15 @@ const { msgError, msgSuccess } = Astro.props;
   closeDialogForm?.addEventListener("click", (e) => {
     e.preventDefault();
 
+    console.log("close", dialogForm);
+
     dialogForm?.close();
   });
 
   closeErrorDialogForm?.addEventListener("click", (e) => {
     e.preventDefault();
+
+    console.log("close", dialogFormError);
 
     dialogFormError?.close();
   });

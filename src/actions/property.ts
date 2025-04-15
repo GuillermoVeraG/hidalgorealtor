@@ -5,6 +5,7 @@ import {
   getFullUrl,
   getUrlSearchParams,
   getUrlLocationParams,
+  getUrlSortParams,
   getPropertyParams,
 } from "@/utils/property";
 import type { PropertyResult, PropertyResultItems } from "@/utils/property";
@@ -41,6 +42,17 @@ export const property = {
       return searchParams;
     },
   }),
+  getUrlSortParams: defineAction({
+    input: z.object({
+      url: z.string(),
+      sort: z.string(),
+      order: z.string(),
+    }),
+    handler: async (input) => {
+      const searchParams = getUrlSortParams(input);
+      return searchParams;
+    },
+  }),
   getProperties: defineAction({
     input: z.object({
       data: z.object({
@@ -63,7 +75,7 @@ export const property = {
         total: z.number().gt(0),
         page: z.number().gte(0),
       }),
-      sortby: z.string().default("BridgeModificationTimestamp"),
+      sortby: z.string().default("date"),
       sortorder: z.string().default("desc"),
     }),
     handler: async (input) => {

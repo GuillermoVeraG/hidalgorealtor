@@ -96,8 +96,24 @@ export interface LabelsContactParams {
   ph_message: string;
 }
 
+export interface LabelsSortParams {
+  sort: string;
+  opt1: string;
+  opt2: string;
+  opt3: string;
+  opt4: string;
+  opt5: string;
+  opt6: string;
+}
+
 export interface PropertyLocationParams {
   address: string;
+}
+
+export interface PropertySortParams {
+  url: string;
+  sort: string;
+  order: string;
 }
 
 export interface PropertyParamsItems {
@@ -192,15 +208,29 @@ export function getUrlSearchParams(params: PropertySearchParams) {
   if (amenities.length > 0) searchParams += amenities + "/";
   else searchParams += "none/";
 
-  searchParams += "1/";
+  searchParams += "date/desc/1/";
 
   return encodeURI(searchParams);
 }
 
 export function getUrlLocationParams(params: PropertyLocationParams) {
   let searchParams =
-    "sale/" + params.address + "/none/0-5000000/0-5000/0/0/none/1/";
+    "sale/" + params.address + "/none/0-5000000/0-5000/0/0/none/date/desc/1/";
 
+  return encodeURI(searchParams);
+}
+
+export function getUrlSortParams(params: PropertySortParams) {
+  const urlArray = params.url.split("/");
+  let searchParams = "";
+
+  for (let i = 0; i < urlArray.length - 4; i++) {
+    searchParams += decodeURI(urlArray[i]) + "/";
+  }
+
+  searchParams += params.sort + "/" + params.order + "/1/";
+
+  console.log(searchParams);
   return encodeURI(searchParams);
 }
 
@@ -328,10 +358,17 @@ export function getFullUrl(
   params = "&PostalCode=33139",
   key = "",
   url = "",
-  sortby = "BridgeModificationTimestamp",
+  sortby = "date",
   sortorder = "desc"
 ): string {
   const offset = page * total;
+
+  const sortUrl =
+    sortby == "price"
+      ? "ListPrice"
+      : sortby == "sqft"
+        ? "LivingArea"
+        : "BridgeModificationTimestamp";
 
   let fullUrl =
     url +
@@ -342,11 +379,9 @@ export function getFullUrl(
     "&offset=" +
     offset +
     "&sortBy[0]=" +
-    sortby +
+    sortUrl +
     "&order=" +
     sortorder;
-
-  console.log(sortby, sortorder, fullUrl);
 
   return fullUrl;
 }

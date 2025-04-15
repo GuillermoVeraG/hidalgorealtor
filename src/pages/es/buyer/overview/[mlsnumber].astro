@@ -9,7 +9,7 @@ import type {
 
 import PropertyGalery from "@/components/PropertyGalery.astro";
 import ShareWindow from "@/components/ShareWindow.astro";
-import ContactForm from "@/components/ContactForm.tsx";
+import ContactWin from "@/components/ContactWin.astro";
 import MapStatic from "@/components/MapStatic.tsx";
 
 import Phone from "@/components/icons/Phone.astro";
@@ -96,7 +96,6 @@ const labels = {
       </div>
     </div>
     <ShareWindow address={property.address} />
-    <ContactForm labels={labels} />
 
     {error && <p>Property not found</p>}
     {
@@ -220,6 +219,7 @@ const labels = {
             </div>
           </div>
         </section>
+        <ContactWin />
       )
     }
   </main>

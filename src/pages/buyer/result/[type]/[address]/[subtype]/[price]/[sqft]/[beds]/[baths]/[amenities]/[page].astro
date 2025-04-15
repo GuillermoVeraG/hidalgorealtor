@@ -79,6 +79,8 @@ const search = {
   key: API_TOKEN,
   urlBase: API_URL,
   pagination: { page: currentPage - 1, total: ITEMS_PER_PAGE },
+  sortby: "BridgeModificationTimestamp",
+  sortorder: "desc",
 } as PropertySearchParamsItems;
 
 const { data } = await Astro.callAction(actions.property.getProperties, search);

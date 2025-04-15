@@ -1,0 +1,169 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { actions } from "astro:actions";
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/Menu.astro";
+import type {
+  PropertySearchParams,
+  PropertySearchParamsItems,
+  PropertyResultItems,
+  LabelsSortParams,
+} from "@/utils/property";
+
+import Pagination from "@/components/Pagination.astro";
+import PropertiesItem from "@/components/PropertiesItem.astro";
+import Filter from "@/components/Filters.astro";
+import FiltersWin from "@/components/FiltersWin.astro";
+import SortForm from "@/components/SortForm.tsx";
+
+import Arrow from "@/components/icons/Arrow.astro";
+
+import { useTranslations } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const relativeLocale = Astro.currentLocale || "en";
+const t = useTranslations(relativeLocale as keyof typeof languages);
+
+const url = new URL(Astro.url);
+const {
+  type,
+  subtype,
+  address,
+  beds,
+  baths,
+  price,
+  sqft,
+  amenities,
+  page,
+  sort,
+  order,
+} = Astro.params;
+
+var descHeaderText = t("buyer.result.header.global");
+if (address === "miramar") {
+  descHeaderText = t("buyer.result.header.miramar");
+} else if (address === "pembroke pines") {
+  descHeaderText = t("buyer.result.header.pembroke_pines");
+} else if (address === "southwest ranches") {
+  descHeaderText = t("buyer.result.header.southwest_ranches");
+} else if (address === "weston") {
+  descHeaderText = t("buyer.result.header.weston");
+} else if (address === "cooper city") {
+  descHeaderText = t("buyer.result.header.cooper_city");
+} else if (address === "davie") {
+  descHeaderText = t("buyer.result.header.davie");
+}
+
+const paths = url.pathname.split("/");
+const baseUrl = paths.slice(0, -2).join("/") + "/";
+
+const priceRange = price?.split("-") ?? ["0", "5000000"];
+const sqftRange = sqft?.split("-") ?? ["0", "5000"];
+const amenitiesList = amenities?.split(" ") ?? [];
+
+let input = {} as PropertySearchParams;
+
+input.address = address ?? "";
+input.beds = parseInt(beds ?? "0");
+input.baths = parseInt(baths ?? "0");
+
+input["min-price"] = parseInt(priceRange[0]);
+input["max-price"] = parseInt(priceRange[1]);
+input["min-sqft"] = parseInt(sqftRange[0]);
+input["max-sqft"] = parseInt(sqftRange[1]);
+
+input.type = type ?? "sale";
+input.subtype = subtype ?? "residential";
+
+amenitiesList.forEach((amenity) => {
+  if (amenity === "pool") input.pool = true;
+  if (amenity === "view") input.view = true;
+  if (amenity === "parking") input.parking = true;
+});
+
+const API_TOKEN = import.meta.env.PUBLIC_API_TOKEN ?? "bad_token";
+const API_URL = import.meta.env.PUBLIC_API_URL ?? "bad_url";
+
+const currentPage = parseInt(page ?? "1");
+const ITEMS_PER_PAGE = 9;
+
+const search = {
+  data: input,
+  key: API_TOKEN,
+  urlBase: API_URL,
+  pagination: { page: currentPage - 1, total: ITEMS_PER_PAGE },
+  sortby: sort ?? "date",
+  sortorder: order ?? "desc",
+} as PropertySearchParamsItems;
+
+const { data } = await Astro.callAction(actions.property.getProperties, search);
+const { total, dataProperty } = data ?? { total: 0, dataProperty: [] };
+
+const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
+
+const title = t("SEO.buyer.result.title");
+const description = t("SEO.buyer.result.description");
+
+const labelsSort = {
+  sort: t("buyer.result.paging.sort"),
+  opt1: t("buyer.result.paging.opt1"),
+  opt2: t("buyer.result.paging.opt2"),
+  opt3: t("buyer.result.paging.opt3"),
+  opt4: t("buyer.result.paging.opt4"),
+  opt5: t("buyer.result.paging.opt5"),
+  opt6: t("buyer.result.paging.opt6"),
+} as LabelsSortParams;
+---
+
+<Layout title={title} description={description}>
+  <Menu isBorder />
+  <main
+    class="flex flex-col justify-between items-center w-full lg:max-w-7xl mx-auto px-8 sm:px-10"
+  >
+    <div class="flex justify-between items-center w-full pt-8 font-sans">
+      <div>
+        <a
+          href={getRelativeLocaleUrl(relativeLocale, "/buyer/")}
+          class="flex items-center justify-start gap-2"
+        >
+          <Arrow className="size-5 stroke-black -ml-2" />{
+            t("buyer.result.back")
+          }</a
+        >
+      </div>
+      <div>
+        <Filter />
+        <FiltersWin data={input} />
+      </div>
+    </div>
+
+    <div class="my-4 text-left text-pretty w-full md:w-10/12 lg:w-8/12 text-sm">
+      {descHeaderText}
+    </div>
+
+    <div class="flex justify-between items-center w-full pb-4 font-sans">
+      <div>
+        {total}
+        {t("buyer.result.listings")}
+      </div>
+
+      <SortForm
+        sort={sort ?? "date"}
+        order={order ?? "desc"}
+        url={url.pathname}
+        labels={labelsSort}
+        client:load
+      />
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      {
+        dataProperty.map((property: PropertyResultItems) => (
+          <PropertiesItem property={property} />
+        ))
+      }
+    </section>
+
+    <Pagination currentPage={currentPage} lastPage={lastPage} url={baseUrl} />
+  </main>
+</Layout>

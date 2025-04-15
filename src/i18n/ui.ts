@@ -183,6 +183,15 @@ export const ui = {
     "buyer.result.btn": "View Property",
     "buyer.result.paging.page": "Page",
     "buyer.result.paging.of": "of",
+
+    "buyer.result.paging.sort": "sort",
+    "buyer.result.paging.opt1": "Date (Newest - Oldest)",
+    "buyer.result.paging.opt2": "Date (Oldest - Newest)",
+    "buyer.result.paging.opt3": "Price (Highest - Lowest)",
+    "buyer.result.paging.opt4": "Price (Lowest - Highest)",
+    "buyer.result.paging.opt5": "Square Feet (Highest - Lowest)",
+    "buyer.result.paging.opt6": "Square Feet (Lowest - Highest)",
+
     "buyer.result.header.global":
       "Southeast Florida blends coastal elegance with metropolitan energy—offering a lifestyle of year-round sunshine, cultural richness, and diverse communities. From business hubs to beach towns, it's a region where opportunity meets quality of life, attracting professionals, families, and investors alike. With world-class amenities, strong market demand, and a dynamic pace of growth, Southeast Florida continues to stand out as one of the most desirable places to live, invest, and thrive.",
     "buyer.result.header.miramar":
@@ -492,7 +501,7 @@ export const ui = {
     "seller.form.prefix": "Prefijo",
     "seller.form.phone": "Teléfono (opcional)",
     "seller.form.location": "Ciudad, Código Postal o número de MLS",
-    "seller.form.square.meters": "Metraje Cuadrado",
+    "seller.form.square.meters": "Pie Cuadrado",
     "seller.form.bedrooms.bathrooms": "Habitaciones y baños",
     "seller.form.bedrooms": "Habitación",
     "seller.form.bathrooms": "Baño",
@@ -517,7 +526,7 @@ export const ui = {
     "investor.form.prefix": "Prefijo",
     "investor.form.phone": "Teléfono (opcional)",
     "investor.form.location": "Ciudad, Código Postal o número de MLS",
-    "investor.form.square.meters": "Metraje Cuadrado",
+    "investor.form.square.meters": "Pie Cuadrado",
     "investor.form.bedrooms.bathrooms": "Habitaciones y baños",
     "investor.form.bedrooms": "Habitación",
     "investor.form.bathrooms": "Baño",
@@ -547,7 +556,7 @@ export const ui = {
     "buyer.search.sale.price.title": "Presupuesto",
     "buyer.search.sale.price.desc":
       "Ingresa el monto mínimo y máximo que deseas gastar",
-    "buyer.search.sale.sqft.title": "Metraje Cuadrado",
+    "buyer.search.sale.sqft.title": "Pie Cuadrado",
     "buyer.search.sale.sqft.desc":
       "Ingresa el monto mínimo y máximo que deseas",
     "buyer.search.sale.text": "¿Listo para Descubrir Tu Propiedad Ideal?",
@@ -567,7 +576,7 @@ export const ui = {
     "buyer.search.rent.price.title": "Presupuesto",
     "buyer.search.rent.price.desc":
       "Ingresa el monto mínimo y máximo que deseas gastar",
-    "buyer.search.rent.sqft.title": "Metraje Cuadrado",
+    "buyer.search.rent.sqft.title": "Pie Cuadrado",
     "buyer.search.rent.sqft.desc":
       "Ingresa el monto mínimo y máximo que deseas",
     "buyer.search.rent.text": "¿Listo para Descubrir Tu Propiedad Ideal?",
@@ -580,6 +589,15 @@ export const ui = {
     "buyer.result.btn": "Ver Propiedad",
     "buyer.result.paging.page": "Página",
     "buyer.result.paging.of": "de",
+
+    "buyer.result.paging.sort": "ordenar",
+    "buyer.result.paging.opt1": "Fecha (Nuevo - Antiguo)",
+    "buyer.result.paging.opt2": "Fecha (Antiguo - Nuevo)",
+    "buyer.result.paging.opt3": "Precio (Mayor - Menor)",
+    "buyer.result.paging.opt4": "Precio (Menor - Mayor)",
+    "buyer.result.paging.opt5": "Pie Cuadrado (Grande - Pequeño)",
+    "buyer.result.paging.opt6": "Pie Cuadrado (Pequeño - Grande)",
+
     "buyer.result.header.global":
       "El sureste de Florida combina la elegancia costera con la energía metropolitana, ofreciendo un estilo de vida de sol durante todo el año, riqueza cultural y comunidades diversas. Desde centros de negocios hasta pueblos costeros, es una región donde la oportunidad se une a la calidad de vida, atrayendo a profesionales, familias e inversores por igual. Con comodidades de clase mundial, una fuerte demanda del mercado y un ritmo de crecimiento dinámico, el sureste de Florida continúa destacándose como uno de los lugares más deseables para vivir, invertir y prosperar.",
     "buyer.result.header.miramar":

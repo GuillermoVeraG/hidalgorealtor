@@ -130,6 +130,8 @@ export interface PropertySearchParamsItems {
     total: number;
     page: number;
   };
+  sortby: string;
+  sortorder: string;
 }
 
 export interface PropertyResult {
@@ -325,7 +327,9 @@ export function getFullUrl(
   page = 0,
   params = "&PostalCode=33139",
   key = "",
-  url = ""
+  url = "",
+  sortby = "BridgeModificationTimestamp",
+  sortorder = "desc"
 ): string {
   const offset = page * total;
 
@@ -337,7 +341,12 @@ export function getFullUrl(
     total +
     "&offset=" +
     offset +
-    "&sortBy[0]=BridgeModificationTimestamp&order=desc";
+    "&sortBy[0]=" +
+    sortby +
+    "&order=" +
+    sortorder;
+
+  console.log(sortby, sortorder, fullUrl);
 
   return fullUrl;
 }

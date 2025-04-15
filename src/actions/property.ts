@@ -63,6 +63,8 @@ export const property = {
         total: z.number().gt(0),
         page: z.number().gte(0),
       }),
+      sortby: z.string().default("BridgeModificationTimestamp"),
+      sortorder: z.string().default("desc"),
     }),
     handler: async (input) => {
       const searchParams = getApiSearchParams(input.data);
@@ -71,7 +73,9 @@ export const property = {
         input.pagination.page,
         searchParams,
         input.key,
-        input.urlBase
+        input.urlBase,
+        input.sortby,
+        input.sortorder
       );
 
       //console.log(fullUrl);

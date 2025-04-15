@@ -7,12 +7,14 @@ import type {
   PropertySearchParams,
   PropertySearchParamsItems,
   PropertyResultItems,
+  LabelsSortParams,
 } from "@/utils/property";
 
 import Pagination from "@/components/Pagination.astro";
 import PropertiesItem from "@/components/PropertiesItem.astro";
 import Filter from "@/components/Filters.astro";
 import FiltersWin from "@/components/FiltersWin.astro";
+import SortForm from "@/components/SortForm.tsx";
 
 import Arrow from "@/components/icons/Arrow.astro";
 
@@ -23,8 +25,19 @@ const relativeLocale = Astro.currentLocale || "en";
 const t = useTranslations(relativeLocale as keyof typeof languages);
 
 const url = new URL(Astro.url);
-const { type, subtype, address, beds, baths, price, sqft, amenities, page } =
-  Astro.params;
+const {
+  type,
+  subtype,
+  address,
+  beds,
+  baths,
+  price,
+  sqft,
+  amenities,
+  page,
+  sort,
+  order,
+} = Astro.params;
 
 var descHeaderText = t("buyer.result.header.global");
 if (address === "miramar") {
@@ -79,8 +92,8 @@ const search = {
   key: API_TOKEN,
   urlBase: API_URL,
   pagination: { page: currentPage - 1, total: ITEMS_PER_PAGE },
-  sortby: "BridgeModificationTimestamp",
-  sortorder: "desc",
+  sortby: sort ?? "date",
+  sortorder: order ?? "desc",
 } as PropertySearchParamsItems;
 
 const { data } = await Astro.callAction(actions.property.getProperties, search);
@@ -90,6 +103,16 @@ const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
 
 const title = t("SEO.buyer.result.title");
 const description = t("SEO.buyer.result.description");
+
+const labelsSort = {
+  sort: t("buyer.result.paging.sort"),
+  opt1: t("buyer.result.paging.opt1"),
+  opt2: t("buyer.result.paging.opt2"),
+  opt3: t("buyer.result.paging.opt3"),
+  opt4: t("buyer.result.paging.opt4"),
+  opt5: t("buyer.result.paging.opt5"),
+  opt6: t("buyer.result.paging.opt6"),
+} as LabelsSortParams;
 ---
 
 <Layout title={title} description={description}>
@@ -118,9 +141,19 @@ const description = t("SEO.buyer.result.description");
       {descHeaderText}
     </div>
 
-    <div class="flex justify-start items-center w-full pb-4 font-sans">
-      {total}
-      {t("buyer.result.listings")}
+    <div class="flex justify-between items-center w-full pb-4 font-sans">
+      <div>
+        {total}
+        {t("buyer.result.listings")}
+      </div>
+
+      <SortForm
+        sort={sort ?? "date"}
+        order={order ?? "desc"}
+        url={url.pathname}
+        labels={labelsSort}
+        client:load
+      />
     </div>
 
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">

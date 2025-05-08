@@ -101,8 +101,19 @@ const { total, dataProperty } = data ?? { total: 0, dataProperty: [] };
 
 const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
 
-const title = t("SEO.buyer.result.title");
-const description = t("SEO.buyer.result.description");
+const title = t("SEO.buyer.result.title") + " " + address;
+const description =
+  t("SEO.buyer.result.description") +
+  " " +
+  address +
+  " " +
+  t("buyer.result.paging.page") +
+  " " +
+  currentPage +
+  " " +
+  t("buyer.result.paging.of") +
+  " " +
+  lastPage;
 
 const labelsSort = {
   sort: t("buyer.result.paging.sort"),
@@ -137,7 +148,9 @@ const labelsSort = {
       </div>
     </div>
 
-    <div class="my-4 text-left text-pretty w-full md:w-10/12 lg:w-8/12 text-sm">
+    <div
+      class="hidden my-4 text-left text-pretty w-full md:w-10/12 lg:w-8/12 text-sm"
+    >
       {descHeaderText}
     </div>
 
